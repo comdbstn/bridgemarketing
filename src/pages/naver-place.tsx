@@ -5,7 +5,6 @@ import { Stats } from "@/components/sections/naver-place/Stats";
 import { Advantages } from "@/components/sections/naver-place/Advantages";
 import { Pricing } from "@/components/sections/naver-place/Pricing";
 import { Industries } from "@/components/sections/naver-place/Industries";
-import { References } from "@/components/sections/naver-place/References";
 import { Process } from "@/components/sections/naver-place/Process";
 import { QA } from "@/components/sections/naver-place/QA";
 import { Footer } from "@/components/layout/Footer";
@@ -28,7 +27,6 @@ export default function NaverPlaceServicePage() {
             <Stats />
             <Advantages />
             <Industries />
-            <References />
             <Process />
             <Pricing />
             <QA />

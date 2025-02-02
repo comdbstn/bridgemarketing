@@ -1,37 +1,22 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
-import { Users, Target, BarChart3, MessageSquare, Search, TrendingUp } from "lucide-react";
+import { Award, Coins, Brain } from "lucide-react";
 
 const advantages = [
     {
-        icon: Users,
-        title: "타겟 맞춤형 마케팅",
-        description: "맘카페, 지역카페, 취미카페 등 다양한 카페에서 타겟에 맞는 마케팅을 진행합니다."
+        icon: Award,
+        title: "업계 최대 경력",
+        description: "업계 최초로 네이버 카페 마케팅을 시작했습니다. 노하우와 경험을 바탕으로 최적의 마케팅 경험을 제공해드립니다."
     },
     {
-        icon: Target,
-        title: "정확한 타겟팅",
-        description: "관심사, 지역, 연령대 등을 고려한 정확한 타겟팅으로 효과적인 마케팅을 실현합니다."
+        icon: Coins,
+        title: "업계 최저가",
+        description: "장기간 확보해온 계정 및 계약을 맺은 카페 회원 풀을 통하여 합리적인 가격"
     },
     {
-        icon: BarChart3,
-        title: "데이터 기반 전략",
-        description: "실시간 데이터 분석을 통해 최적의 마케팅 전략을 수립하고 실행합니다."
-    },
-    {
-        icon: MessageSquare,
-        title: "자연스러운 바이럴",
-        description: "실제 카페 회원들의 자연스러운 후기와 경험담으로 신뢰도 높은 바이럴을 진행합니다."
-    },
-    {
-        icon: Search,
-        title: "SEO 최적화",
-        description: "네이버 검색 노출을 극대화하는 SEO 최적화 전략을 제공합니다."
-    },
-    {
-        icon: TrendingUp,
-        title: "성과 분석",
-        description: "상세한 성과 분석 리포트를 제공하여 마케팅 효과를 정확하게 측정합니다."
+        icon: Brain,
+        title: "9년경력의 마케팅 노하우",
+        description: "보고하기 쉬운 마케팅 보고서 제공, 1:1 담당자 매칭 및 매니징"
     }
 ];
 

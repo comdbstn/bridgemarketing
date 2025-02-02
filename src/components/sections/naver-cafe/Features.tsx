@@ -1,26 +1,47 @@
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import { Clock, Users, DollarSign, Users2, Target, Layout, MessageSquare, BookMarked } from "lucide-react";
 
 const features = [
     {
-        image: "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80&w=400",
-        title: "정확한 타겟팅",
-        description: "맘카페, 지역카페, 취미카페 등 관심사 기반 맞춤 타겟팅",
+        icon: Clock,
+        title: "높은 리텐션",
+        description: "하루 평균 이용시간 40분, MAU 4500만 등 압도적인 사용자 참여도",
     },
     {
-        image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=400",
-        title: "높은 도달률",
-        description: "월간 순방문자 4,500만 명의 국내 최대 커뮤니티 플랫폼",
+        icon: Users,
+        title: "4500만+ 이용자",
+        description: "대한민국의 대부분의 인터넷 사용자가 이용하는 최대 규모의 커뮤니티",
     },
     {
-        image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=400",
-        title: "합리적인 비용",
-        description: "기존 온라인 마케팅 채널 대비 최대 60% 비용 절감",
+        icon: DollarSign,
+        title: "높은 구매력",
+        description: "30-50대 주부 및 직장인 중심으로 높은 구매 전환율",
     },
     {
-        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
-        title: "전문 컨설팅",
-        description: "15년 이상의 네이버 카페 마케팅 노하우로 최적의 전략 제시",
+        icon: Users2,
+        title: "다양한 연령층",
+        description: "10대부터 60대까지 전 연령대가 고르게 분포",
+    },
+    {
+        icon: Target,
+        title: "타겟 설정 용이",
+        description: "지역, 관심사, 연령대별 타겟팅 가능",
+    },
+    {
+        icon: Layout,
+        title: "관심사별 커뮤니티",
+        description: "관심사 기반으로 나누어진 카페로 효과적인 타겟팅",
+    },
+    {
+        icon: MessageSquare,
+        title: "활발한 반응",
+        description: "댓글과 대댓글이 활발하게 이루어져 높은 참여도",
+    },
+    {
+        icon: BookMarked,
+        title: "영구 보관",
+        description: "게시물이 삭제되지 않고 언제나 확인 가능",
     },
 ];
 
@@ -54,17 +75,13 @@ export function Features() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className='h-full mx-4 sm:mx-0'
+                            className='h-full'
                         >
                             <Card className='h-full flex flex-col hover:shadow-lg transition-all duration-300 overflow-hidden group'>
-                                <div className='relative h-48 flex-shrink-0'>
-                                    <img
-                                        src={feature.image}
-                                        alt={feature.title}
-                                        className='w-full h-full object-cover transition-transform duration-300 group-hover:scale-110'
-                                    />
-                                </div>
                                 <div className='p-6 flex flex-col flex-grow'>
+                                    <div className='w-12 h-12 rounded-lg bg-gradient-to-r from-[#2DB400] to-[#1EC800] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
+                                        <feature.icon className='w-6 h-6 text-white' />
+                                    </div>
                                     <h3 className='text-xl font-bold mb-2 text-gray-900 font-tway'>{feature.title}</h3>
                                     <p className='text-gray-600 font-tway'>{feature.description}</p>
                                 </div>

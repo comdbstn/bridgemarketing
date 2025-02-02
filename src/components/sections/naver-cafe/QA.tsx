@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Plus } from "lucide-react";
 import { useState } from "react";
 
-const faqs = [
+const questions = [
     {
         question: "어떤 카페에서 마케팅이 진행되나요?",
         answer: "맘카페, 지역카페, 취미카페, 팬카페 등 다양한 카테고리의 카페에서 마케팅을 진행합니다. 귀사의 제품이나 서비스에 가장 적합한 카페를 선정하여 효과적인 마케팅을 진행합니다.",
@@ -30,69 +30,71 @@ const faqs = [
     },
 ];
 
+function QAItem({ question, answer, isOpen, onClick }: { question: string; answer: string; isOpen: boolean; onClick: () => void }) {
+    return (
+        <div className="py-4">
+            <button
+                onClick={onClick}
+                className="w-full flex justify-between items-center text-left"
+            >
+                <span className="text-lg font-semibold font-tway">{question}</span>
+                <Plus
+                    className={`w-5 h-5 text-green-600 transform transition-transform ${
+                        isOpen ? "rotate-45" : ""
+                    }`}
+                />
+            </button>
+            {isOpen && (
+                <p className="mt-4 text-gray-600 font-tway">
+                    {answer}
+                </p>
+            )}
+        </div>
+    );
+}
+
 export function QA() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <section className="py-24 relative overflow-hidden bg-gradient-to-br from-white to-green-50">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-12"
-                >
-                    <span className="text-green-600 font-semibold text-lg font-tway mb-4 block">
-                        Q&A
-                    </span>
-                    <h2 className="text-4xl font-bold mb-4 font-aggro">
-                        자주 묻는 질문
-                    </h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto font-tway">
-                        네이버 카페 마케팅에 대해 자주 묻는 질문들을 모았습니다.
-                        <br />
-                        더 자세한 내용은 카카오톡 채널을 통해 문의해주세요.
-                    </p>
-                </motion.div>
-
+        <section className="py-20 bg-white">
+            <div className="container mx-auto px-4">
                 <div className="max-w-3xl mx-auto">
-                    {faqs.map((faq, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="mb-4"
-                        >
-                            <Card
-                                className="overflow-hidden cursor-pointer hover:shadow-md transition-all duration-300"
-                                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-4xl font-bold text-center mb-4 font-aggro"
+                    >
+                        자주 묻는 질문
+                    </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-gray-600 text-center mb-12 font-tway"
+                    >
+                        네이버 카페 마케팅에 대해 자주 묻는 질문들을 모았습니다
+                    </motion.p>
+
+                    <div className="divide-y divide-gray-100">
+                        {questions.map((item, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                viewport={{ once: true }}
                             >
-                                <div className="p-6">
-                                    <div className="flex items-center justify-between">
-                                        <h3 className="text-lg font-bold font-tway">{faq.question}</h3>
-                                        <Plus
-                                            className={`w-5 h-5 text-green-600 transition-transform duration-300 ${
-                                                openIndex === index ? "rotate-45" : ""
-                                            }`}
-                                        />
-                                    </div>
-                                    {openIndex === index && (
-                                        <motion.p
-                                            initial={{ opacity: 0, height: 0 }}
-                                            animate={{ opacity: 1, height: "auto" }}
-                                            exit={{ opacity: 0, height: 0 }}
-                                            transition={{ duration: 0.3 }}
-                                            className="mt-4 text-gray-600 font-tway"
-                                        >
-                                            {faq.answer}
-                                        </motion.p>
-                                    )}
-                                </div>
-                            </Card>
-                        </motion.div>
-                    ))}
+                                <QAItem
+                                    question={item.question}
+                                    answer={item.answer}
+                                    isOpen={openIndex === index}
+                                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                                />
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

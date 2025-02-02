@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const plans = [
     {
@@ -76,29 +77,41 @@ export function Pricing() {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
                         >
-                            <Card className="p-8 h-full hover:shadow-lg transition-all duration-300">
-                                <h3 className="text-2xl font-bold mb-2 font-aggro">{plan.name}</h3>
-                                <div className="text-3xl font-bold text-green-600 mb-4">
-                                    {plan.price}
-                                    <span className="text-base font-normal text-gray-600">/월</span>
+                            <Card className={`p-8 h-full flex flex-col ${
+                                plan.popular ? 'border-2 border-green-500 relative' : ''
+                            }`}>
+                                {plan.popular && (
+                                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                                        <span className="bg-green-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                                            인기
+                                        </span>
+                                    </div>
+                                )}
+                                <div>
+                                    <h3 className="text-2xl font-bold mb-2 font-aggro">{plan.name}</h3>
+                                    <div className="text-gray-600 mb-4 font-tway">{plan.description}</div>
+                                    <div className="text-3xl font-bold mb-6 font-aggro">
+                                        {plan.price}
+                                        <span className="text-lg text-gray-600 font-normal">만원~/월</span>
+                                    </div>
                                 </div>
-                                <p className="text-gray-600 mb-6 font-tway">{plan.description}</p>
-                                <ul className="space-y-4 mb-8">
+                                <div className="space-y-4 mb-8 flex-grow">
                                     {plan.features.map((feature, i) => (
-                                        <li key={i} className="flex items-start">
-                                            <Check className="w-5 h-5 text-green-600 mr-2 flex-shrink-0" />
-                                            <span className="text-gray-600 font-tway">{feature}</span>
-                                        </li>
+                                        <div key={i} className="flex items-center text-gray-600 font-tway">
+                                            <Check className="w-5 h-5 text-green-500 mr-2" />
+                                            {feature}
+                                        </div>
                                     ))}
-                                </ul>
-                                <a
-                                    href="http://pf.kakao.com/_CYGdn/chat"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="block w-full py-3 px-6 bg-green-600 hover:bg-green-700 text-white rounded-lg text-center transition-colors font-tway"
+                                </div>
+                                <Button
+                                    className={`w-full ${
+                                        plan.popular
+                                            ? 'bg-green-500 hover:bg-green-600'
+                                            : 'bg-gray-800 hover:bg-gray-900'
+                                    } text-white font-tway`}
                                 >
-                                    문의하기
-                                </a>
+                                    시작하기
+                                </Button>
                             </Card>
                         </motion.div>
                     ))}
