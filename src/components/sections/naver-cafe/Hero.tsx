@@ -2,6 +2,10 @@ import { motion } from "framer-motion";
 import { useCountAnimation } from "@/hooks/use-count-animation";
 import { formatNumber } from "@/lib/utils";
 import { MessageCircle } from "lucide-react";
+import Image from "next/image";
+
+const ANIMATION_DELAY_BASE = 0.2;
+const ANIMATION_DURATION = 0.6;
 
 export function Hero() {
     const { count: totalUsers, ref: totalRef } = useCountAnimation(500);
@@ -20,32 +24,38 @@ export function Hero() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
+                    transition={{ duration: ANIMATION_DURATION }}
                     className='max-w-4xl mx-auto text-center'
                 >
                     <div className='space-y-12 mb-12'>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                            className="font-['Changa'] text-[28px] sm:text-[50px] font-bold tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-[#E5F7FF] to-[#FFFFFF] select-none"
+                            transition={{ duration: ANIMATION_DURATION, delay: ANIMATION_DELAY_BASE }}
+                            className="font-sans text-[28px] sm:text-[50px] font-bold tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-[#E5F7FF] to-[#FFFFFF] select-none"
                         >
                             BRIDGE MARKETING
                         </motion.p>
                         <div className='flex items-center justify-center gap-12'>
-                            <motion.img
+                            <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.3 }}
-                                src='/logo/naver-cafe.png'
-                                alt='네이버 카페 로고'
-                                className='h-28 rounded-2xl'
-                            />
+                                transition={{ duration: ANIMATION_DURATION, delay: ANIMATION_DELAY_BASE * 1.5 }}
+                                className="relative h-28 w-28"
+                            >
+                                <Image
+                                    src='/logo/naver-cafe.png'
+                                    alt='네이버 카페 로고'
+                                    fill
+                                    className='rounded-2xl object-contain'
+                                    priority
+                                />
+                            </motion.div>
                             <motion.h1
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.8, ease: "easeOut" }}
-                                className="font-['Changa'] text-[50px] sm:text-[130px] font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-br from-[#E5F7FF] via-[#FFFFFF] to-[#F5FBFF] select-none leading-none"
+                                transition={{ duration: ANIMATION_DURATION * 1.3, delay: ANIMATION_DELAY_BASE * 2 }}
+                                className="font-sans text-[50px] sm:text-[130px] font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-br from-[#E5F7FF] via-[#FFFFFF] to-[#F5FBFF] select-none leading-none"
                             >
                                 CAFE
                             </motion.h1>
@@ -54,8 +64,8 @@ export function Hero() {
                             <motion.h2
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.3 }}
-                                className='text-3xl sm:text-5xl font-bold text-white font-aggro'
+                                transition={{ duration: ANIMATION_DURATION, delay: ANIMATION_DELAY_BASE * 2.5 }}
+                                className='text-3xl sm:text-5xl font-bold text-white'
                             >
                                 커뮤니티 마케팅의 새로운 기준
                             </motion.h2>
@@ -63,8 +73,8 @@ export function Hero() {
                             <motion.p
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.4 }}
-                                className='text-lg sm:text-xl text-white/90 px-4 font-tway'
+                                transition={{ duration: ANIMATION_DURATION, delay: ANIMATION_DELAY_BASE * 3 }}
+                                className='text-lg sm:text-xl text-white/90 px-4'
                             >
                                 네이버 카페는 대한민국 최대의 커뮤니티 플랫폼입니다.
                                 <br className='hidden sm:block' />
@@ -82,11 +92,11 @@ export function Hero() {
                                     key={stat.label}
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+                                    transition={{ duration: ANIMATION_DURATION, delay: ANIMATION_DELAY_BASE * (3.5 + index * 0.5) }}
                                     className='p-4 sm:p-6 mx-4 sm:mx-0 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:border-white/20 transition-all duration-300 group'
                                     ref={stat.ref}
                                 >
-                                    <h3 className='text-2xl sm:text-4xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300 font-aggro'>
+                                    <h3 className='text-2xl sm:text-4xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300'>
                                         <span className='text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/60'>
                                             {formatNumber(stat.number, stat.suffix)}
                                         </span>
@@ -99,7 +109,7 @@ export function Hero() {
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.8 }}
+                            transition={{ duration: ANIMATION_DURATION, delay: ANIMATION_DELAY_BASE * 5 }}
                             className='mt-12 pb-16 sm:pb-20'
                         >
                             <a
