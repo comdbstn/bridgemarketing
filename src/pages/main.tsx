@@ -363,15 +363,14 @@ export function MainPage() {
                                 <motion.div
                                     key={row}
                                     className="flex gap-8 py-4"
-                                    initial={{ x: row % 2 === 0 ? "-10%" : "-90%" }}
-                                    animate={{
-                                        x: row % 2 === 0 ? ["-10%", "-100%"] : ["-90%", "0%"]
-                                    }}
+                                    initial={{ x: row === 1 ? "-100%" : "0%" }}
+                                    animate={{ x: row === 1 ? "0%" : "-100%" }}
                                     transition={{
                                         duration: 150,
                                         repeat: Infinity,
                                         ease: "linear",
-                                        repeatType: "loop"
+                                        repeatType: "loop",
+                                        repeatDelay: 0
                                     }}
                                 >
                                     {Array(10).fill([...clientLogos]).flat().slice(row * 13, (row + 1) * 13).map((logo, index) => (
@@ -389,8 +388,9 @@ export function MainPage() {
                                     ))}
                                 </motion.div>
                             ))}
-                            <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-black to-transparent z-10" />
-                            <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-black to-transparent z-10" />
+                            {/* 페이드 아웃 효과 */}
+                            <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-[#010002] via-[#010002]/50 to-transparent z-10" />
+                            <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-[#010002] via-[#010002]/50 to-transparent z-10" />
                         </div>
                     </div>
                 </section>
