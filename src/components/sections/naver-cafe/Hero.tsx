@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { useCountAnimation } from "@/hooks/use-count-animation";
 import { formatNumber } from "@/lib/utils";
 import { MessageCircle } from "lucide-react";
-import Image from "next/image";
 
 const ANIMATION_DELAY_BASE = 0.1;
 const ANIMATION_DURATION = 0.5;

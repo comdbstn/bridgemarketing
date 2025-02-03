@@ -3,7 +3,15 @@ import { Card } from "@/components/ui/card";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const plans = [
+interface Plan {
+    name: string;
+    price: string;
+    description: string;
+    features: string[];
+    popular?: boolean;
+}
+
+const plans: Plan[] = [
     {
         name: "Basic",
         price: "50만원",
@@ -15,6 +23,7 @@ const plans = [
             "기본 키워드 최적화",
             "1:1 전담 매니저",
         ],
+        popular: false
     },
     {
         name: "Standard",
@@ -28,6 +37,7 @@ const plans = [
             "일일 리포트 제공",
             "SEO 최적화",
         ],
+        popular: true
     },
     {
         name: "Premium",
@@ -42,6 +52,7 @@ const plans = [
             "성과 분석 컨설팅",
             "24/7 긴급 대응",
         ],
+        popular: false
     },
 ];
 
