@@ -5,7 +5,7 @@ import { Check } from "lucide-react";
 const plans = [
     {
         name: "Basic",
-        price: "50만원",
+        price: "50만원 (키워드별상이)",
         description: "소규모 매장을 위한 기본 플랜",
         features: [
             "5개 리뷰 작성",
@@ -16,7 +16,7 @@ const plans = [
     },
     {
         name: "Standard",
-        price: "150만원",
+        price: "150만원 (키워드별상이)",
         description: "효과적인 마케팅을 위한 표준 플랜",
         features: [
             "20개 리뷰 작성",
@@ -28,10 +28,9 @@ const plans = [
     },
     {
         name: "Premium",
-        price: "500만원",
+        price: "500만원 (키워드별상이)",
         description: "프리미엄 마케팅을 위한 고급 플랜",
         features: [
-            "무제한 리뷰 작성",
             "프리미엄 컨텐츠 제작",
             "실시간 대시보드 제공",
             "키워드 상위노출 최적화",

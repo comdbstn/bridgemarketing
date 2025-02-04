@@ -55,7 +55,7 @@ export function Features() {
                     viewport={{ once: true }}
                     className='text-4xl font-bold text-center mb-4 font-aggro'
                 >
-                    네이버 카페 마케팅의 강점
+                    브릿지마케팅만의 장점
                 </motion.h2>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
@@ -63,9 +63,11 @@ export function Features() {
                     viewport={{ once: true }}
                     className='text-gray-600 text-center mb-12 max-w-2xl mx-auto px-4 font-tway'
                 >
-                    온라인 마케팅의 새로운 기준을 제시합니다. 
+                    지역 커뮤니티에 대한 이해
                     <br />
-                    정확한 타겟팅과 높은 도달률로 귀사의 마케팅 목표를 달성하세요.
+                    브릿지마케팅은 섭외 가능한 200여개의 카페에 대한 이해도를 보유하고있습니다.
+                    <br />
+                    자연스러운 바이럴로 입소문을 만들어드리겠습니다.
                 </motion.p>
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8'>
                     {features.map((feature, index) => (

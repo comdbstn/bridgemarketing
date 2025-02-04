@@ -57,7 +57,7 @@ export function Hero() {
                                 transition={{ duration: 0.6, delay: 0.3 }}
                                 className='text-3xl sm:text-5xl font-bold text-white font-aggro'
                             >
-                                대학생 마케팅의 새로운 기준
+                                대학생에게 홍보하는 가장 저렴한 바이럴 솔루션
                             </motion.h2>
 
                             <motion.p

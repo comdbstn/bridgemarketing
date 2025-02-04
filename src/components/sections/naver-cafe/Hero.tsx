@@ -54,10 +54,10 @@ export function Hero() {
                             <motion.h2
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: ANIMATION_DURATION, delay: ANIMATION_DELAY_BASE * 2.5 }}
+                                transition={{ duration: 0.6, delay: 0.3 }}
                                 className='text-3xl sm:text-5xl font-bold text-white font-aggro'
                             >
-                                커뮤니티 마케팅의 새로운 기준
+                                입소문에는 역시? 네이버 카페
                             </motion.h2>
 
                             <motion.p
