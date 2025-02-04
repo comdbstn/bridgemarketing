@@ -436,7 +436,7 @@ export function MainPage() {
                                 Marketing Paradigm
                             </motion.span>
                             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white via-purple-500 to-indigo-500 bg-clip-text text-transparent">
-                                마케팅의 패러다임
+                                마케팅의 새로운 관점을 제시합니다
                             </h2>
                             <p className="text-xl text-gray-400">경험, 분석, 기술이 합쳐진 마케팅</p>
                         </motion.div>
@@ -469,11 +469,8 @@ export function MainPage() {
                                         <path d="M22 11.0799V11.9999C21.9988 14.1563 21.3005 16.2545 20.0093 17.9817C18.7182 19.7088 16.9033 20.9723 14.8354 21.5838C12.7674 22.1952 10.5573 22.1218 8.53447 21.3744C6.51168 20.6271 4.78465 19.246 3.61096 17.4369C2.43727 15.6279 1.87979 13.4879 2.02168 11.3362C2.16356 9.18443 2.99721 7.13619 4.39828 5.49694C5.79935 3.85768 7.69279 2.71525 9.79619 2.24001C11.8996 1.76477 14.1003 1.9822 16.07 2.85986" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                         <path d="M22 4L12 14.01L9 11.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                     </svg>,
-                                    stats: [
-                                        { value: "716", label: "누적 고객사" },
-                                        { value: "34,000", label: "총 작업 건수" },
-                                        { value: "92%", label: "재구매율" }
-                                    ],
+                                    value: "92%",
+                                    description: "재구매율",
                                     subtext: "수많은 성공 사례로\n입증된 마케팅 효과"
                                 }
                             ].map((item, index) => (
