@@ -389,11 +389,10 @@ export function MainPage() {
                                         duration: 150,
                                         repeat: Infinity,
                                         ease: "linear",
-                                        repeatType: "loop",
-                                        repeatDelay: 0
+                                        repeatType: "loop"
                                     }}
                                 >
-                                    {Array(10).fill([...clientLogos]).flat().slice(row * 13, (row + 1) * 13).map((logo, index) => (
+                                    {Array(2).fill([...clientLogos]).flat().slice(row * 13, (row + 1) * 13).map((logo, index) => (
                                         <div 
                                             key={index}
                                             className="flex-shrink-0 w-[150px] h-[60px] flex items-center justify-center bg-black/50 rounded-lg backdrop-blur-sm border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300"
