@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useMotionTemplate, useTransform } from "framer-motion";
-import { ArrowRight, Bot, Zap, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Navbar } from "@/components/navigation/Navbar";
 import { Footer } from "@/components/layout/Footer";
