@@ -171,7 +171,7 @@ export function MainPage() {
                                 transition={{ delay: 0.1, duration: 0.4 }}
                                 className="text-xl md:text-2xl text-gray-400 mb-12 font-medium"
                             >
-                                정확한 데이터와 KPI로 가치를 전달합니다
+                                사업 성공을 위한 A to Z 솔루션
                             </motion.p>
 
                             {/* 통계 섹션 */}
@@ -218,7 +218,11 @@ export function MainPage() {
                                                 initial={{ opacity: 0, y: 10 }}
                                                 whileInView={{ opacity: 1, y: 0 }}
                                                 viewport={{ once: true }}
-                                                transition={{ delay: 1 + index * 0.2 }}
+                                                transition={{ 
+                                                    delay: 0.5,
+                                                    duration: 1.5,
+                                                    ease: "easeOut"
+                                                }}
                                             >
                                                 {statsCounts[index]}{stat.suffix}
                                             </motion.div>
@@ -432,7 +436,7 @@ export function MainPage() {
                             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white via-purple-500 to-indigo-500 bg-clip-text text-transparent">
                                 마케팅의 패러다임
                             </h2>
-                            <p className="text-xl text-gray-400">이제는 달라져야 합니다</p>
+                            <p className="text-xl text-gray-400">경험, 분석, 기술이 합쳐진 마케팅</p>
                         </motion.div>
 
                         <div className="grid md:grid-cols-3 gap-8 mb-16">
@@ -466,7 +470,7 @@ export function MainPage() {
                                     stats: [
                                         { value: "716", label: "누적 고객사" },
                                         { value: "34,000", label: "총 작업 건수" },
-                                        { value: "85%", label: "재계약률" }
+                                        { value: "92%", label: "재구매율" }
                                     ],
                                     subtext: "수많은 성공 사례로\n입증된 마케팅 효과"
                                 }
@@ -839,10 +843,11 @@ export function MainPage() {
                                 transition={{ delay: 0.4 }}
                                 className="text-xl text-gray-300 mb-12 leading-relaxed"
                             >
-                                브릿지마케팅과 함께라면<br className="md:hidden" />
-                                당신의 마케팅이 더욱 특별해집니다.
+                                상담만 받아도 필요한 마케팅 인사이트를 전달해드립니다.
                                 <br />
-                                지금 바로 무료 상담을 받아보세요.
+                                혼자보단 여러명이 강합니다.
+                                <br />
+                                브릿지마케팅과 함께할때 더욱 강합니다.
                             </motion.p>
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
