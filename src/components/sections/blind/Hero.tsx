@@ -57,7 +57,7 @@ export function Hero() {
                                 transition={{ duration: 0.6, delay: 0.3 }}
                                 className='text-3xl sm:text-5xl font-bold text-white font-aggro'
                             >
-                                직장인 마케팅의 새로운 기준
+                                직장인 대상 마케팅의 새로운 패러다임
                             </motion.h2>
 
                             <motion.p
