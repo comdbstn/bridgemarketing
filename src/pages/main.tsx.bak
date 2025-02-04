@@ -7,6 +7,9 @@ import { useEffect, useRef, useState, useMemo } from "react";
 import { Loading } from "@/components/ui/loading";
 import { Analytics } from "@vercel/analytics/react";
 import Head from 'next/head';
+import { useCountAnimation } from "@/hooks/use-count-animation";
+import { formatNumber } from "@/lib/utils";
+import { MessageCircle, Star, Award, Users, TrendingUp } from "lucide-react";
 
 // 로고 배열 생성
 const timestamp = Date.now();
