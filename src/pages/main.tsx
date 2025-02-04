@@ -379,20 +379,20 @@ export function MainPage() {
 
                         {/* 누적 고객사 로고 그리드 */}
                         <div className="relative w-full overflow-hidden">
-                            {[0, 1, 2].map((row) => (
+                            {[0, 1].map((row) => (
                                 <motion.div
                                     key={row}
-                                    className="flex gap-8 py-4"
-                                    initial={{ x: row === 1 ? "-100%" : "0%" }}
-                                    animate={{ x: row === 1 ? "0%" : "-100%" }}
+                                    className="flex gap-4 py-4"
+                                    initial={{ x: "0%" }}
+                                    animate={{ x: "-100%" }}
                                     transition={{
-                                        duration: 150,
+                                        duration: 50,
                                         repeat: Infinity,
                                         ease: "linear",
                                         repeatType: "loop"
                                     }}
                                 >
-                                    {Array(2).fill([...clientLogos]).flat().slice(row * 13, (row + 1) * 13).map((logo, index) => (
+                                    {Array(3).fill([...clientLogos]).flat().map((logo, index) => (
                                         <div 
                                             key={index}
                                             className="flex-shrink-0 w-[150px] h-[60px] flex items-center justify-center bg-black/50 rounded-lg backdrop-blur-sm border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300"
@@ -408,8 +408,8 @@ export function MainPage() {
                                 </motion.div>
                             ))}
                             {/* 페이드 아웃 효과 */}
-                            <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-[#010002] via-[#010002]/50 to-transparent z-10" />
-                            <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-[#010002] via-[#010002]/50 to-transparent z-10" />
+                            <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#010002] via-[#010002]/50 to-transparent z-10" />
+                            <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#010002] via-[#010002]/50 to-transparent z-10" />
                         </div>
                     </div>
                 </section>
