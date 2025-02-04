@@ -172,6 +172,8 @@ export function MainPage() {
                                 className="text-xl md:text-2xl text-gray-400 mb-12 font-medium"
                             >
                                 사업 성공을 위한 A to Z 솔루션
+                                <br />
+                                정확한 데이터와 KPI로 가치를 전달합니다
                             </motion.p>
 
                             {/* 통계 섹션 */}
