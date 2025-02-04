@@ -383,23 +383,23 @@ export function MainPage() {
                                 <motion.div
                                     key={row}
                                     className="flex gap-4 py-4"
-                                    initial={{ x: row === 1 ? "0%" : row === 0 ? "0%" : "-100%" }}
-                                    animate={{ x: row === 1 ? "-100%" : row === 0 ? "-100%" : "0%" }}
+                                    initial={{ x: row === 1 ? "0%" : "100%" }}
+                                    animate={{ x: row === 1 ? "100%" : "-100%" }}
                                     transition={{
-                                        duration: 50,
+                                        duration: 40,
                                         repeat: Infinity,
                                         ease: "linear",
                                         repeatType: "loop"
                                     }}
                                 >
-                                    {[...clientLogos].slice(row * 12, (row + 1) * 12).map((logo, index) => (
+                                    {[...clientLogos, ...clientLogos].map((logo, index) => (
                                         <div 
                                             key={`${row}-${index}`}
                                             className="flex-shrink-0 w-[150px] h-[60px] flex items-center justify-center bg-black/50 rounded-lg backdrop-blur-sm border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300"
                                         >
                                             <img
                                                 src={logo}
-                                                alt={`Client ${row * 12 + index + 1}`}
+                                                alt={`Client ${index + 1}`}
                                                 className="w-[120px] h-[48px] object-contain opacity-80 hover:opacity-100 transition-all duration-300"
                                                 loading="lazy"
                                             />
