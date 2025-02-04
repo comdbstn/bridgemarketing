@@ -6,6 +6,10 @@ import { Footer } from "@/components/layout/Footer";
 import { useEffect, useRef, useState, useMemo } from "react";
 import { Loading } from "@/components/ui/loading";
 import { Analytics } from "@vercel/analytics/react";
+import Head from 'next/head';
+import { useCountAnimation } from "@/hooks/use-count-animation";
+import { formatNumber } from "@/lib/utils";
+import { MessageCircle, Star, Award, Users, TrendingUp } from "lucide-react";
 
 // 로고 배열 생성
 const timestamp = Date.now();
@@ -126,6 +130,19 @@ export function MainPage() {
 
     return (
         <>
+            <Head>
+                <title>브릿지마케팅 | 대한민국 1위 통합 마케팅 에이전시</title>
+                <meta name="description" content="9년차 시니어 마케터의 전문성으로 검증된 마케팅 성과를 제공합니다. 블라인드, 에브리타임, 틱톡 등 다양한 플랫폼에서 300% 이상의 마케팅 효율을 달성하세요." />
+                <meta name="keywords" content="브릿지마케팅, 통합마케팅, 디지털마케팅, 블라인드마케팅, 에브리타임마케팅, 틱톡마케팅" />
+                <meta property="og:title" content="브릿지마케팅 | 대한민국 1위 통합 마케팅 에이전시" />
+                <meta property="og:description" content="9년차 시니어 마케터의 전문성으로 검증된 마케팅 성과를 제공합니다. 300% 이상의 마케팅 효율, 98% 고객 만족도를 경험하세요." />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://bridgemarketing.co.kr" />
+                <meta property="og:image" content="/images/og-image.jpg" />
+                <link rel="canonical" href="https://bridgemarketing.co.kr" />
+                <meta name="robots" content="index, follow" />
+            </Head>
+
             <Analytics />
             <Navbar />
             <main className="min-h-screen bg-black text-white" onMouseMove={handleMouseMove}>
