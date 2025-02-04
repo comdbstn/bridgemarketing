@@ -385,6 +385,8 @@ export function MainPage() {
                                 const endIndex = startIndex + Math.floor(clientLogos.length / 3);
                                 const rowLogos = [
                                     ...clientLogos.slice(startIndex, endIndex),
+                                    ...clientLogos.slice(startIndex, endIndex),
+                                    ...clientLogos.slice(startIndex, endIndex),
                                     ...clientLogos.slice(startIndex, endIndex)
                                 ];
 
@@ -392,10 +394,10 @@ export function MainPage() {
                                     <motion.div
                                         key={row}
                                         className="flex gap-4 py-4"
-                                        initial={{ x: "0%" }}
-                                        animate={{ x: "-50%" }}
+                                        initial={{ x: row === 1 ? "-16.66%" : "0%" }}
+                                        animate={{ x: "-100%" }}
                                         transition={{
-                                            duration: 15,
+                                            duration: 35,
                                             repeat: Infinity,
                                             ease: "linear",
                                             repeatType: "loop"
