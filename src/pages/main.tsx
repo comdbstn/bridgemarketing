@@ -397,7 +397,7 @@ export function MainPage() {
                                         initial={{ x: "0%" }}
                                         animate={{ x: "-100%" }}
                                         transition={{
-                                            duration: 10,
+                                            duration: row === 1 ? 30 : 25,
                                             repeat: Infinity,
                                             ease: "linear",
                                             repeatType: "loop"
