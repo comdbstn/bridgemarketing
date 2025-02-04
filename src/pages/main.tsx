@@ -394,10 +394,10 @@ export function MainPage() {
                                     <motion.div
                                         key={row}
                                         className="flex gap-4 py-4"
-                                        initial={{ x: row === 1 ? "-16.66%" : "0%" }}
+                                        initial={{ x: "0%" }}
                                         animate={{ x: "-100%" }}
                                         transition={{
-                                            duration: 35,
+                                            duration: 10,
                                             repeat: Infinity,
                                             ease: "linear",
                                             repeatType: "loop"
