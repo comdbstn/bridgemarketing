@@ -379,34 +379,44 @@ export function MainPage() {
 
                         {/* 누적 고객사 로고 그리드 */}
                         <div className="relative w-full overflow-hidden">
-                            {[0, 1, 2].map((row) => (
-                                <motion.div
-                                    key={row}
-                                    className="flex gap-4 py-4"
-                                    initial={{ x: row === 1 ? "0%" : "100%" }}
-                                    animate={{ x: row === 1 ? "100%" : "-100%" }}
-                                    transition={{
-                                        duration: 40,
-                                        repeat: Infinity,
-                                        ease: "linear",
-                                        repeatType: "loop"
-                                    }}
-                                >
-                                    {[...clientLogos, ...clientLogos].map((logo, index) => (
-                                        <div 
-                                            key={`${row}-${index}`}
-                                            className="flex-shrink-0 w-[150px] h-[60px] flex items-center justify-center bg-black/50 rounded-lg backdrop-blur-sm border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300"
-                                        >
-                                            <img
-                                                src={logo}
-                                                alt={`Client ${index + 1}`}
-                                                className="w-[120px] h-[48px] object-contain opacity-80 hover:opacity-100 transition-all duration-300"
-                                                loading="lazy"
-                                            />
-                                        </div>
-                                    ))}
-                                </motion.div>
-                            ))}
+                            {[0, 1, 2].map((row) => {
+                                // 각 줄마다 다른 로고 세트 생성
+                                const startIndex = row * Math.floor(clientLogos.length / 3);
+                                const endIndex = startIndex + Math.floor(clientLogos.length / 3);
+                                const rowLogos = [
+                                    ...clientLogos.slice(startIndex, endIndex),
+                                    ...clientLogos.slice(startIndex, endIndex)
+                                ];
+
+                                return (
+                                    <motion.div
+                                        key={row}
+                                        className="flex gap-4 py-4"
+                                        initial={{ x: "0%" }}
+                                        animate={{ x: "-50%" }}
+                                        transition={{
+                                            duration: 30,
+                                            repeat: Infinity,
+                                            ease: "linear",
+                                            repeatType: "loop"
+                                        }}
+                                    >
+                                        {rowLogos.map((logo, index) => (
+                                            <div 
+                                                key={`${row}-${index}`}
+                                                className="flex-shrink-0 w-[150px] h-[60px] flex items-center justify-center bg-black/50 rounded-lg backdrop-blur-sm border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300"
+                                            >
+                                                <img
+                                                    src={logo}
+                                                    alt={`Client ${startIndex + (index % (endIndex - startIndex)) + 1}`}
+                                                    className="w-[120px] h-[48px] object-contain opacity-80 hover:opacity-100 transition-all duration-300"
+                                                    loading="lazy"
+                                                />
+                                            </div>
+                                        ))}
+                                    </motion.div>
+                                );
+                            })}
                             {/* 페이드 아웃 효과 */}
                             <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#010002] via-[#010002]/50 to-transparent z-10" />
                             <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#010002] via-[#010002]/50 to-transparent z-10" />
