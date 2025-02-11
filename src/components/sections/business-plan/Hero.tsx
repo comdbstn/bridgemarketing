@@ -56,7 +56,7 @@ export function Hero() {
                                 transition={{ duration: 0.6, delay: 0.3 }}
                                 className="text-3xl sm:text-5xl font-bold text-white font-aggro"
                             >
-                                AI가 만드는 완벽한 사업계획서
+                                전문가가 만드는 완벽한 사업계획서
                             </motion.h2>
 
                             <motion.p
@@ -65,9 +65,9 @@ export function Hero() {
                                 transition={{ duration: 0.6, delay: 0.4 }}
                                 className="text-lg sm:text-xl text-white/90 px-4 font-tway"
                             >
-                                AI 기술과 전문가의 노하우로 완성하는
+                                전문가의 노하우와 체계적인 프로세스로
                                 <br />
-                                맞춤형 사업계획서 작성 서비스
+                                맞춤형 사업계획서를 작성해드립니다
                             </motion.p>
                         </div>
 

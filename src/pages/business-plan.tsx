@@ -51,10 +51,10 @@ export default function BusinessPlanServicePage() {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: num * 0.1 }}
                                 className="group relative aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 cursor-pointer"
-                                onClick={() => setSelectedImage(`/business-plan_reference/${num}.jpeg`)}
+                                onClick={() => setSelectedImage(`/images/business-plan/사업계획서 레퍼런스 이미지${num}.png`)}
                             >
                                 <img
-                                    src={`/business-plan_reference/${num}.jpeg`}
+                                    src={`/images/business-plan/사업계획서 레퍼런스 이미지${num}.png`}
                                     alt={`사업계획서 레퍼런스 ${num}`}
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />

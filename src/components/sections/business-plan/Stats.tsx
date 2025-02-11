@@ -65,7 +65,7 @@ export function Stats() {
                         viewport={{ once: true }}
                         className="text-3xl font-bold text-gray-900 mb-4"
                     >
-                        AI 시대의 사업계획서 작성
+                        사업계획서 작성의 새로운 기준
                         <br />
                         이제는 달라져야 합니다
                     </motion.h2>

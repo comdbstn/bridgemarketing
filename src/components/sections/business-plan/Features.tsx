@@ -5,18 +5,18 @@ export function Features() {
     const features = [
         {
             icon: Bot,
-            title: "AI 기반 작성",
-            description: "최신 AI 기술을 활용하여 정확하고 효과적인 사업계획서를 작성합니다."
+            title: "전문가 작성",
+            description: "각 분야 전문가들의 체계적인 프로세스로 정확하고 효과적인 사업계획서를 작성합니다."
         },
         {
             icon: Shield,
-            title: "전문가 검수",
-            description: "각 분야 전문가들의 꼼꼼한 검토로 완성도 높은 결과물을 보장합니다."
+            title: "품질 보장",
+            description: "전문가들의 꼼꼼한 검토로 완성도 높은 결과물을 보장합니다."
         },
         {
             icon: Coins,
             title: "합리적 비용",
-            description: "AI 기술 활용으로 기존 대비 최대 3배까지 비용을 절감할 수 있습니다."
+            description: "체계적인 프로세스로 기존 대비 최대 3배까지 비용을 절감할 수 있습니다."
         },
         {
             icon: Clock,
