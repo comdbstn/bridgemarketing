@@ -27,7 +27,7 @@ export function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="font-['Changa'] text-[28px] sm:text-[50px] font-bold tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-[#c6e0fc] to-[#FFFFFF] select-none"
+                            className="font-['Changa'] text-[28px] sm:text-[50px] font-bold tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-[#E5F7FF] to-[#FFFFFF] select-none"
                         >
                             BRIDGE MARKETING
                         </motion.p>
@@ -37,14 +37,14 @@ export function Hero() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.3 }}
                                 src="/logo/boltlab.png"
-                                alt="서비스 개발 로고"
+                                alt="볼트랩 로고"
                                 className="w-28 h-28 object-contain rounded-2xl bg-white p-2"
                             />
                             <motion.h1
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.8, ease: "easeOut" }}
-                                className="font-['Changa'] text-[40px] sm:text-[100px] font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-br from-[#c6e0fc] via-[#FFFFFF] to-[#c6e0fc] select-none leading-none"
+                                className="font-['Changa'] text-[40px] sm:text-[100px] font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-br from-[#E5F7FF] via-[#FFFFFF] to-[#F5FBFF] select-none leading-none"
                             >
                                 DEVELOPMENT
                             </motion.h1>
@@ -75,48 +75,48 @@ export function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.8 }}
-                            className="mt-12 pb-16 sm:pb-20"
+                            className="mt-8"
                         >
                             <a
                                 href="http://pf.kakao.com/_CYGdn/chat"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-white/90 text-[#626ae2] rounded-full font-bold text-lg transition-all duration-300 hover:scale-105"
+                                className="inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-white/90 text-[#626ae2] rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 font-tway"
                             >
                                 <MessageCircle className="w-5 h-5" />
                                 지금 바로 시작하세요
                             </a>
                         </motion.div>
-                    </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 mt-12">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.5 }}
-                            className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white"
-                        >
-                            <h3 className="text-2xl sm:text-4xl font-bold mb-2" ref={projectRef}>{projectCount}+</h3>
-                            <p className="text-sm sm:text-base text-white/80">프로젝트 완수</p>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.6 }}
-                            className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white"
-                        >
-                            <h3 className="text-2xl sm:text-4xl font-bold mb-2" ref={satisfactionRef}>{satisfactionRate}%</h3>
-                            <p className="text-sm sm:text-base text-white/80">고객 만족도</p>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.7 }}
-                            className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white"
-                        >
-                            <h3 className="text-2xl sm:text-4xl font-bold mb-2" ref={recontractRef}>{recontractRate}%</h3>
-                            <p className="text-sm sm:text-base text-white/80">재계약률</p>
-                        </motion.div>
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 mt-12">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.5 }}
+                                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white"
+                            >
+                                <h3 className="text-2xl sm:text-4xl font-bold mb-2" ref={projectRef}>{projectCount}+</h3>
+                                <p className="text-sm sm:text-base text-white/80">프로젝트 완수</p>
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.6 }}
+                                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white"
+                            >
+                                <h3 className="text-2xl sm:text-4xl font-bold mb-2" ref={satisfactionRef}>{satisfactionRate}%</h3>
+                                <p className="text-sm sm:text-base text-white/80">고객 만족도</p>
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.7 }}
+                                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white"
+                            >
+                                <h3 className="text-2xl sm:text-4xl font-bold mb-2" ref={recontractRef}>{recontractRate}%</h3>
+                                <p className="text-sm sm:text-base text-white/80">재계약률</p>
+                            </motion.div>
+                        </div>
                     </div>
                 </motion.div>
             </div>
