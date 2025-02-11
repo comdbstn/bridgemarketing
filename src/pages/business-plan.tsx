@@ -42,8 +42,8 @@ export default function BusinessPlanServicePage() {
                             브릿지마케팅이 작성한 사업계획서를 소개합니다
                         </p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {Array.from({ length: 4 }, (_, i) => i + 1).map((num) => (
                             <motion.div
                                 key={num}
                                 initial={{ opacity: 0, y: 20 }}
@@ -51,10 +51,10 @@ export default function BusinessPlanServicePage() {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: num * 0.1 }}
                                 className="group relative aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 cursor-pointer"
-                                onClick={() => setSelectedImage(`/business-plan_reference/${num}.${num === 3 || num === 4 ? 'jpg' : 'jpeg'}`)}
+                                onClick={() => setSelectedImage(`/business-plan_reference/${num}.jpeg`)}
                             >
                                 <img
-                                    src={`/business-plan_reference/${num}.${num === 3 || num === 4 ? 'jpg' : 'jpeg'}`}
+                                    src={`/business-plan_reference/${num}.jpeg`}
                                     alt={`사업계획서 레퍼런스 ${num}`}
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
