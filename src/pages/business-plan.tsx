@@ -7,9 +7,9 @@ import { Process } from "@/components/sections/business-plan/Process";
 import { Profile } from "@/components/sections/business-plan/Profile";
 import { Pricing } from "@/components/sections/business-plan/Pricing";
 import { QA } from "@/components/sections/business-plan/QA";
-import { Footer } from "@/components/layout/Footer";
-import { BackButton } from "@/components/navigation/back-button";
-import { KakaoChatButton } from "@/components/chat/kakao-chat-button";
+import { Footer } from "@/components/common/Footer";
+import { BackButton } from "@/components/common/back-button";
+import { KakaoChatButton } from "@/components/common/kakao-chat-button";
 import { motion } from "framer-motion";
 import { ImageModal } from "@/components/ui/image-modal";
 
