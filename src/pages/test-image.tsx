@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function TestImagePage() {
     return (
         <div className="p-8">
@@ -8,7 +6,7 @@ export default function TestImagePage() {
                 <div>
                     <h2 className="text-lg mb-2">일반 레퍼런스</h2>
                     <img 
-                        src="/images/business-plan/references/일반 레퍼런스 한번에.png" 
+                        src="/images/business-plan/references/general-reference.png" 
                         alt="일반 레퍼런스"
                         className="w-full max-w-lg"
                     />
