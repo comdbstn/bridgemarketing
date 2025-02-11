@@ -13,6 +13,8 @@ import {
     ChartOptions,
 } from "chart.js";
 import { Line, Doughnut } from "react-chartjs-2";
+import { useEffect, useRef, useState } from "react";
+import { useInView } from "framer-motion";
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ArcElement);
 
@@ -102,70 +104,105 @@ const doughnutOptions: ChartOptions<"doughnut"> = {
     },
 };
 
+function CountUp({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) {
+    const [count, setCount] = useState(0);
+    const ref = useRef(null);
+    const isInView = useInView(ref);
+    
+    useEffect(() => {
+        let startTime: number;
+        let animationFrame: number;
+        
+        const updateCount = (timestamp: number) => {
+            if (!startTime) startTime = timestamp;
+            const progress = timestamp - startTime;
+            
+            if (progress < duration) {
+                const nextCount = Math.min(end, Math.floor((progress / duration) * end));
+                setCount(nextCount);
+                animationFrame = requestAnimationFrame(updateCount);
+            } else {
+                setCount(end);
+            }
+        };
+        
+        if (isInView) {
+            animationFrame = requestAnimationFrame(updateCount);
+        }
+        
+        return () => {
+            if (animationFrame) {
+                cancelAnimationFrame(animationFrame);
+            }
+        };
+    }, [end, duration, isInView]);
+    
+    return <span ref={ref}>{count}{suffix}</span>;
+}
+
 export function Stats() {
+    const stats = [
+        { number: 397, suffix: "개", label: "전국 캠퍼스" },
+        { number: 82, suffix: "%", label: "20대 사용률" },
+        { number: 280, suffix: "만+", label: "월간 활성 사용자" },
+        { number: 3, suffix: "배", label: "빠른 효과" },
+        { number: 100, suffix: "+", label: "광고 집행" },
+        { number: 95, suffix: "%", label: "재계약률" }
+    ];
+
     return (
-        <section className='py-20 bg-gradient-to-br from-white via-pink-50 to-white'>
-            <div className='container mx-auto px-4'>
-                <motion.h2
+        <section className="py-20">
+            <div className="container mx-auto px-4">
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className='text-4xl font-bold text-center mb-12 font-aggro'
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-16"
                 >
-                    에브리타임 성장 지표
-                </motion.h2>
-                <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto'>
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                    <motion.h2
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
-                        className='bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300'
+                        className="text-3xl font-bold text-gray-900 mb-4"
                     >
-                        <h3 className='text-xl font-bold mb-4 text-[#e1595e]'>연간 사용자 성장</h3>
-                        <div className='h-[300px]'>
-                            <Line options={lineOptions} data={userGrowthData} />
-                        </div>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        className='bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300'
-                    >
-                        <h3 className='text-xl font-bold mb-4 text-[#e1595e]'>캠퍼스 분포</h3>
-                        <div className='h-[300px]'>
-                            <Doughnut options={doughnutOptions} data={campusDistributionData} />
-                        </div>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className='lg:col-span-2'
-                    >
-                        <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-                            {[
-                                { label: "전국 캠퍼스", value: "397개" },
-                                { label: "누적 가입자 수", value: "700만+" },
-                                { label: "월간 사용자 수", value: "280만+" },
-                            ].map((stat, index) => (
-                                <motion.div
-                                    key={stat.label}
-                                    initial={{ scale: 0.9, opacity: 0 }}
-                                    whileInView={{ scale: 1, opacity: 1 }}
-                                    transition={{ delay: index * 0.1 }}
-                                    viewport={{ once: true }}
-                                >
-                                    <Card className='p-6 text-center border-2 border-[#e1595e] hover:shadow-lg transition-all duration-300'>
-                                        <h4 className='text-lg font-medium mb-2 text-gray-600'>{stat.label}</h4>
-                                        <p className='text-3xl font-bold text-[#e1595e]'>{stat.value}</p>
-                                    </Card>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </motion.div>
+                        대학생 마케팅의 새로운 기준
+                        <br />
+                        에브리타임이 만듭니다
+                    </motion.h2>
+                </motion.div>
+                <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
+                    {stats.map((stat, index) => (
+                        <motion.div
+                            key={stat.label}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: index * 0.1 }}
+                            whileHover={{ scale: 1.05 }}
+                            className="text-center group"
+                        >
+                            <motion.p
+                                initial={{ scale: 0.5, opacity: 0 }}
+                                whileInView={{ scale: 1, opacity: 1 }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                viewport={{ once: true }}
+                                className="text-3xl font-bold text-[#f03e3e] mb-2 group-hover:text-[#ff6b6b] transition-colors duration-300"
+                            >
+                                <CountUp end={stat.number} suffix={stat.suffix} />
+                            </motion.p>
+                            <motion.p
+                                initial={{ y: 10, opacity: 0 }}
+                                whileInView={{ y: 0, opacity: 1 }}
+                                transition={{ duration: 0.6, delay: index * 0.1 + 0.2 }}
+                                viewport={{ once: true }}
+                                className="text-gray-600 group-hover:text-gray-900 transition-colors duration-300"
+                            >
+                                {stat.label}
+                            </motion.p>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </section>

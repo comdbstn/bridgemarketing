@@ -1,27 +1,55 @@
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { useInView } from "framer-motion";
+
+function CountUp({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) {
+    const [count, setCount] = useState(0);
+    const ref = useRef(null);
+    const isInView = useInView(ref);
+    
+    useEffect(() => {
+        let startTime: number;
+        let animationFrame: number;
+        
+        const updateCount = (timestamp: number) => {
+            if (!startTime) startTime = timestamp;
+            const progress = timestamp - startTime;
+            
+            if (progress < duration) {
+                const nextCount = Math.min(end, Math.floor((progress / duration) * end));
+                setCount(nextCount);
+                animationFrame = requestAnimationFrame(updateCount);
+            } else {
+                setCount(end);
+            }
+        };
+        
+        if (isInView) {
+            animationFrame = requestAnimationFrame(updateCount);
+        }
+        
+        return () => {
+            if (animationFrame) {
+                cancelAnimationFrame(animationFrame);
+            }
+        };
+    }, [end, duration, isInView]);
+    
+    return <span ref={ref}>{count}{suffix}</span>;
+}
 
 export function Stats() {
     const stats = [
-        {
-            number: "1,600+",
-            label: "정부지원사업 커버리지"
-        },
-        {
-            number: "92%",
-            label: "서류 1차 합격률"
-        },
-        {
-            number: "2년+",
-            label: "전략 기획자 경력"
-        },
-        {
-            number: "100%",
-            label: "고객 만족도"
-        }
+        { number: 92, suffix: "%", label: "선정 성공률" },
+        { number: 3, suffix: "배", label: "빠른 작성" },
+        { number: 98, suffix: "%", label: "고객 만족도" },
+        { number: 3, suffix: "배", label: "저렴한 비용" },
+        { number: 100, suffix: "+", label: "작성 완료" },
+        { number: 85, suffix: "%", label: "재계약률" }
     ];
 
     return (
-        <section className="py-20 bg-gray-50">
+        <section className="py-20">
             <div className="container mx-auto px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -30,16 +58,19 @@ export function Stats() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                        검증된 실적으로 증명합니다
-                    </h2>
-                    <p className="text-xl text-gray-600">
-                        사업 영위하시는 것도 힘드신데, 페이퍼 워크에게 고통 받는 대표님들께
+                    <motion.h2
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                        className="text-3xl font-bold text-gray-900 mb-4"
+                    >
+                        AI 시대의 사업계획서 작성
                         <br />
-                        작지만 큰 힘이 되어드리겠습니다.
-                    </p>
+                        이제는 달라져야 합니다
+                    </motion.h2>
                 </motion.div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
                     {stats.map((stat, index) => (
                         <motion.div
                             key={stat.label}
@@ -47,10 +78,27 @@ export function Stats() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
-                            className="text-center"
+                            whileHover={{ scale: 1.05 }}
+                            className="text-center group"
                         >
-                            <p className="text-4xl font-bold text-[#626ae2] mb-2">{stat.number}</p>
-                            <p className="text-gray-600">{stat.label}</p>
+                            <motion.p
+                                initial={{ scale: 0.5, opacity: 0 }}
+                                whileInView={{ scale: 1, opacity: 1 }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                viewport={{ once: true }}
+                                className="text-3xl font-bold text-[#626ae2] mb-2 group-hover:text-[#7884eb] transition-colors duration-300"
+                            >
+                                <CountUp end={stat.number} suffix={stat.suffix} />
+                            </motion.p>
+                            <motion.p
+                                initial={{ y: 10, opacity: 0 }}
+                                whileInView={{ y: 0, opacity: 1 }}
+                                transition={{ duration: 0.6, delay: index * 0.1 + 0.2 }}
+                                viewport={{ once: true }}
+                                className="text-gray-600 group-hover:text-gray-900 transition-colors duration-300"
+                            >
+                                {stat.label}
+                            </motion.p>
                         </motion.div>
                     ))}
                 </div>

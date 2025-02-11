@@ -5,23 +5,23 @@ export function Process() {
     const processes = [
         {
             icon: FileSearch,
-            title: "현황 분석",
-            description: "사업 현황을 파악하고,\n대표님과 의논 후, 적합한 지원 사업을 선별 추천해드립니다."
+            title: "요구사항 분석",
+            description: "사업의 특성과 목표를 상세히 분석하여 최적의 방향성을 도출합니다."
         },
         {
             icon: FileEdit,
-            title: "문서 작성",
-            description: "현실적인 BM 고도화 및 아이디어 구체화 등으로\n사업계획서, 제안서, 기획서를 작성해드립니다."
+            title: "초안 작성",
+            description: "AI 기술을 활용하여 핵심 내용을 담은 초안을 신속하게 작성합니다."
         },
         {
             icon: FileCheck,
-            title: "검토 및 수정",
-            description: "작성해드린 문서에 대해\n대표님께서 원하시는 부분을 수정해드리고, 추가해드립니다."
+            title: "전문가 검수",
+            description: "각 분야 전문가들의 검토를 통해 완성도를 높입니다."
         },
         {
             icon: Presentation,
-            title: "발표 준비",
-            description: "1차 서류 합격 이후,\n발표 평가 준비 서비스 이용 시, 15% 할인된 가격에 제공해드립니다."
+            title: "최종 완성",
+            description: "피드백을 반영하여 최종 사업계획서를 완성합니다."
         }
     ];
 
@@ -36,36 +36,48 @@ export function Process() {
                     className="text-center mb-16"
                 >
                     <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                        진행 프로세스
+                        작성 프로세스
                     </h2>
                     <p className="text-xl text-gray-600">
-                        단순한 사업계획서 첨삭을 넘어,
-                        <br />
-                        1차 합격 이후 발표 컨설팅까지, 정부지원사업의 A to Z
+                        체계적이고 효율적인 프로세스로 완벽한 사업계획서를 작성합니다
                     </p>
                 </motion.div>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    {processes.map((process, index) => (
-                        <motion.div
-                            key={process.title}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: index * 0.1 }}
-                            className="relative"
-                        >
-                            {index < processes.length - 1 && (
-                                <div className="hidden md:block absolute top-1/4 right-0 w-full h-0.5 bg-[#c6e0fc]" />
-                            )}
-                            <div className="relative bg-white p-6 rounded-xl shadow-lg text-center z-10">
-                                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#f8faff] rounded-full mb-6">
-                                    <process.icon className="w-8 h-8 text-[#626ae2]" />
+                <div className="relative max-w-5xl mx-auto">
+                    {/* Connecting Line */}
+                    <div className="absolute top-1/2 left-0 w-full h-0.5 bg-[#626ae2]/20 -translate-y-1/2 hidden md:block" />
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                        {processes.map((process, index) => (
+                            <motion.div
+                                key={process.title}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                className="relative"
+                            >
+                                <div className="relative bg-white p-6 rounded-xl shadow-lg text-center z-10 hover:shadow-xl transition-shadow duration-300">
+                                    <div className="relative">
+                                        <div className="inline-flex items-center justify-center w-16 h-16 bg-[#626ae2]/10 rounded-full mb-6 group-hover:bg-[#626ae2]/20 transition-colors duration-300">
+                                            <process.icon className="w-8 h-8 text-[#626ae2]" />
+                                        </div>
+                                        <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#626ae2] rounded-full flex items-center justify-center text-white font-bold">
+                                            {index + 1}
+                                        </div>
+                                    </div>
+                                    <h3 className="text-xl font-bold text-gray-900 mb-4">{process.title}</h3>
+                                    <p className="text-gray-600 whitespace-pre-line">{process.description}</p>
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-4">{process.title}</h3>
-                                <p className="text-gray-600 whitespace-pre-line">{process.description}</p>
-                            </div>
-                        </motion.div>
-                    ))}
+                                
+                                {/* Arrow for mobile */}
+                                {index < processes.length - 1 && (
+                                    <div className="absolute left-1/2 -bottom-6 transform -translate-x-1/2 w-4 h-4 text-[#626ae2] md:hidden">
+                                        ↓
+                                    </div>
+                                )}
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

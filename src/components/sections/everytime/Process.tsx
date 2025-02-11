@@ -1,133 +1,82 @@
-import { Card } from "@/components/ui/card";
-import { motion, useScroll } from "framer-motion";
-import { useRef } from "react";
-import { MessageSquare, FileEdit, Upload, BarChart, ArrowRight } from "lucide-react";
-
-const steps = [
-    {
-        number: 1,
-        icon: MessageSquare,
-        title: "상담 및 견적 확인",
-        description:
-            "홍보가 필요한 서비스 종류, 배포 희망 대학 등 구매자 측이 희망하는 요소를 파악하고 그에 맞는 마케팅 방법을 제시합니다.",
-        color: "from-[#FF416C] to-[#FF4B2B]",
-    },
-    {
-        number: 2,
-        icon: FileEdit,
-        title: "초안 검토 및 수정",
-        description:
-            "구매자 측에서 준비한 원고를 바탕으로 대학생 커뮤니티의 분위기와 감성에 맞게 수정하는 절차를 거칩니다. 구매자 측의 확인이 완료되면 최종원고가 확정됩니다.",
-        color: "from-[#FF4B2B] to-[#FF6B6B]",
-    },
-    {
-        number: 3,
-        icon: Upload,
-        title: "업로드 진행",
-        description:
-            "업로드에 필요한 기한은 업로드 게시물 수에 따라 달라지지만, 통상 영업일 기준 약 3일 정도 소요됩니다.",
-        color: "from-[#FF6B6B] to-[#FF8585]",
-    },
-    {
-        number: 4,
-        icon: BarChart,
-        title: "보고 및 피드백",
-        description: "업로드가 완료되면 캡쳐 및 스크린샷으로 홍보글 업로드 여부 확인 등을 종합하여 보고드립니다.",
-        color: "from-[#FF8585] to-[#FFA5A5]",
-    },
-];
+import { motion } from "framer-motion";
+import { FileSearch, FileEdit, FileCheck, Presentation } from "lucide-react";
 
 export function Process() {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start end", "end start"],
-    });
+    const processes = [
+        {
+            icon: FileSearch,
+            title: "타겟 분석",
+            description: "학교별, 학과별 특성을 분석하여 최적의 마케팅 전략을 수립합니다."
+        },
+        {
+            icon: FileEdit,
+            title: "컨텐츠 기획",
+            description: "대학생들의 관심사와 트렌드를 반영한 맞춤형 컨텐츠를 기획합니다."
+        },
+        {
+            icon: FileCheck,
+            title: "광고 집행",
+            description: "전략적인 시간대와 게시판을 선정하여 효과적으로 광고를 집행합니다."
+        },
+        {
+            icon: Presentation,
+            title: "성과 분석",
+            description: "실시간 반응과 참여도를 분석하여 마케팅 효과를 측정합니다."
+        }
+    ];
 
     return (
-        <section className='py-20 bg-white overflow-hidden' ref={containerRef}>
-            <div className='container mx-auto px-4'>
-                <motion.h2
+        <section className="py-20 bg-white">
+            <div className="container mx-auto px-4">
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className='text-4xl font-bold text-center mb-4 font-aggro'
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-16"
                 >
-                    광고 진행 과정
-                </motion.h2>
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className='text-gray-600 text-center mb-16 max-w-2xl mx-auto font-tway'
-                >
-                    체계적인 프로세스로 효과적인 마케팅을 진행합니다
-                </motion.p>
-
-                <div className='max-w-5xl mx-auto'>
-                    <div className='relative'>
-                        {/* Progress Line */}
-                        <div className='absolute left-[45px] top-0 bottom-0 w-1 bg-gray-100 sm:left-1/2 sm:-ml-[2px]' />
-                        <motion.div
-                            className='absolute left-[45px] top-0 w-1 bg-gradient-to-b from-[#FF416C] to-[#FFA5A5] origin-top sm:left-1/2 sm:-ml-[2px]'
-                            style={{
-                                scaleY: scrollYProgress,
-                                height: "100%",
-                            }}
-                        />
-
-                        {/* Steps */}
-                        <div className='space-y-20'>
-                            {steps.map((step, index) => (
-                                <motion.div
-                                    key={step.number}
-                                    initial={{ opacity: 0, y: 50 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.5, delay: index * 0.2 }}
-                                    viewport={{ once: true, margin: "-100px" }}
-                                    className={`relative flex items-center ${
-                                        index % 2 === 0 ? "sm:flex-row" : "sm:flex-row-reverse"
-                                    } flex-col`}
-                                >
-                                    {/* Number Circle - Moved above content on mobile */}
-                                    <div className='flex items-center justify-center w-24 h-24 relative mb-4 sm:mb-0 order-first sm:order-none'>
-                                        <motion.div
-                                            className={`w-16 h-16 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center text-2xl font-bold text-white z-10`}
-                                            whileHover={{ scale: 1.1 }}
-                                            transition={{ type: "spring", stiffness: 300 }}
-                                        >
-                                            {step.number}
-                                        </motion.div>
+                    <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                        진행 프로세스
+                    </h2>
+                    <p className="text-xl text-gray-600">
+                        체계적이고 효율적인 프로세스로 성공적인 마케팅을 실현합니다
+                    </p>
+                </motion.div>
+                <div className="relative max-w-5xl mx-auto">
+                    {/* Connecting Line */}
+                    <div className="absolute top-1/2 left-0 w-full h-0.5 bg-[#f03e3e]/20 -translate-y-1/2 hidden md:block" />
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                        {processes.map((process, index) => (
+                            <motion.div
+                                key={process.title}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                className="relative"
+                            >
+                                <div className="relative bg-white p-6 rounded-xl shadow-lg text-center z-10 hover:shadow-xl transition-shadow duration-300">
+                                    <div className="relative">
+                                        <div className="inline-flex items-center justify-center w-16 h-16 bg-[#f03e3e]/10 rounded-full mb-6 group-hover:bg-[#f03e3e]/20 transition-colors duration-300">
+                                            <process.icon className="w-8 h-8 text-[#f03e3e]" />
+                                        </div>
+                                        <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#f03e3e] rounded-full flex items-center justify-center text-white font-bold">
+                                            {index + 1}
+                                        </div>
                                     </div>
-
-                                    {/* Content */}
-                                    <div className={`flex-1 ${index % 2 === 0 ? "sm:pr-16" : "sm:pl-16"}`}>
-                                        <Card className='p-6 hover:shadow-lg transition-all duration-300 group'>
-                                            <div className='flex flex-col sm:flex-row items-start gap-4'>
-                                                <div
-                                                    className={`w-12 h-12 rounded-xl bg-gradient-to-r ${step.color} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
-                                                >
-                                                    <step.icon className='w-6 h-6 text-white' />
-                                                </div>
-                                                <div className='flex-1'>
-                                                    <h3 className='text-xl font-bold mb-2 flex items-center gap-2 font-tway'>
-                                                        {step.title}
-                                                    </h3>
-                                                    <p className='text-gray-600 leading-relaxed font-tway'>
-                                                        {step.description}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </Card>
+                                    <h3 className="text-xl font-bold text-gray-900 mb-4">{process.title}</h3>
+                                    <p className="text-gray-600 whitespace-pre-line">{process.description}</p>
+                                </div>
+                                
+                                {/* Arrow for mobile */}
+                                {index < processes.length - 1 && (
+                                    <div className="absolute left-1/2 -bottom-6 transform -translate-x-1/2 w-4 h-4 text-[#f03e3e] md:hidden">
+                                        ↓
                                     </div>
-
-                                    {/* Arrow for mobile */}
-                                    <div className='sm:hidden absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-full'>
-                                        <ArrowRight className='w-6 h-6 text-gray-400 transform rotate-90' />
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
+                                )}
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
             </div>

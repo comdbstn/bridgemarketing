@@ -1,7 +1,12 @@
 import { motion } from "framer-motion";
+import { useCountAnimation } from "@/hooks/use-count-animation";
 import { MessageCircle } from "lucide-react";
 
 export function Hero() {
+    const { count: projectCount, ref: projectRef } = useCountAnimation(100);
+    const { count: satisfactionRate, ref: satisfactionRef } = useCountAnimation(98);
+    const { count: recontractRate, ref: recontractRef } = useCountAnimation(95);
+
     return (
         <section className="relative min-h-[100vh] w-full flex items-center bg-gradient-to-br from-[#626ae2] via-[#7884eb] to-[#95c5fa] overflow-hidden">
             {/* Background patterns */}
@@ -32,7 +37,7 @@ export function Hero() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.3 }}
                                 src="/logo/business-plan.png"
-                                alt="사업계획서 첨삭 서비스 로고"
+                                alt="사업계획서 로고"
                                 className="w-28 h-28 object-contain rounded-2xl bg-white p-2"
                             />
                             <motion.h1
@@ -51,7 +56,7 @@ export function Hero() {
                                 transition={{ duration: 0.6, delay: 0.3 }}
                                 className="text-3xl sm:text-5xl font-bold text-white font-aggro"
                             >
-                                정부지원사업 전문 컨설팅
+                                AI가 만드는 완벽한 사업계획서
                             </motion.h2>
 
                             <motion.p
@@ -60,51 +65,10 @@ export function Hero() {
                                 transition={{ duration: 0.6, delay: 0.4 }}
                                 className="text-lg sm:text-xl text-white/90 px-4 font-tway"
                             >
-                                예비창업자, 초기예비창업자, 초기창업자 관련 정부지원사업 약 1,600종 커버 가능합니다.
+                                AI 기술과 전문가의 노하우로 완성하는
                                 <br />
-                                사업계획서 뿐만 아니라, 제안서, IR, 보고서 등의 모든 기획 문서 제공 가능합니다.
-                                <br />
-                                한 번만 사업계획서 제대로 작성하시면, 모든 지원사업 난이도가 이전보다 훨씬 쉬워집니다.
+                                맞춤형 사업계획서 작성 서비스
                             </motion.p>
-                        </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 sm:gap-8 mt-12 pb-8 sm:pb-0">
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.5 }}
-                                className="p-4 sm:p-6 mx-4 sm:mx-0 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:border-white/20 transition-all duration-300 group"
-                            >
-                                <h3 className="text-lg sm:text-xl font-bold text-white/90 mb-2">예비창업가</h3>
-                                <p className="text-sm text-white/70">정부지원사업 지원을 준비하시는 분</p>
-                            </motion.div>
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.6 }}
-                                className="p-4 sm:p-6 mx-4 sm:mx-0 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:border-white/20 transition-all duration-300 group"
-                            >
-                                <h3 className="text-lg sm:text-xl font-bold text-white/90 mb-2">사업가</h3>
-                                <p className="text-sm text-white/70">용역 수주를 위한 제안서가 필요하신 분</p>
-                            </motion.div>
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.7 }}
-                                className="p-4 sm:p-6 mx-4 sm:mx-0 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:border-white/20 transition-all duration-300 group"
-                            >
-                                <h3 className="text-lg sm:text-xl font-bold text-white/90 mb-2">스타트업</h3>
-                                <p className="text-sm text-white/70">투자 제안서가 필요하신 분</p>
-                            </motion.div>
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.8 }}
-                                className="p-4 sm:p-6 mx-4 sm:mx-0 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:border-white/20 transition-all duration-300 group"
-                            >
-                                <h3 className="text-lg sm:text-xl font-bold text-white/90 mb-2">참가자</h3>
-                                <p className="text-sm text-white/70">공모전·경진대회 발표자료가 필요하신 분</p>
-                            </motion.div>
                         </div>
 
                         <motion.div
@@ -122,6 +86,36 @@ export function Hero() {
                                 <MessageCircle className="w-5 h-5" />
                                 지금 바로 시작하세요
                             </a>
+                        </motion.div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 mt-12">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.5 }}
+                            className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white"
+                        >
+                            <h3 className="text-2xl sm:text-4xl font-bold mb-2" ref={projectRef}>{projectCount}+</h3>
+                            <p className="text-sm sm:text-base text-white/80">작성 완료</p>
+                        </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.6 }}
+                            className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white"
+                        >
+                            <h3 className="text-2xl sm:text-4xl font-bold mb-2" ref={satisfactionRef}>{satisfactionRate}%</h3>
+                            <p className="text-sm sm:text-base text-white/80">고객 만족도</p>
+                        </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.7 }}
+                            className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white"
+                        >
+                            <h3 className="text-2xl sm:text-4xl font-bold mb-2" ref={recontractRef}>{recontractRate}%</h3>
+                            <p className="text-sm sm:text-base text-white/80">선정 성공률</p>
                         </motion.div>
                     </div>
                 </motion.div>

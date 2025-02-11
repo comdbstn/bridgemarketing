@@ -25,9 +25,9 @@ export default function BusinessPlanServicePage() {
             <BackButton />
             <KakaoChatButton />
             <Hero />
-            <Products />
-            <Features />
             <Stats />
+            <Features />
+            <Products />
             <Process />
             <Profile />
             
@@ -43,26 +43,19 @@ export default function BusinessPlanServicePage() {
                         </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {[
-                            "GYMPT.png",
-                            "zolv_신사업창업사관학교_선정_사업계획서.png",
-                            "분석 보고서 리포트.png",
-                            "사업계획서 레퍼런스 이미지2.png",
-                            "애스크미_ai바우처.png",
-                            "일반 레퍼런스 한번에.png"
-                        ].map((imageName, index) => (
+                        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
                             <motion.div
-                                key={imageName}
+                                key={num}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                transition={{ duration: 0.6, delay: num * 0.1 }}
                                 className="group relative aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 cursor-pointer"
-                                onClick={() => setSelectedImage(`/images/business-plan/${imageName}`)}
+                                onClick={() => setSelectedImage(`/business-plan_reference/${num}.${num === 3 || num === 4 ? 'jpg' : 'jpeg'}`)}
                             >
                                 <img
-                                    src={`/images/business-plan/${imageName}`}
-                                    alt={`사업계획서 레퍼런스 ${index + 1}`}
+                                    src={`/business-plan_reference/${num}.${num === 3 || num === 4 ? 'jpg' : 'jpeg'}`}
+                                    alt={`사업계획서 레퍼런스 ${num}`}
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
