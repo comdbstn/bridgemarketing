@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
@@ -34,12 +34,24 @@ export function QA() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                    <motion.h2
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                        className="text-3xl font-bold text-gray-900 mb-4"
+                    >
                         자주 묻는 질문
-                    </h2>
-                    <p className="text-xl text-gray-600">
+                    </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        viewport={{ once: true }}
+                        className="text-xl text-gray-600"
+                    >
                         고객님들이 자주 문의하시는 내용을 모았습니다
-                    </p>
+                    </motion.p>
                 </motion.div>
                 <div className="max-w-3xl mx-auto">
                     {qas.map((qa, index) => (
@@ -51,28 +63,51 @@ export function QA() {
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             className="mb-4"
                         >
-                            <button
+                            <motion.button
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                className="w-full flex items-center justify-between p-6 bg-[#f8faff] hover:bg-[#e8f0ff] rounded-lg transition-colors"
+                                className="w-full flex items-center justify-between p-6 bg-[#f8faff] hover:bg-[#e8f0ff] rounded-lg transition-all duration-300"
+                                whileHover={{ scale: 1.01 }}
+                                whileTap={{ scale: 0.99 }}
                             >
-                                <span className="text-lg font-medium text-gray-900">{qa.question}</span>
-                                <ChevronDown
-                                    className={`w-5 h-5 text-gray-500 transition-transform ${
-                                        openIndex === index ? "transform rotate-180" : ""
-                                    }`}
-                                />
-                            </button>
-                            {openIndex === index && (
-                                <motion.div
-                                    initial={{ opacity: 0, height: 0 }}
-                                    animate={{ opacity: 1, height: "auto" }}
-                                    exit={{ opacity: 0, height: 0 }}
-                                    transition={{ duration: 0.3 }}
-                                    className="p-6 bg-white border border-gray-100 rounded-lg mt-2"
+                                <motion.span
+                                    className="text-lg font-medium text-gray-900"
+                                    initial={false}
+                                    animate={{ color: openIndex === index ? "#626ae2" : "#111827" }}
+                                    transition={{ duration: 0.2 }}
                                 >
-                                    <p className="text-gray-600">{qa.answer}</p>
+                                    {qa.question}
+                                </motion.span>
+                                <motion.div
+                                    initial={false}
+                                    animate={{ rotate: openIndex === index ? 180 : 0 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <ChevronDown className={`w-5 h-5 text-gray-500 transition-colors duration-300 ${
+                                        openIndex === index ? "text-[#626ae2]" : ""
+                                    }`} />
                                 </motion.div>
-                            )}
+                            </motion.button>
+                            <AnimatePresence>
+                                {openIndex === index && (
+                                    <motion.div
+                                        initial={{ opacity: 0, height: 0 }}
+                                        animate={{ opacity: 1, height: "auto" }}
+                                        exit={{ opacity: 0, height: 0 }}
+                                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                                        className="overflow-hidden"
+                                    >
+                                        <motion.div
+                                            initial={{ y: -20, opacity: 0 }}
+                                            animate={{ y: 0, opacity: 1 }}
+                                            exit={{ y: -20, opacity: 0 }}
+                                            transition={{ duration: 0.3, delay: 0.1 }}
+                                            className="p-6 bg-white border border-gray-100 rounded-lg mt-2"
+                                        >
+                                            <p className="text-gray-600">{qa.answer}</p>
+                                        </motion.div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
                         </motion.div>
                     ))}
                 </div>

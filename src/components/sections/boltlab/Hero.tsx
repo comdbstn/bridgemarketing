@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useCountAnimation } from "@/hooks/use-count-animation";
+import { MessageCircle } from "lucide-react";
 
 export function Hero() {
     const { count: projectCount, ref: projectRef } = useCountAnimation(50);
@@ -14,7 +15,7 @@ export function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
 
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative pt-20 sm:pt-0">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -48,27 +49,44 @@ export function Hero() {
                                 DEVELOPMENT
                             </motion.h1>
                         </div>
-                    </div>
+                        <div className="space-y-8">
+                            <motion.h2
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.3 }}
+                                className="text-3xl sm:text-5xl font-bold text-white font-aggro"
+                            >
+                                최신 기술로 혁신하는 개발 서비스
+                            </motion.h2>
 
-                    <div className="space-y-8">
-                        <motion.h2
+                            <motion.p
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.4 }}
+                                className="text-lg sm:text-xl text-white/90 px-4 font-tway"
+                            >
+                                AI 기술과 전문성으로 비즈니스의 디지털 혁신을 지원합니다.
+                                <br />
+                                웹, 모바일, AI 솔루션까지 모든 개발 니즈를 충족시켜 드립니다.
+                            </motion.p>
+                        </div>
+
+                        <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.3 }}
-                            className="text-3xl sm:text-5xl font-bold text-white font-aggro"
+                            transition={{ duration: 0.6, delay: 0.8 }}
+                            className="mt-12 pb-16 sm:pb-20"
                         >
-                            최신 기술로 혁신하는 개발 서비스
-                        </motion.h2>
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.4 }}
-                            className="text-lg sm:text-xl text-white/90 px-4 font-tway"
-                        >
-                            AI 기술과 전문성으로 비즈니스의 디지털 혁신을 지원합니다.
-                            <br className="hidden sm:block" />
-                            웹, 모바일, AI 솔루션까지 모든 개발 니즈를 충족시켜 드립니다.
-                        </motion.p>
+                            <a
+                                href="http://pf.kakao.com/_CYGdn/chat"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-white/90 text-[#626ae2] rounded-full font-bold text-lg transition-all duration-300 hover:scale-105"
+                            >
+                                <MessageCircle className="w-5 h-5" />
+                                지금 바로 시작하세요
+                            </a>
+                        </motion.div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 mt-12">

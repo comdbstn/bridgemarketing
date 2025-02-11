@@ -42,28 +42,42 @@ export function Process() {
                         체계적이고 효율적인 개발 프로세스로 성공적인 프로젝트를 완성합니다
                     </p>
                 </motion.div>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    {processes.map((process, index) => (
-                        <motion.div
-                            key={process.title}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: index * 0.1 }}
-                            className="relative"
-                        >
-                            {index < processes.length - 1 && (
-                                <div className="hidden md:block absolute top-1/4 right-0 w-full h-0.5 bg-[#c6e0fc]" />
-                            )}
-                            <div className="relative bg-white p-6 rounded-xl shadow-lg text-center z-10">
-                                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#f8faff] rounded-full mb-6">
-                                    <process.icon className="w-8 h-8 text-[#626ae2]" />
+                <div className="relative max-w-5xl mx-auto">
+                    {/* Connecting Line */}
+                    <div className="absolute top-1/2 left-0 w-full h-0.5 bg-[#626ae2]/20 -translate-y-1/2 hidden md:block" />
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                        {processes.map((process, index) => (
+                            <motion.div
+                                key={process.title}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                className="relative"
+                            >
+                                <div className="relative bg-white p-6 rounded-xl shadow-lg text-center z-10 hover:shadow-xl transition-shadow duration-300">
+                                    <div className="relative">
+                                        <div className="inline-flex items-center justify-center w-16 h-16 bg-[#626ae2]/10 rounded-full mb-6 group-hover:bg-[#626ae2]/20 transition-colors duration-300">
+                                            <process.icon className="w-8 h-8 text-[#626ae2]" />
+                                        </div>
+                                        <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#626ae2] rounded-full flex items-center justify-center text-white font-bold">
+                                            {index + 1}
+                                        </div>
+                                    </div>
+                                    <h3 className="text-xl font-bold text-gray-900 mb-4">{process.title}</h3>
+                                    <p className="text-gray-600 whitespace-pre-line">{process.description}</p>
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-4">{process.title}</h3>
-                                <p className="text-gray-600 whitespace-pre-line">{process.description}</p>
-                            </div>
-                        </motion.div>
-                    ))}
+                                
+                                {/* Arrow for mobile */}
+                                {index < processes.length - 1 && (
+                                    <div className="absolute left-1/2 -bottom-6 transform -translate-x-1/2 w-4 h-4 text-[#626ae2] md:hidden">
+                                        ↓
+                                    </div>
+                                )}
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

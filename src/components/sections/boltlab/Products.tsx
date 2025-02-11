@@ -79,30 +79,51 @@ export function Products() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+                            whileHover={{ scale: 1.02 }}
+                            className="group bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:border-[#626ae2]/20"
                         >
                             <div className="flex flex-col items-center text-center">
-                                <div className="w-14 h-14 rounded-full bg-[#626ae2]/10 flex items-center justify-center mb-4">
+                                <motion.div
+                                    whileHover={{ rotate: 360 }}
+                                    transition={{ duration: 0.6 }}
+                                    className="w-14 h-14 rounded-full bg-[#626ae2]/10 flex items-center justify-center mb-4 group-hover:bg-[#626ae2]/20 transition-colors duration-300"
+                                >
                                     <product.icon className="w-7 h-7 text-[#626ae2]" />
-                                </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                                </motion.div>
+                                <motion.h3
+                                    whileHover={{ scale: 1.05 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="text-xl font-bold text-gray-900 mb-2"
+                                >
                                     {product.title}
-                                </h3>
+                                </motion.h3>
                                 <p className="text-gray-600 mb-2">
                                     {product.subtitle}
                                 </p>
-                                <p className="text-[#626ae2] font-bold mb-4">
+                                <motion.p
+                                    whileHover={{ scale: 1.1 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="text-[#626ae2] font-bold mb-4"
+                                >
                                     {product.price}
-                                </p>
+                                </motion.p>
                                 <ul className="space-y-2 text-left w-full">
-                                    {product.features.map((feature) => (
-                                        <li
+                                    {product.features.map((feature, featureIndex) => (
+                                        <motion.li
                                             key={feature}
-                                            className="flex items-center text-gray-600"
+                                            initial={{ opacity: 0, x: -20 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            transition={{ duration: 0.3, delay: index * 0.1 + featureIndex * 0.1 }}
+                                            viewport={{ once: true }}
+                                            className="flex items-center text-gray-600 group-hover:text-gray-900 transition-colors duration-300"
                                         >
-                                            <span className="w-1.5 h-1.5 bg-[#626ae2] rounded-full mr-2" />
+                                            <motion.span
+                                                whileHover={{ scale: 1.5 }}
+                                                transition={{ duration: 0.3 }}
+                                                className="w-1.5 h-1.5 bg-[#626ae2] rounded-full mr-2"
+                                            />
                                             {feature}
-                                        </li>
+                                        </motion.li>
                                     ))}
                                 </ul>
                             </div>
