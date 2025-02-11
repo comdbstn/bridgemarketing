@@ -5,6 +5,16 @@ import { KakaoChatButton } from "@/components/chat/kakao-chat-button";
 import { Footer } from "@/components/layout/Footer";
 import { useCountAnimation } from "@/hooks/use-count-animation";
 import { ImageModal } from "@/components/ui/image-modal";
+import { Hero } from "@/components/sections/boltlab/Hero";
+import { Products } from "@/components/sections/boltlab/Products";
+import { Features } from "@/components/sections/boltlab/Features";
+import { Stats } from "@/components/sections/boltlab/Stats";
+import { Advantages } from "@/components/sections/boltlab/Advantages";
+import { Industries } from "@/components/sections/boltlab/Industries";
+import { References } from "@/components/sections/boltlab/References";
+import { Process } from "@/components/sections/boltlab/Process";
+import { Pricing } from "@/components/sections/boltlab/Pricing";
+import { QA } from "@/components/sections/boltlab/QA";
 
 interface Product {
     title: string;
@@ -186,304 +196,22 @@ const BoltlabPage: React.FC = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen w-full bg-white overflow-hidden">
             <BackButton />
             <KakaoChatButton />
+            <Hero />
+            <Products />
+            <Features />
+            <Stats />
+            <Advantages />
+            <Industries />
             
-            {/* Hero Section */}
-            <section className="relative min-h-[100vh] w-full flex items-center bg-gradient-to-br from-[#626ae2] via-[#7884eb] to-[#95c5fa] overflow-hidden">
-                {/* Background patterns */}
-                <div className="absolute inset-0 overflow-hidden">
-                    <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MCIgaGVpZ2h0PSI1MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IHgxPSIxMDAlIiB5MT0iMjEuMTgyJSIgeDI9IjUwJSIgeTI9IjEwMCUiIGlkPSJhIj48c3RvcCBzdG9wLWNvbG9yPSIjRkZGIiBvZmZzZXQ9IjAlIi8+PHN0b3Agc3RvcC1jb2xvcj0iI0ZGRiIgc3RvcC1vcGFjaXR5PSIwIiBvZmZzZXQ9IjEwMCUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCBkPSJNLTM1Ljg5IDQ4NC4yMzdDLTEwLjI0NyA1MjIuMDg0IDIyNy4xNDIgNTE3LjMwMiAyNjcuMTAzIDUwOS4zMzFjNi42MDktMS4zMjEgMTguNDk1LTMuNjA3IDM1LjY1OC02Ljg1OCAxNDQuMDEtMjcuMjMgMjE3LjI0OC0xMDkuNDIgMzA2Ljk0NS0xMDkuNDIgODkuNjk3IDAgMTc0LjE1MSAxMC43MzMgMzY5LjI4NCA3Mi4yMyAxOTUuMTMyIDYxLjQ5NSAyOTUuMDExIDY5LjIzIDM5OS4wNTUgNTMuMjNDMTQ4Mi4wNDIgNDgxLjE4NSAxNTQ0IDQ1OS4xMTIgMTU0NCA0NTkuMTEyVjBILTYwLjA5MXY0MzkuNDk2YzEuNzMgOC44MzggMTEuNTMgMjUuNDYyIDI0LjIwMSA0NC43NDF6IiBmaWxsPSJ1cmwoI2EpIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIG9wYWNpdHk9Ii4wNSIvPjwvc3ZnPg==')] bg-cover bg-center opacity-10 animate-pulse" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                </div>
-
-                <div className="container mx-auto px-4">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="max-w-4xl mx-auto text-center"
-                    >
-                        <div className="space-y-12 mb-12">
-                            <motion.p
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.2 }}
-                                className="font-['Changa'] text-[28px] sm:text-[50px] font-bold tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-[#c6e0fc] to-[#FFFFFF] select-none"
-                            >
-                                BRIDGE MARKETING
-                            </motion.p>
-                            <div className="flex items-center justify-center gap-12">
-                                <motion.img
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.6, delay: 0.3 }}
-                                    src="/logo/boltlab.png"
-                                    alt="서비스 개발 로고"
-                                    className="w-28 h-28 object-contain rounded-2xl bg-white p-2"
-                                />
-                                <motion.h1
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ duration: 0.8, ease: "easeOut" }}
-                                    className="font-['Changa'] text-[40px] sm:text-[100px] font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-br from-[#c6e0fc] via-[#FFFFFF] to-[#c6e0fc] select-none leading-none"
-                                >
-                                    DEVELOPMENT
-                                </motion.h1>
-                            </div>
-                        </div>
-
-                        <div className="space-y-8">
-                            <motion.h2
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.3 }}
-                                className="text-3xl sm:text-5xl font-bold text-white font-aggro"
-                            >
-                                최신 기술로 혁신하는 개발 서비스
-                            </motion.h2>
-                            <motion.p
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.4 }}
-                                className="text-lg sm:text-xl text-white/90 px-4 font-tway"
-                            >
-                                AI 기술과 전문성으로 비즈니스의 디지털 혁신을 지원합니다.
-                                <br className="hidden sm:block" />
-                                웹, 모바일, AI 솔루션까지 모든 개발 니즈를 충족시켜 드립니다.
-                            </motion.p>
-                        </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 mt-12">
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.5 }}
-                                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white"
-                            >
-                                <h3 className="text-2xl sm:text-4xl font-bold mb-2" ref={projectRef}>{projectCount}+</h3>
-                                <p className="text-sm sm:text-base text-white/80">프로젝트 완수</p>
-                            </motion.div>
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.6 }}
-                                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white"
-                            >
-                                <h3 className="text-2xl sm:text-4xl font-bold mb-2" ref={satisfactionRef}>{satisfactionRate}%</h3>
-                                <p className="text-sm sm:text-base text-white/80">고객 만족도</p>
-                            </motion.div>
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.7 }}
-                                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white"
-                            >
-                                <h3 className="text-2xl sm:text-4xl font-bold mb-2" ref={recontractRef}>{recontractRate}%</h3>
-                                <p className="text-sm sm:text-base text-white/80">재계약률</p>
-                            </motion.div>
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
-
-            {/* Stats Section */}
-            <section className="py-20">
-                <div className="container mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            AI 시대의 개발 비용과 효율
-                            <br />
-                            이제는 달라져야 합니다
-                        </h2>
-                    </div>
-                    <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
-                        {stats.map((stat, index) => (
-                            <motion.div
-                                key={stat.label}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="text-center"
-                            >
-                                <p className="text-3xl font-bold text-[#626ae2] mb-2">{stat.number}</p>
-                                <p className="text-gray-600">{stat.label}</p>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Features Section */}
-            <section className="py-20 bg-[#f8faff]">
-                <div className="container mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            주요 특징
-                        </h2>
-                        <p className="text-xl text-gray-600">
-                            최신 기술과 전문성으로 최고의 서비스를 제공합니다
-                        </p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                        {features.map((feature, index) => (
-                            <motion.div
-                                key={feature.title}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="bg-white p-8 rounded-2xl shadow-lg"
-                            >
-                                <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                                <p className="text-gray-600">{feature.description}</p>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Products Section */}
-            <section className="py-20">
-                <div className="container mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            개발 서비스
-                        </h2>
-                        <p className="text-xl text-gray-600">
-                            비즈니스 성장을 위한 최적의 개발 솔루션을 제공합니다
-                        </p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                        {products.map((product, index) => (
-                            <motion.div
-                                key={product.title}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="bg-[#f8faff] p-8 rounded-2xl"
-                            >
-                                <h3 className="text-2xl font-bold text-gray-900 mb-2">{product.title}</h3>
-                                <p className="text-gray-600 mb-4">{product.subtitle}</p>
-                                <p className="text-2xl font-bold text-[#626ae2] mb-6">{product.price}</p>
-                                <ul className="space-y-3">
-                                    {product.features.map((feature) => (
-                                        <li key={feature} className="flex items-center text-gray-600">
-                                            <span className="w-1.5 h-1.5 bg-[#626ae2] rounded-full mr-2" />
-                                            {feature}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Advantages Section */}
-            <section className="py-20 bg-[#f8faff]">
-                <div className="container mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            서비스 강점
-                        </h2>
-                        <p className="text-xl text-gray-600">
-                            차별화된 서비스로 고객의 성공을 지원합니다
-                        </p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                        {advantages.map((advantage, index) => (
-                            <motion.div
-                                key={advantage.title}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="bg-white p-8 rounded-2xl shadow-lg"
-                            >
-                                <h3 className="text-xl font-bold text-gray-900 mb-4">{advantage.title}</h3>
-                                <p className="text-gray-600">{advantage.description}</p>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Industries Section */}
-            <section className="py-20">
-                <div className="container mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            적용 분야
-                        </h2>
-                        <p className="text-xl text-gray-600">
-                            다양한 산업 분야에서 검증된 개발 서비스를 제공합니다
-                        </p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                        {industries.map((industry, index) => (
-                            <motion.div
-                                key={industry.title}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="bg-[#f8faff] p-8 rounded-2xl"
-                            >
-                                <h3 className="text-xl font-bold text-gray-900 mb-4">{industry.title}</h3>
-                                <p className="text-gray-600">{industry.description}</p>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Process Section */}
-            <section className="py-20 bg-[#f8faff]">
-                <div className="container mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            개발 프로세스
-                        </h2>
-                        <p className="text-xl text-gray-600">
-                            체계적이고 효율적인 개발 프로세스로 성공적인 프로젝트를 완성합니다
-                        </p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                        {process.map((step, index) => (
-                            <motion.div
-                                key={step.title}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="relative"
-                            >
-                                {index < process.length - 1 && (
-                                    <div className="hidden md:block absolute top-1/4 right-0 w-full h-0.5 bg-[#c6e0fc]" />
-                                )}
-                                <div className="relative bg-white p-6 rounded-xl shadow-lg text-center z-10">
-                                    <div className="w-12 h-12 bg-[#626ae2] rounded-full flex items-center justify-center text-white font-bold text-xl mb-4 mx-auto">
-                                        {step.step}
-                                    </div>
-                                    <h3 className="text-xl font-bold text-gray-900 mb-4">{step.title}</h3>
-                                    <p className="text-gray-600">{step.description}</p>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* References Section */}
-            <section className="py-20 bg-white">
+            <section className="py-20 bg-[#f8faff]">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            Our References
+                            레퍼런스
                         </h2>
                         <p className="text-xl text-gray-600">
                             볼트랩이 만든 다양한 프로젝트들을 소개합니다
@@ -516,24 +244,10 @@ const BoltlabPage: React.FC = () => {
                     imageSrc={selectedImage || ''}
                 />
             </section>
-
-            {/* CTA Section */}
-            <section className="py-20 bg-gradient-to-br from-[#626ae2] via-[#7884eb] to-[#95c5fa]">
-                <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                        프로젝트 문의하기
-                    </h2>
-                    <p className="text-xl text-white/90 mb-8">
-                        전문가와 상담하고 최적의 개발 솔루션을 제안받으세요
-                        <br />
-                        지금 바로 무료 컨설팅을 받아보세요
-                    </p>
-                    <button className="px-8 py-4 bg-white text-[#626ae2] rounded-full font-bold hover:bg-opacity-90 transition-colors">
-                        상담 시작하기
-                    </button>
-                </div>
-            </section>
-
+            
+            <Process />
+            <Pricing />
+            <QA />
             <Footer />
         </div>
     );

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Hero } from "@/components/sections/business-plan/Hero";
+import { Products } from "@/components/sections/business-plan/Products";
 import { Features } from "@/components/sections/business-plan/Features";
 import { Stats } from "@/components/sections/business-plan/Stats";
 import { Process } from "@/components/sections/business-plan/Process";
@@ -24,6 +25,7 @@ export default function BusinessPlanServicePage() {
             <BackButton />
             <KakaoChatButton />
             <Hero />
+            <Products />
             <Features />
             <Stats />
             <Process />
