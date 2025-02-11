@@ -1,108 +1,6 @@
-import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend,
-    ArcElement,
-    ChartOptions,
-} from "chart.js";
-import { Line, Doughnut } from "react-chartjs-2";
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
-
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ArcElement);
-
-const userGrowthData = {
-    labels: ["2016년 3월", "2020년 1월", "2024년 2월"],
-    datasets: [
-        {
-            label: "사용자 수(만)",
-            data: [100, 400, 700],
-            borderColor: "#FF0000",
-            backgroundColor: "rgba(255, 0, 0, 0.1)",
-            fill: true,
-            tension: 0.3,
-            borderWidth: 3,
-            pointRadius: 6,
-            pointBackgroundColor: "#FF0000",
-        },
-    ],
-};
-
-const campusDistributionData = {
-    labels: ["수도권", "영남권", "충청권", "호남권", "강원/제주"],
-    datasets: [
-        {
-            data: [127, 98, 82, 76, 14],
-            backgroundColor: [
-                "#FF6B6B", // 붉은 계열
-                "#4ECDC4", // 청록색
-                "#45B7D1", // 하늘색
-                "#96CEB4", // 민트색
-                "#FFEEAD", // 연한 노란색
-            ],
-            borderWidth: 0,
-        },
-    ],
-};
-
-const lineOptions: ChartOptions<"line"> = {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-        legend: {
-            display: false,
-        },
-    },
-    scales: {
-        y: {
-            beginAtZero: true,
-            grid: {
-                color: "rgba(0, 0, 0, 0.1)",
-            },
-            ticks: {
-                callback: function (tickValue: number | string) {
-                    return tickValue + "만";
-                },
-            },
-        },
-        x: {
-            grid: {
-                display: false,
-            },
-        },
-    },
-    animation: {
-        duration: 2000,
-        easing: "easeInOutQuart",
-    },
-};
-
-const doughnutOptions: ChartOptions<"doughnut"> = {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-        legend: {
-            position: "bottom",
-            labels: {
-                padding: 20,
-                usePointStyle: true,
-            },
-        },
-    },
-    animation: {
-        animateRotate: true,
-        animateScale: true,
-        duration: 2000,
-        easing: "easeInOutQuart",
-    },
-};
 
 function CountUp({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) {
     const [count, setCount] = useState(0);
@@ -142,12 +40,12 @@ function CountUp({ end, duration = 2000, suffix = "" }: { end: number; duration?
 
 export function Stats() {
     const stats = [
-        { number: 397, suffix: "개", label: "전국 캠퍼스" },
-        { number: 82, suffix: "%", label: "20대 사용률" },
-        { number: 280, suffix: "만+", label: "월간 활성 사용자" },
-        { number: 3, suffix: "배", label: "빠른 효과" },
-        { number: 100, suffix: "+", label: "광고 집행" },
-        { number: 95, suffix: "%", label: "재계약률" }
+        { number: 53, suffix: "%", label: "광고 효율 증가" },
+        { number: 3, suffix: "배", label: "빠른 집행" },
+        { number: 98, suffix: "%", label: "고객 만족도" },
+        { number: 3, suffix: "배", label: "저렴한 비용" },
+        { number: 100, suffix: "+", label: "프로젝트 완수" },
+        { number: 85, suffix: "%", label: "재계약률" }
     ];
 
     return (
@@ -167,9 +65,9 @@ export function Stats() {
                         viewport={{ once: true }}
                         className="text-3xl font-bold text-gray-900 mb-4"
                     >
-                        대학생 마케팅의 새로운 기준
+                        AI 시대의 마케팅 비용과 효율
                         <br />
-                        에브리타임이 만듭니다
+                        이제는 달라져야 합니다
                     </motion.h2>
                 </motion.div>
                 <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
