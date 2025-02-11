@@ -72,35 +72,11 @@ export function Hero() {
                             </motion.p>
                         </div>
 
-                        <div className='grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 mt-12 pb-8 sm:pb-0'>
-                            {[
-                                { number: totalUsers, suffix: "만+", label: "월간 활성 카페", ref: totalRef },
-                                { number: koreanUsers, suffix: "만+", label: "일간 방문자", ref: koreanRef },
-                                { number: mau, suffix: "만+", label: "월간 게시글", ref: mauRef },
-                            ].map((stat, index) => (
-                                <motion.div
-                                    key={stat.label}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: ANIMATION_DURATION, delay: ANIMATION_DELAY_BASE * (3.5 + index * 0.5) }}
-                                    className='p-4 sm:p-6 mx-4 sm:mx-0 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:border-white/20 transition-all duration-300 group'
-                                    ref={stat.ref}
-                                >
-                                    <h3 className='text-2xl sm:text-4xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300'>
-                                        <span className='text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/60'>
-                                            {formatNumber(stat.number, stat.suffix)}
-                                        </span>
-                                    </h3>
-                                    <p className='text-white/80 font-tway'>{stat.label}</p>
-                                </motion.div>
-                            ))}
-                        </div>
-
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: ANIMATION_DURATION, delay: ANIMATION_DELAY_BASE * 5 }}
-                            className='mt-12 pb-16 sm:pb-20'
+                            className='mt-8'
                         >
                             <a
                                 href='http://pf.kakao.com/_CYGdn/chat'
@@ -111,6 +87,28 @@ export function Hero() {
                                 <MessageCircle className='w-5 h-5' />더 빠른 성장을 원하시나요?
                             </a>
                         </motion.div>
+
+                        <div className='grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 mt-12'>
+                            {[
+                                { number: totalUsers, suffix: "만+", label: "월간 활성 카페", ref: totalRef },
+                                { number: koreanUsers, suffix: "만+", label: "일간 방문자", ref: koreanRef },
+                                { number: mau, suffix: "만+", label: "월간 게시글", ref: mauRef },
+                            ].map((stat, index) => (
+                                <motion.div
+                                    key={stat.label}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: ANIMATION_DURATION, delay: ANIMATION_DELAY_BASE * (3.5 + index * 0.5) }}
+                                    className='bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white'
+                                    ref={stat.ref}
+                                >
+                                    <h3 className='text-2xl sm:text-4xl font-bold mb-2'>
+                                        {formatNumber(stat.number, stat.suffix)}
+                                    </h3>
+                                    <p className='text-sm sm:text-base text-white/80'>{stat.label}</p>
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
                 </motion.div>
             </div>

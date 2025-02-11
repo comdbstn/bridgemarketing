@@ -39,8 +39,8 @@ export function EverytimePage() {
                             에브리타임 마케팅 성공 사례를 소개합니다
                         </p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {Array.from({ length: 9 }, (_, i) => i + 1).map((num) => (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {Array.from({ length: 4 }, (_, i) => i + 1).map((num) => (
                             <motion.div
                                 key={num}
                                 initial={{ opacity: 0, y: 20 }}

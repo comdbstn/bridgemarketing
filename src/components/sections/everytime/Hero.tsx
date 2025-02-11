@@ -71,24 +71,7 @@ export function Hero() {
                             </motion.p>
                         </div>
 
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.8 }}
-                            className="mt-8"
-                        >
-                            <a
-                                href="http://pf.kakao.com/_CYGdn/chat"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-white/90 text-[#f03e3e] rounded-full font-bold text-lg transition-all duration-300 hover:scale-105"
-                            >
-                                <MessageCircle className="w-5 h-5" />
-                                지금 바로 시작하세요
-                            </a>
-                        </motion.div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 mt-12">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8">
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -117,6 +100,23 @@ export function Hero() {
                                 <p className="text-sm sm:text-base text-white/80">재계약률</p>
                             </motion.div>
                         </div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.8 }}
+                            className="mt-12"
+                        >
+                            <a
+                                href="http://pf.kakao.com/_CYGdn/chat"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-white/90 text-[#f03e3e] rounded-full font-bold text-lg transition-all duration-300 hover:scale-105"
+                            >
+                                <MessageCircle className="w-5 h-5" />
+                                지금 바로 시작하세요
+                            </a>
+                        </motion.div>
                     </div>
                 </motion.div>
             </div>
