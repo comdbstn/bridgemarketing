@@ -40,7 +40,7 @@ const referenceImages = [
     }
 ];
 
-export function BusinessPlanPage() {
+export default function BusinessPlanPage() {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
     
     useEffect(() => {
