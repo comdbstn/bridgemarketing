@@ -1,8 +1,8 @@
 import { motion, useMotionValue, useMotionTemplate, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Navbar } from "@/components/navigation/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { Navbar } from "@/components/common/Navbar";
+import { Footer } from "@/components/common/Footer";
 import { useEffect, useRef, useState, useMemo } from "react";
 import { Loading } from "@/components/ui/loading";
 import { Analytics } from "@vercel/analytics/react";

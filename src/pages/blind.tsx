@@ -9,8 +9,8 @@ import { References } from "@/components/sections/blind/References";
 import { Process } from "@/components/sections/blind/Process";
 import { QA } from "@/components/sections/blind/QA";
 import { Footer } from "@/components/sections/blind/Footer";
-import { BackButton } from "@/components/navigation/back-button";
-import { KakaoChatButton } from "@/components/chat/kakao-chat-button";
+import { BackButton } from "@/components/common/back-button";
+import { KakaoChatButton } from "@/components/common/kakao-chat-button";
 import { useEffect } from "react";
 
 export function BlindPage() {

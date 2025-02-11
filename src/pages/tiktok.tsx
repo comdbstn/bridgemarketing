@@ -9,8 +9,8 @@ import References from "@/components/sections/tiktok/References";
 import Process from "@/components/sections/tiktok/Process";
 import QA from "@/components/sections/tiktok/QA";
 import Footer from "@/components/sections/tiktok/Footer";
-import { BackButton } from "@/components/navigation/back-button";
-import { KakaoChatButton } from "@/components/chat/kakao-chat-button";
+import { BackButton } from "@/components/common/back-button";
+import { KakaoChatButton } from "@/components/common/kakao-chat-button";
 import { useEffect } from "react";
 
 export function TiktokPage() {

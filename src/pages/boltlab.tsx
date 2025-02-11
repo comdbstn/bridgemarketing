@@ -8,9 +8,9 @@ import { Industries } from "@/components/sections/boltlab/Industries";
 import { Process } from "@/components/sections/boltlab/Process";
 import { Pricing } from "@/components/sections/boltlab/Pricing";
 import { QA } from "@/components/sections/boltlab/QA";
-import { Footer } from "@/components/layout/Footer";
-import { BackButton } from "@/components/navigation/back-button";
-import { KakaoChatButton } from "@/components/chat/kakao-chat-button";
+import { Footer } from "@/components/common/Footer";
+import { BackButton } from "@/components/common/back-button";
+import { KakaoChatButton } from "@/components/common/kakao-chat-button";
 import { motion } from "framer-motion";
 import { ImageModal } from "@/components/ui/image-modal";
 

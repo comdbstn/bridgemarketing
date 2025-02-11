@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Navbar } from "@/components/navigation/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { Navbar } from "@/components/common/Navbar";
+import { Footer } from "@/components/common/Footer";
 import { Loading } from "@/components/ui/loading";
 
 interface Service {

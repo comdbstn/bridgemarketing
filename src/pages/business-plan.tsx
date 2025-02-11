@@ -15,23 +15,23 @@ import { ImageModal } from "@/components/ui/image-modal";
 
 const referenceImages = [
     {
-        src: "/images/business-plan/references/일반 레퍼런스 한번에.png",
+        src: "/images/business-plan/references/general-reference.png",
         alt: "일반 레퍼런스"
     },
     {
-        src: "/images/business-plan/references/애스크미_ai바우처.png",
+        src: "/images/business-plan/references/askme-ai.png",
         alt: "애스크미 AI바우처"
     },
     {
-        src: "/images/business-plan/references/사업계획서 레퍼런스 이미지2.png",
+        src: "/images/business-plan/references/business-plan-ref2.png",
         alt: "사업계획서 레퍼런스"
     },
     {
-        src: "/images/business-plan/references/분석 보고서 리포트.png",
+        src: "/images/business-plan/references/analysis-report.png",
         alt: "분석 보고서 리포트"
     },
     {
-        src: "/images/business-plan/references/zolv_신사업창업사관학교_선정_사업계획서.png",
+        src: "/images/business-plan/references/zolv-business.png",
         alt: "ZOLV 신사업창업사관학교"
     },
     {
@@ -84,6 +84,8 @@ export default function BusinessPlanPage() {
                                     src={image.src}
                                     alt={image.alt}
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                             </motion.div>

@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Calendar, Clock, Tag } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Navbar } from "@/components/navigation/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { Navbar } from "@/components/common/Navbar";
+import { Footer } from "@/components/common/Footer";
 import { Loading } from "@/components/ui/loading";
 
 interface Post {

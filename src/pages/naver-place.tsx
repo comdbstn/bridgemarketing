@@ -7,9 +7,9 @@ import { Pricing } from "@/components/sections/naver-place/Pricing";
 import { Industries } from "@/components/sections/naver-place/Industries";
 import { Process } from "@/components/sections/naver-place/Process";
 import { QA } from "@/components/sections/naver-place/QA";
-import { Footer } from "@/components/layout/Footer";
-import { BackButton } from "@/components/navigation/back-button";
-import { KakaoChatButton } from "@/components/chat/kakao-chat-button";
+import { Footer } from "@/components/common/Footer";
+import { BackButton } from "@/components/common/back-button";
+import { KakaoChatButton } from "@/components/common/kakao-chat-button";
 import { useEffect } from "react";
 
 export default function NaverPlaceServicePage() {

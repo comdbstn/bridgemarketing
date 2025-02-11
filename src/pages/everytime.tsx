@@ -6,9 +6,9 @@ import { Stats } from "@/components/sections/everytime/Stats";
 import { Process } from "@/components/sections/everytime/Process";
 import { Pricing } from "@/components/sections/everytime/Pricing";
 import { QA } from "@/components/sections/everytime/QA";
-import { Footer } from "@/components/layout/Footer";
-import { BackButton } from "@/components/navigation/back-button";
-import { KakaoChatButton } from "@/components/chat/kakao-chat-button";
+import { Footer } from "@/components/common/Footer";
+import { BackButton } from "@/components/common/back-button";
+import { KakaoChatButton } from "@/components/common/kakao-chat-button";
 import { motion } from "framer-motion";
 import { ImageModal } from "@/components/ui/image-modal";
 

@@ -9,8 +9,9 @@ import NaverPlaceServicePage from "@/pages/naver-place";
 import PortfolioPage from "@/pages/portfolio";
 import InsightsPage from "@/pages/insights";
 import { InsightDetailPage } from "@/pages/insight-detail";
-import BusinessPlanServicePage from "@/pages/business-plan";
+import BusinessPlanPage from "@/pages/business-plan";
 import BoltlabPage from "@/pages/boltlab";
+import TestImagePage from "@/pages/test-image";
 import "./App.css";
 
 function App() {
@@ -27,8 +28,9 @@ function App() {
                 <Route path="/naver-cafe" element={<NaverCafeServicePage />} />
                 <Route path="/naver-place" element={<NaverPlaceServicePage />} />
                 <Route path="/portfolio" element={<PortfolioPage />} />
-                <Route path="/business-plan" element={<BusinessPlanServicePage />} />
+                <Route path="/business-plan" element={<BusinessPlanPage />} />
                 <Route path="/boltlab" element={<BoltlabPage />} />
+                <Route path="/test-image" element={<TestImagePage />} />
             </Routes>
         </Router>
     );
