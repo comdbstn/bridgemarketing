@@ -276,7 +276,7 @@ export function Pricing() {
                         return (
                             <motion.div
                                 key={plan.name}
-                                className="flex flex-col p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 h-full"
+                                className="flex flex-col p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -289,7 +289,7 @@ export function Pricing() {
                                 </div>
 
                                 {/* 이름 & 가격 */}
-                                <div className="text-center h-28">
+                                <div className="text-center mb-6">
                                     <h3 className="text-xl font-bold text-gray-900 mb-2">{plan.name}</h3>
                                     <div className="flex flex-col items-center">
                                         <p className="text-3xl font-bold text-[#626ae2]">{plan.price}</p>
@@ -298,14 +298,14 @@ export function Pricing() {
                                 </div>
 
                                 {/* 설명 */}
-                                <div className="bg-gray-50 p-4 rounded-lg mb-6 h-24 flex items-center justify-center">
+                                <div className="bg-gray-50 p-4 rounded-lg mb-6">
                                     <p className="text-gray-600 text-center text-sm leading-relaxed">{plan.description}</p>
                                 </div>
 
                                 {/* 혜택 & 과정 */}
-                                <div className="flex-grow space-y-6">
+                                <div className="flex-1 space-y-6">
                                     {/* 주요 혜택 */}
-                                    <div className="h-full">
+                                    <div>
                                         <h4 className="font-bold text-lg mb-3 text-gray-900 text-center">주요 혜택</h4>
                                         <ul className="space-y-2">
                                             {plan.features.map((feature: string) => (
@@ -318,7 +318,7 @@ export function Pricing() {
                                     </div>
 
                                     {/* 진행 과정 */}
-                                    <div className="h-full">
+                                    <div>
                                         <h4 className="font-bold text-lg mb-3 text-gray-900 text-center">진행 과정</h4>
                                         <ul className="space-y-2">
                                             {plan.process.map((step: string, stepIndex: number) => (
@@ -335,9 +335,14 @@ export function Pricing() {
 
                                 {/* 시작하기 버튼 */}
                                 <div className="mt-6 pt-6 border-t border-gray-100">
-                                    <button className="w-full py-3 px-6 bg-[#626ae2] hover:bg-[#7884eb] text-white font-medium rounded-lg transition-colors duration-300">
+                                    <a
+                                        href="http://pf.kakao.com/_CYGdn/chat"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block w-full py-3 px-6 bg-[#626ae2] hover:bg-[#7884eb] text-white font-medium rounded-lg text-center transition-colors duration-300"
+                                    >
                                         시작하기
-                                    </button>
+                                    </a>
                                 </div>
                             </motion.div>
                         );

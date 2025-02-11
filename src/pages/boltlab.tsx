@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { BackButton } from "@/components/navigation/back-button";
 import { KakaoChatButton } from "@/components/chat/kakao-chat-button";
 import { Footer } from "@/components/layout/Footer";
 import { useCountAnimation } from "@/hooks/use-count-animation";
+import { ImageModal } from "@/components/ui/image-modal";
 
 interface Product {
     title: string;
@@ -42,6 +43,7 @@ const BoltlabPage: React.FC = () => {
     const { count: projectCount, ref: projectRef } = useCountAnimation(100);
     const { count: satisfactionRate, ref: satisfactionRef } = useCountAnimation(98);
     const { count: recontractRate, ref: recontractRef } = useCountAnimation(85);
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -495,7 +497,8 @@ const BoltlabPage: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: num * 0.1 }}
-                                className="group relative aspect-[4/3] rounded-xl overflow-hidden bg-gray-100"
+                                className="group relative aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 cursor-pointer"
+                                onClick={() => setSelectedImage(`/boltlab_reference/${num}.${num === 4 || num === 7 ? 'jpeg' : 'png'}`)}
                             >
                                 <img
                                     src={`/boltlab_reference/${num}.${num === 4 || num === 7 ? 'jpeg' : 'png'}`}
@@ -507,6 +510,11 @@ const BoltlabPage: React.FC = () => {
                         ))}
                     </div>
                 </div>
+                <ImageModal
+                    isOpen={!!selectedImage}
+                    onClose={() => setSelectedImage(null)}
+                    imageSrc={selectedImage || ''}
+                />
             </section>
 
             {/* CTA Section */}

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Hero } from "@/components/sections/business-plan/Hero";
 import { Features } from "@/components/sections/business-plan/Features";
 import { Stats } from "@/components/sections/business-plan/Stats";
@@ -10,8 +10,11 @@ import { Footer } from "@/components/layout/Footer";
 import { BackButton } from "@/components/navigation/back-button";
 import { KakaoChatButton } from "@/components/chat/kakao-chat-button";
 import { motion } from "framer-motion";
+import { ImageModal } from "@/components/ui/image-modal";
 
 export default function BusinessPlanServicePage() {
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+    
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -52,7 +55,8 @@ export default function BusinessPlanServicePage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="group relative aspect-[4/3] rounded-xl overflow-hidden bg-gray-100"
+                                className="group relative aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 cursor-pointer"
+                                onClick={() => setSelectedImage(`/images/business-plan/${imageName}`)}
                             >
                                 <img
                                     src={`/images/business-plan/${imageName}`}
@@ -64,6 +68,11 @@ export default function BusinessPlanServicePage() {
                         ))}
                     </div>
                 </div>
+                <ImageModal
+                    isOpen={!!selectedImage}
+                    onClose={() => setSelectedImage(null)}
+                    imageSrc={selectedImage || ''}
+                />
             </section>
             
             <Pricing />
