@@ -75,7 +75,7 @@ export function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.8 }}
-                            className="mt-8 pb-8 sm:pb-12"
+                            className="mt-8"
                         >
                             <a
                                 href="http://pf.kakao.com/_CYGdn/chat"
@@ -87,36 +87,36 @@ export function Hero() {
                                 지금 바로 시작하세요
                             </a>
                         </motion.div>
-                    </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 mt-8">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.5 }}
-                            className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white"
-                        >
-                            <h3 className="text-2xl sm:text-4xl font-bold mb-2" ref={projectRef}>{projectCount}만+</h3>
-                            <p className="text-sm sm:text-base text-white/80">일간 활성 사용자</p>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.6 }}
-                            className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white"
-                        >
-                            <h3 className="text-2xl sm:text-4xl font-bold mb-2" ref={satisfactionRef}>{satisfactionRate}%</h3>
-                            <p className="text-sm sm:text-base text-white/80">광고 도달률</p>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.7 }}
-                            className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white"
-                        >
-                            <h3 className="text-2xl sm:text-4xl font-bold mb-2" ref={recontractRef}>{recontractRate}%</h3>
-                            <p className="text-sm sm:text-base text-white/80">재계약률</p>
-                        </motion.div>
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 mt-12">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.5 }}
+                                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white"
+                            >
+                                <h3 className="text-2xl sm:text-4xl font-bold mb-2" ref={projectRef}>{projectCount}만+</h3>
+                                <p className="text-sm sm:text-base text-white/80">일간 활성 사용자</p>
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.6 }}
+                                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white"
+                            >
+                                <h3 className="text-2xl sm:text-4xl font-bold mb-2" ref={satisfactionRef}>{satisfactionRate}%</h3>
+                                <p className="text-sm sm:text-base text-white/80">광고 도달률</p>
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.7 }}
+                                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white"
+                            >
+                                <h3 className="text-2xl sm:text-4xl font-bold mb-2" ref={recontractRef}>{recontractRate}%</h3>
+                                <p className="text-sm sm:text-base text-white/80">재계약률</p>
+                            </motion.div>
+                        </div>
                     </div>
                 </motion.div>
             </div>
