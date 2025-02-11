@@ -75,7 +75,7 @@ export function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.8 }}
-                            className="mt-12 pb-16 sm:pb-20"
+                            className="mt-8 pb-8 sm:pb-12"
                         >
                             <a
                                 href="http://pf.kakao.com/_CYGdn/chat"
@@ -89,7 +89,7 @@ export function Hero() {
                         </motion.div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 mt-12">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 mt-8">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
