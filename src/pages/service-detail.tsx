@@ -5,6 +5,7 @@ import { Navbar } from "@/components/common/Navbar";
 import { Footer } from "@/components/common/Footer";
 import { Loading } from "@/components/ui/loading";
 import { useState, useEffect } from "react";
+import { BackButton } from "@/components/common/back-button";
 
 interface ServiceDetail {
     title: string;
@@ -108,127 +109,30 @@ export function ServiceDetailPage() {
     };
 
     return (
-        <div className="min-h-screen bg-black">
-            <Navbar />
-            <main>
-                <section className="pt-40 pb-20 relative overflow-hidden">
-                    <motion.div 
-                        className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(147,51,234,0.15),transparent_70%)]"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.4 }}
-                    />
-                    <div className="container mx-auto px-4">
-                        <div className="max-w-4xl mx-auto">
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.4 }}
-                            >
-                                <button
-                                    onClick={handleGoBack}
-                                    className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors mb-8"
-                                >
-                                    <ArrowLeft className="w-4 h-4 mr-2" />
-                                    {fromPage === '/service' ? '서비스 목록으로 돌아가기' : '이전 페이지로 돌아가기'}
-                                </button>
-                                <motion.h1
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.4, delay: 0.1 }}
-                                    className="text-4xl font-bold text-white mb-4"
-                                >
-                                    {serviceDetail.title}
-                                </motion.h1>
-                                <motion.p
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.4, delay: 0.2 }}
-                                    className="text-xl text-gray-400 mb-8"
-                                >
-                                    {serviceDetail.description}
-                                </motion.p>
-                            </motion.div>
-
-                            {/* Features */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.4, delay: 0.3 }}
-                                className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
-                            >
-                                {serviceDetail.features.map((feature, index) => (
-                                    <motion.div
-                                        key={feature}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                                        className="bg-gray-900/50 rounded-xl p-6"
-                                    >
-                                        <h3 className="text-lg font-semibold text-white mb-2">{feature}</h3>
-                                    </motion.div>
-                                ))}
-                            </motion.div>
-
-                            {/* Process */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.4, delay: 0.5 }}
-                                className="mb-16"
-                            >
-                                <h2 className="text-2xl font-bold text-white mb-8">진행 프로세스</h2>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    {serviceDetail.process.map((step, index) => (
-                                        <motion.div
-                                            key={step.title}
-                                            initial={{ opacity: 0, y: 20 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
-                                            className="bg-gray-900/50 rounded-xl p-6"
-                                        >
-                                            <h3 className="text-lg font-semibold text-white mb-2">{step.title}</h3>
-                                            <p className="text-gray-400">{step.description}</p>
-                                        </motion.div>
-                                    ))}
-                                </div>
-                            </motion.div>
-
-                            {/* Pricing */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.4, delay: 0.7 }}
-                            >
-                                <h2 className="text-2xl font-bold text-white mb-8">서비스 요금</h2>
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                    {serviceDetail.pricing.map((plan, index) => (
-                                        <motion.div
-                                            key={plan.title}
-                                            initial={{ opacity: 0, y: 20 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-                                            className="bg-gray-900/50 rounded-xl p-6"
-                                        >
-                                            <h3 className="text-xl font-bold text-white mb-2">{plan.title}</h3>
-                                            <p className="text-2xl font-bold text-purple-400 mb-4">{plan.price}</p>
-                                            <ul className="space-y-2">
-                                                {plan.features.map((feature, featureIndex) => (
-                                                    <li key={featureIndex} className="text-gray-400 flex items-center">
-                                                        <span className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2" />
-                                                        {feature}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </motion.div>
-                                    ))}
-                                </div>
-                            </motion.div>
-                        </div>
-                    </div>
-                </section>
-            </main>
-            <Footer />
+        <div className="min-h-screen bg-black flex items-center justify-center relative">
+            <BackButton />
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="text-center px-4"
+            >
+                <motion.span
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="inline-block px-6 py-2 bg-purple-500/10 rounded-full text-purple-300 text-sm border border-purple-500/20 backdrop-blur-sm font-tway mb-6"
+                >
+                    Coming Soon
+                </motion.span>
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-aggro">
+                    포트폴리오 페이지는 현재 개발 중입니다
+                </h1>
+                <p className="text-gray-400 text-lg md:text-xl font-tway">
+                    더 나은 서비스를 위해 준비 중입니다.<br />
+                    조금만 기다려주세요.
+                </p>
+            </motion.div>
         </div>
     );
 } 
