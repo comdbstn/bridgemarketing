@@ -26,7 +26,7 @@ export function Features() {
     ];
 
     return (
-        <section className="py-20 bg-[#f8faff]">
+        <section className="py-20 relative overflow-hidden bg-gradient-to-br from-white to-blue-50">
             <div className="container mx-auto px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -40,7 +40,7 @@ export function Features() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
-                        className="text-4xl font-bold text-gray-900 mb-4"
+                        className="text-4xl font-bold text-gray-900 mb-4 font-aggro"
                     >
                         주요 특징
                     </motion.h2>
@@ -49,13 +49,13 @@ export function Features() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                         viewport={{ once: true }}
-                        className="text-lg text-gray-600"
+                        className="text-lg text-gray-600 font-tway"
                     >
                         업계에 대한 깊은 이해도와 전문성으로 사업계획서를 작성합니다
                     </motion.p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {features.map((feature, index) => (
                         <motion.div
                             key={feature.title}
@@ -65,7 +65,7 @@ export function Features() {
                             viewport={{ once: true }}
                             whileHover={{ 
                                 scale: 1.02,
-                                boxShadow: "0 10px 30px -10px rgba(98, 106, 226, 0.3)"
+                                boxShadow: "0 10px 30px -10px rgba(0, 169, 255, 0.3)"
                             }}
                             className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
                         >
@@ -73,14 +73,14 @@ export function Features() {
                                 <motion.div
                                     whileHover={{ rotate: 360, scale: 1.1 }}
                                     transition={{ duration: 0.6 }}
-                                    className="w-14 h-14 rounded-full bg-[#626ae2]/10 flex items-center justify-center mb-4 group-hover:bg-[#626ae2]/20 transition-colors duration-300"
+                                    className="w-14 h-14 rounded-full bg-[#00A9FF]/10 flex items-center justify-center mb-4 group-hover:bg-[#00A9FF]/20 transition-colors duration-300"
                                 >
-                                    <feature.icon className="w-7 h-7 text-[#626ae2]" />
+                                    <feature.icon className="w-7 h-7 text-[#00A9FF]" />
                                 </motion.div>
                                 <motion.h3
                                     whileHover={{ scale: 1.05 }}
                                     transition={{ duration: 0.3 }}
-                                    className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#626ae2] transition-colors duration-300"
+                                    className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#00A9FF] transition-colors duration-300 font-aggro"
                                 >
                                     {feature.title}
                                 </motion.h3>
@@ -89,7 +89,7 @@ export function Features() {
                                     whileInView={{ opacity: 1 }}
                                     transition={{ duration: 0.6, delay: index * 0.2 }}
                                     viewport={{ once: true }}
-                                    className="text-gray-600 group-hover:text-gray-900 transition-colors duration-300"
+                                    className="text-gray-600 group-hover:text-gray-900 transition-colors duration-300 font-tway"
                                 >
                                     {feature.description}
                                 </motion.p>
