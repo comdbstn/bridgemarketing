@@ -3,7 +3,6 @@ import { FileSearch, FileEdit, FileCheck, Presentation } from "lucide-react";
 
 const processes = [
     {
-        number: 1,
         icon: FileSearch,
         title: "상담 및 분석",
         description:
@@ -11,7 +10,6 @@ const processes = [
         gradient: "from-purple-400 to-pink-400"
     },
     {
-        number: 2,
         icon: FileEdit,
         title: "전문가 작업 진행",
         description:
@@ -19,7 +17,6 @@ const processes = [
         gradient: "from-blue-400 to-indigo-400"
     },
     {
-        number: 3,
         icon: FileCheck,
         title: "피드백 반영",
         description:
@@ -27,12 +24,11 @@ const processes = [
         gradient: "from-purple-400 to-indigo-400"
     },
     {
-        number: 4,
         icon: Presentation,
         title: "최종 완성",
         description: "전문가 작업과 피드백을 통해 최종 결과물을 완성합니다",
         gradient: "from-indigo-400 to-blue-400"
-    },
+    }
 ];
 
 export function Process() {
@@ -105,13 +101,8 @@ export function Process() {
                             >
                                 <div className="absolute -inset-px bg-gradient-to-r from-purple-600/20 to-indigo-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
                                 <div className="relative bg-purple-500/5 backdrop-blur-xl border-2 border-purple-500/10 rounded-2xl p-8 hover:border-purple-500/30 transition-all duration-500">
-                                    <div className="relative mb-8">
-                                        <div className={`absolute -top-10 left-0 w-10 h-10 rounded-full bg-gradient-to-r ${process.gradient} flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                                            {process.number}
-                                        </div>
-                                        <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${process.gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}>
-                                            <process.icon className="w-8 h-8 text-white" />
-                                        </div>
+                                    <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${process.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500`}>
+                                        <process.icon className="w-8 h-8 text-white" />
                                     </div>
                                     <h3 className='text-2xl font-bold text-white mb-4 font-aggro'>{process.title}</h3>
                                     <p className='text-gray-400 font-tway text-base'>{process.description}</p>

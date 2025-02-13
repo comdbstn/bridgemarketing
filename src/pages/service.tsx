@@ -6,6 +6,8 @@ import { BackButton } from "@/components/common/back-button";
 import { KakaoChatButton } from "@/components/common/kakao-chat-button";
 import { FileText, Code, GraduationCap, Building2 } from "lucide-react";
 import { Loading } from "@/components/ui/loading";
+import { Navbar } from "@/components/common/Navbar";
+import { Footer } from "@/components/common/Footer";
 
 interface Service {
     title: string;
@@ -29,8 +31,17 @@ const glowAnimation = {
     }
 };
 
+const categories = [
+    { id: "all", name: "전체" },
+    { id: "business", name: "사업지원" },
+    { id: "viral", name: "바이럴마케팅" },
+    { id: "naver", name: "네이버 마케팅" },
+    { id: "influencer", name: "인플루언서 마케팅" }
+];
+
 export default function ServicePage() {
     const [isLoading, setIsLoading] = useState(true);
+    const [selectedCategory, setSelectedCategory] = useState("all");
     const location = useLocation();
     const navigate = useNavigate();
     const shouldRestore = location.state?.shouldRestore;
@@ -142,8 +153,13 @@ export default function ServicePage() {
         }
     ];
 
+    const filteredServices = selectedCategory === "all"
+        ? services
+        : services.filter(service => service.category === selectedCategory);
+
     return (
         <div className="min-h-screen bg-black overflow-hidden relative">
+            <Navbar />
             <BackButton />
             <KakaoChatButton />
 
@@ -203,8 +219,29 @@ export default function ServicePage() {
                         </motion.p>
                     </motion.div>
 
+                    {/* Category Filter */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="flex flex-wrap justify-center gap-4 mb-12"
+                    >
+                        {categories.map((category) => (
+                            <button
+                                key={category.id}
+                                onClick={() => setSelectedCategory(category.id)}
+                                className={`px-6 py-2 rounded-full font-tway text-sm transition-all duration-300 ${
+                                    selectedCategory === category.id
+                                        ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white"
+                                        : "bg-purple-500/10 text-purple-300 hover:bg-purple-500/20"
+                                }`}
+                            >
+                                {category.name}
+                            </button>
+                        ))}
+                    </motion.div>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {services.map((service, index) => (
+                        {filteredServices.map((service, index) => (
                             <motion.div
                                 key={service.title}
                                 initial={{ opacity: 0, y: 20 }}
@@ -243,8 +280,7 @@ export default function ServicePage() {
                 </div>
             </div>
 
-            {/* Decorative Elements */}
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
+            <Footer />
         </div>
     );
 } 
