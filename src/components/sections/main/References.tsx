@@ -67,17 +67,19 @@ export function References() {
                                         whileHover={{ scale: 1.1 }}
                                         className="relative group flex-shrink-0"
                                     >
-                                        <div className="absolute -inset-2 bg-gradient-to-r from-purple-600/20 to-indigo-600/20 rounded-lg blur-lg group-hover:opacity-100 opacity-0 transition-opacity duration-500" />
-                                        <img
-                                            src={logo}
-                                            alt={`Client Logo ${index}`}
-                                            className="h-12 w-auto object-contain relative filter grayscale hover:grayscale-0 transition-all duration-500"
-                                            style={{ minWidth: '120px' }}
-                                            onError={(e) => {
-                                                const target = e.target as HTMLImageElement;
-                                                target.style.display = 'none';
-                                            }}
-                                        />
+                                        <div className="absolute -inset-4 bg-gradient-to-br from-purple-600/10 to-indigo-600/10 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                                        <div className="relative p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-purple-500/20 transition-all duration-500">
+                                            <img
+                                                src={logo}
+                                                alt={`Client Logo ${index}`}
+                                                className="h-8 w-auto object-contain relative filter grayscale hover:grayscale-0 transition-all duration-500"
+                                                style={{ minWidth: '100px' }}
+                                                onError={(e) => {
+                                                    const target = e.target as HTMLImageElement;
+                                                    target.style.display = 'none';
+                                                }}
+                                            />
+                                        </div>
                                     </motion.div>
                                 ))}
                             </div>
