@@ -32,7 +32,7 @@ const referenceImages = [
     }
 ];
 
-export default function EverytimePage() {
+export function EverytimePage() {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
     
     useEffect(() => {

@@ -1,16 +1,17 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Toaster } from "@/components/ui/sonner";
 import { MainPage } from "@/pages/main";
 import ServicePage from "@/pages/service";
 import { EverytimePage } from "@/pages/everytime";
 import { BlindPage } from "@/pages/blind";
 import { TiktokPage } from "@/pages/tiktok";
-import NaverCafeServicePage from "@/pages/naver-cafe";
-import NaverPlaceServicePage from "@/pages/naver-place";
-import PortfolioPage from "@/pages/portfolio";
+import NaverCafePage from "@/pages/naver-cafe";
+import NaverPlacePage from "@/pages/naver-place";
+import { ServiceDetailPage } from "@/pages/service-detail";
 import InsightsPage from "@/pages/insights";
 import { InsightDetailPage } from "@/pages/insight-detail";
-import BusinessPlanPage from "@/pages/business-plan";
-import BoltlabPage from "@/pages/boltlab";
+import { BusinessPlanPage } from "@/pages/business-plan";
+import { BoltlabPage } from "@/pages/boltlab";
 import TestImagePage from "@/pages/test-image";
 import "./App.css";
 
@@ -25,9 +26,9 @@ function App() {
                 <Route path="/everytime" element={<EverytimePage />} />
                 <Route path="/blind" element={<BlindPage />} />
                 <Route path="/tiktok" element={<TiktokPage />} />
-                <Route path="/naver-cafe" element={<NaverCafeServicePage />} />
-                <Route path="/naver-place" element={<NaverPlaceServicePage />} />
-                <Route path="/portfolio" element={<PortfolioPage />} />
+                <Route path="/naver-cafe" element={<NaverCafePage />} />
+                <Route path="/naver-place" element={<NaverPlacePage />} />
+                <Route path="/portfolio" element={<ServiceDetailPage />} />
                 <Route path="/business-plan" element={<BusinessPlanPage />} />
                 <Route path="/boltlab" element={<BoltlabPage />} />
                 <Route path="/test-image" element={<TestImagePage />} />
