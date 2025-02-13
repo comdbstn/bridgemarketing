@@ -189,44 +189,46 @@ export function Pricing() {
                 </div>
 
                 {/* 요금제 카드 */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                    {services[selectedService].map((plan: ServicePlan) => (
-                        <motion.div
-                            key={plan.name}
-                            className="relative group"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                        >
-                            <div className="relative bg-white rounded-2xl p-8 border border-[#7884eb]/20 hover:border-[#7884eb]/40 transition-all duration-300">
-                                <div className="text-center mb-8">
-                                    <h3 className="text-2xl font-bold text-gray-900 mb-2 font-aggro">{plan.name}</h3>
-                                    <p className="text-gray-600 mb-4 min-h-[48px] font-tway">{plan.description}</p>
-                                    <div className="text-[#626ae2] text-3xl font-bold font-tway">{plan.price}</div>
+                <div className="flex justify-center">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
+                        {services[selectedService].map((plan: ServicePlan) => (
+                            <motion.div
+                                key={plan.name}
+                                className="relative group"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                            >
+                                <div className="relative bg-white rounded-2xl p-8 border border-[#7884eb]/20 hover:border-[#7884eb]/40 transition-all duration-300">
+                                    <div className="text-center mb-8">
+                                        <h3 className="text-2xl font-bold text-gray-900 mb-2 font-aggro">{plan.name}</h3>
+                                        <p className="text-gray-600 mb-4 min-h-[48px] font-tway">{plan.description}</p>
+                                        <div className="text-[#626ae2] text-3xl font-bold font-tway">{plan.price}</div>
+                                    </div>
+                                    <ul className="space-y-3">
+                                        {plan.features.map((feature: string) => (
+                                            <li key={feature} className="flex items-start gap-3">
+                                                <div className="rounded-full p-1 bg-gradient-to-r from-[#626ae2] to-[#7884eb] mt-1 shrink-0">
+                                                    <Check className="w-3 h-3 text-white" />
+                                                </div>
+                                                <span className="text-gray-600 font-tway text-left">{feature}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <div className="mt-8">
+                                        <a
+                                            href="http://pf.kakao.com/_CYGdn/chat"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="block w-full py-3 px-6 text-center text-white bg-gradient-to-r from-[#626ae2] to-[#7884eb] rounded-lg hover:opacity-90 transition-all duration-300 font-tway"
+                                        >
+                                            시작하기
+                                        </a>
+                                    </div>
                                 </div>
-                                <ul className="space-y-4">
-                                    {plan.features.map((feature: string) => (
-                                        <li key={feature} className="flex items-center justify-center gap-2 text-center">
-                                            <div className="rounded-full p-1 bg-gradient-to-r from-[#626ae2] to-[#7884eb] shrink-0">
-                                                <Check className="w-3 h-3 text-white" />
-                                            </div>
-                                            <span className="text-gray-600 font-tway text-center">{feature}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                                <div className="mt-8">
-                                    <a
-                                        href="http://pf.kakao.com/_CYGdn/chat"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="block w-full py-3 px-6 text-center text-white bg-gradient-to-r from-[#626ae2] to-[#7884eb] rounded-lg hover:opacity-90 transition-all duration-300 font-tway"
-                                    >
-                                        시작하기
-                                    </a>
-                                </div>
-                            </div>
-                        </motion.div>
-                    ))}
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
