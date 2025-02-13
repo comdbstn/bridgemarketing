@@ -45,35 +45,42 @@ export function References() {
                     </div>
                 </motion.div>
 
-                <div className="space-y-16">
-                    {[1, 2, 3].map((row, rowIndex) => (
+                <div className="space-y-16 overflow-hidden">
+                    {[1, 2].map((row, rowIndex) => (
                         <motion.div
                             key={rowIndex}
-                            initial={{ opacity: 0, x: rowIndex === 1 ? 50 : -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                            className="flex gap-12 items-center"
+                            className="relative"
                         >
-                            {Array.from({ length: 15 }, (_, i) => `/logo/${i + rowIndex * 15}.png`).map((logo, index) => (
-                                <motion.div
-                                    key={index}
-                                    whileHover={{ scale: 1.1 }}
-                                    className="relative group"
-                                >
-                                    <div className="absolute -inset-2 bg-gradient-to-r from-purple-600/20 to-indigo-600/20 rounded-lg blur-lg group-hover:opacity-100 opacity-0 transition-opacity duration-500" />
-                                    <img
-                                        src={logo}
-                                        alt={`Client Logo ${index}`}
-                                        className="h-12 w-auto object-contain relative filter grayscale hover:grayscale-0 transition-all duration-500"
-                                        style={{ minWidth: '120px' }}
-                                        onError={(e) => {
-                                            const target = e.target as HTMLImageElement;
-                                            target.style.display = 'none';
-                                        }}
-                                    />
-                                </motion.div>
-                            ))}
+                            <div 
+                                className="flex gap-12 items-center animate-scroll"
+                                style={{
+                                    animationDirection: rowIndex === 1 ? 'reverse' : 'normal',
+                                    animationDuration: '30s'
+                                }}
+                            >
+                                {Array.from({ length: 20 }, (_, i) => `/logo/${i + rowIndex * 20}.png`).map((logo, index) => (
+                                    <motion.div
+                                        key={index}
+                                        whileHover={{ scale: 1.1 }}
+                                        className="relative group flex-shrink-0"
+                                    >
+                                        <div className="absolute -inset-2 bg-gradient-to-r from-purple-600/20 to-indigo-600/20 rounded-lg blur-lg group-hover:opacity-100 opacity-0 transition-opacity duration-500" />
+                                        <img
+                                            src={logo}
+                                            alt={`Client Logo ${index}`}
+                                            className="h-12 w-auto object-contain relative filter grayscale hover:grayscale-0 transition-all duration-500"
+                                            style={{ minWidth: '120px' }}
+                                            onError={(e) => {
+                                                const target = e.target as HTMLImageElement;
+                                                target.style.display = 'none';
+                                            }}
+                                        />
+                                    </motion.div>
+                                ))}
+                            </div>
                         </motion.div>
                     ))}
                 </div>
