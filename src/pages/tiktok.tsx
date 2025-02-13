@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import { Hero } from "@/components/sections/tiktok/Hero";
+import { useEffect } from "react";
+import Hero from "@/components/sections/tiktok/Hero";
 import { Products } from "@/components/sections/tiktok/Products";
 import Features from "@/components/sections/tiktok/Features";
 import { Stats } from "@/components/sections/tiktok/Stats";
 import { Advantages } from "@/components/sections/tiktok/Advantages";
-import { Pricing } from "@/components/sections/tiktok/Pricing";
+import Pricing from "@/components/sections/tiktok/Pricing";
 import Industries from "@/components/sections/tiktok/Industries";
 import References from "@/components/sections/tiktok/References";
 import Process from "@/components/sections/tiktok/Process";
@@ -12,8 +12,6 @@ import { QA } from "@/components/sections/tiktok/QA";
 import { Footer } from "@/components/common/Footer";
 import { BackButton } from "@/components/common/back-button";
 import { KakaoChatButton } from "@/components/common/kakao-chat-button";
-import { motion } from "framer-motion";
-import { ImageModal } from "@/components/ui/image-modal";
 
 export function TiktokPage() {
     useEffect(() => {

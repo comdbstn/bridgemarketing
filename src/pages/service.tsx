@@ -245,18 +245,18 @@ export default function ServicePage() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
-                                className="relative group"
+                                className="relative group h-full"
                             >
-                                <Link to={service.link} className="block">
+                                <Link to={service.link} className="block h-full">
                                     <div className="absolute -inset-px bg-gradient-to-r from-purple-600/20 to-indigo-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
-                                    <div className="relative bg-purple-500/5 backdrop-blur-xl border-2 border-purple-500/10 rounded-2xl p-8 hover:border-purple-500/30 transition-all duration-500">
+                                    <div className="relative bg-purple-500/5 backdrop-blur-xl border-2 border-purple-500/10 rounded-2xl p-8 hover:border-purple-500/30 transition-all duration-500 h-full flex flex-col">
                                         <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${service.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500`}>
                                             <service.icon className="w-8 h-8 text-white" />
                                         </div>
                                         <h3 className={`text-2xl font-bold mb-4 font-aggro bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}>
                                             {service.title}
                                         </h3>
-                                        <p className="text-gray-400 font-tway mb-8">
+                                        <p className="text-gray-400 font-tway mb-8 flex-grow">
                                             {service.description}
                                         </p>
                                         <div className="grid grid-cols-2 gap-4">
