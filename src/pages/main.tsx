@@ -52,10 +52,18 @@ export function MainPage() {
                 <Hero />
                 <Marketing />
                 <About />
-                <References />
-                <Process />
-                <Services />
-                <Contact />
+                <div id="references">
+                    <References />
+                </div>
+                <div id="process">
+                    <Process />
+                </div>
+                <div id="services">
+                    <Services />
+                </div>
+                <div id="contact">
+                    <Contact />
+                </div>
             </main>
             <Footer />
         </div>
