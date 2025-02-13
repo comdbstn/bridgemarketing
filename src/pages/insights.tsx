@@ -1,15 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { BackButton } from "@/components/common/back-button";
 import { KakaoChatButton } from "@/components/common/kakao-chat-button";
 
 export default function InsightsPage() {
-    const [isLoading, setIsLoading] = useState(true);
-
     useEffect(() => {
         window.scrollTo(0, 0);
-        const timer = setTimeout(() => setIsLoading(false), 500);
-        return () => clearTimeout(timer);
     }, []);
 
     return (
