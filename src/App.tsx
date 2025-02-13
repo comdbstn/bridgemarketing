@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { MainPage } from "@/pages/main";
 import ServicePage from "@/pages/service";
-import { EverytimePage } from "@/pages/everytime";
+import EverytimePage from "@/pages/everytime";
 import { BlindPage } from "@/pages/blind";
 import { TiktokPage } from "@/pages/tiktok";
 import NaverCafePage from "@/pages/naver-cafe";
