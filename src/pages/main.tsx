@@ -4,9 +4,10 @@ import { Footer } from "@/components/common/Footer";
 import { useEffect, useState } from "react";
 import { Loading } from "@/components/ui/loading";
 import { Hero } from "@/components/sections/main/Hero";
-import { Features } from "@/components/sections/main/Features";
 import { Services } from "@/components/sections/main/Services";
 import { Process } from "@/components/sections/main/Process";
+import { References } from "@/components/sections/main/References";
+import { KakaoChatButton } from "@/components/common/kakao-chat-button";
 
 export function MainPage() {
     const location = useLocation();
@@ -41,13 +42,14 @@ export function MainPage() {
     if (isLoading) return <Loading />;
 
     return (
-        <div className="min-h-screen bg-black">
+        <div className="min-h-screen w-full bg-black overflow-hidden">
+            <KakaoChatButton />
             <Navbar />
             <main>
                 <Hero />
-                <Features />
                 <Services />
                 <Process />
+                <References />
             </main>
             <Footer />
         </div>
