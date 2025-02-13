@@ -50,13 +50,13 @@ export default function BusinessPlanPage() {
             <Profile />
             
             {/* References Section */}
-            <section className="py-20 bg-[#f8faff]">
+            <section className="py-20 bg-gradient-to-br from-purple-50 to-white">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                        <h2 className="text-3xl md:text-4xl font-bold text-purple-900 mb-4">
                             레퍼런스
                         </h2>
-                        <p className="text-xl text-gray-600">
+                        <p className="text-xl text-purple-600">
                             성공적인 사업계획서 작성 사례를 소개합니다
                         </p>
                     </div>
@@ -68,7 +68,7 @@ export default function BusinessPlanPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="group relative aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 cursor-pointer"
+                                className="group relative aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 cursor-pointer hover:shadow-xl hover:shadow-purple-100 transition-all duration-300"
                                 onClick={() => setSelectedImage(image.src)}
                             >
                                 <img
@@ -78,7 +78,7 @@ export default function BusinessPlanPage() {
                                     loading="lazy"
                                     decoding="async"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 via-purple-800/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                             </motion.div>
                         ))}
                     </div>
