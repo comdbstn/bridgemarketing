@@ -65,14 +65,29 @@ export const Profile: React.FC = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-xl"
+                        className="bg-white p-6 rounded-xl shadow-lg"
                     >
-                        <img
-                            src="/images/everytime/profile.jpg"
-                            alt="에브리타임 마케팅 전문가"
-                            className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#FF4B4B]/60 via-transparent to-transparent" />
+                        <h3 className="text-2xl font-bold text-[#FF4B4B] mb-4 font-aggro">
+                            마케팅 성과
+                        </h3>
+                        <ul className="space-y-3 text-gray-700">
+                            <li className="flex items-center gap-2">
+                                <span className="w-2 h-2 bg-[#FF4B4B] rounded-full" />
+                                <span>평균 게시글 조회수 5,000+</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                                <span className="w-2 h-2 bg-[#FF4B4B] rounded-full" />
+                                <span>댓글 참여율 200% 이상</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                                <span className="w-2 h-2 bg-[#FF4B4B] rounded-full" />
+                                <span>광고 효과 지속기간 2주+</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                                <span className="w-2 h-2 bg-[#FF4B4B] rounded-full" />
+                                <span>재계약률 85% 이상</span>
+                            </li>
+                        </ul>
                     </motion.div>
                 </div>
             </div>
