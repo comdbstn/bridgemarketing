@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Toaster } from "@/components/ui/sonner";
 import { MainPage } from "@/pages/main";
 import ServicePage from "@/pages/service";
 import { EverytimePage } from "@/pages/everytime";
@@ -10,8 +9,8 @@ import NaverPlacePage from "@/pages/naver-place";
 import { ServiceDetailPage } from "@/pages/service-detail";
 import InsightsPage from "@/pages/insights";
 import { InsightDetailPage } from "@/pages/insight-detail";
-import { BusinessPlanPage } from "@/pages/business-plan";
-import { BoltlabPage } from "@/pages/boltlab";
+import BusinessPlanPage from "@/pages/business-plan";
+import BoltlabPage from "@/pages/boltlab";
 import TestImagePage from "@/pages/test-image";
 import "./App.css";
 
