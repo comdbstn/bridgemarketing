@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 export function Loading() {
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50">

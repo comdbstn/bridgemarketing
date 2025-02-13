@@ -1,5 +1,3 @@
-import { MapPin, Phone, Mail } from "lucide-react";
-
 export function Footer() {
     return (
         <footer className="bg-[#0f0f0f] text-white/80 py-12">
