@@ -32,58 +32,62 @@ export function Process() {
     return (
         <section className="py-32 relative overflow-hidden">
             <div className="absolute inset-0">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(147,51,234,0.2),transparent_70%)]" />
-                <motion.div
-                    animate={{
-                        scale: [1, 1.2, 1],
-                        opacity: [0.3, 0.6, 0.3]
-                    }}
-                    transition={{
-                        duration: 8,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                    }}
-                    className="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-indigo-600/20 to-transparent blur-3xl"
-                />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(147,51,234,0.1),transparent_70%)]" />
             </div>
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="container mx-auto px-4 relative"
-            >
-                <div className="max-w-3xl mx-auto text-center">
-                    <motion.span
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
-                        className="inline-block px-6 py-3 bg-purple-500/10 rounded-full text-purple-400 text-sm mb-6 border border-purple-500/20 backdrop-blur-sm"
-                    >
-                        Our Process
-                    </motion.span>
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white via-purple-500 to-indigo-500 bg-clip-text text-transparent font-display"
-                    >
-                        체계적인 프로세스
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.4 }}
-                        className="text-xl text-gray-300 mb-12 leading-relaxed"
-                    >
-                        브릿지마케팅만의 차별화된 프로세스로
-                        <br />
-                        최상의 결과를 만들어냅니다
-                    </motion.p>
+            
+            <div className="container mx-auto px-4 relative">
+                <div className="max-w-7xl mx-auto">
+                    <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+                        <div>
+                            <motion.span
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5 }}
+                                className="inline-block px-6 py-2 bg-purple-500/10 rounded-full text-purple-400 text-sm mb-6 border border-purple-500/20 backdrop-blur-sm font-tway"
+                            >
+                                Our Process
+                            </motion.span>
+                            <motion.h2
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.2 }}
+                                className="text-4xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-indigo-200 bg-clip-text text-transparent font-aggro"
+                            >
+                                체계적인 프로세스
+                            </motion.h2>
+                            <motion.p
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.3 }}
+                                className="text-xl text-gray-400 leading-relaxed font-tway"
+                            >
+                                브릿지마케팅만의 차별화된 프로세스로<br />
+                                최상의 결과를 만들어냅니다
+                            </motion.p>
+                        </div>
 
-                    <div className="grid md:grid-cols-3 gap-8 mb-16">
+                        <motion.div
+                            initial={{ opacity: 0, x: 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.4 }}
+                            className="relative"
+                        >
+                            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/30 to-indigo-500/30 blur-3xl" />
+                            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+                                <img
+                                    src="/images/process.jpg"
+                                    alt="Process"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        </motion.div>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-8">
                         {processes.map((process, index) => (
                             <motion.div
                                 key={process.title}
@@ -93,38 +97,19 @@ export function Process() {
                                 transition={{ delay: index * 0.2 }}
                                 className="group relative"
                             >
-                                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-indigo-600/20 to-purple-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
+                                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-indigo-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
                                 <div className="relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-purple-500/10 group-hover:border-purple-500/30 rounded-2xl p-8 transition-all duration-500">
                                     <div className="relative mb-8">
-                                        <motion.div
-                                            animate={{
-                                                scale: [1, 1.2, 1],
-                                                opacity: [0.5, 0.8, 0.5]
-                                            }}
-                                            transition={{
-                                                duration: 3,
-                                                repeat: Infinity,
-                                                ease: "easeInOut"
-                                            }}
-                                            className="absolute inset-0 bg-purple-500/20 blur-xl rounded-full"
-                                        />
                                         <div className="relative p-4 bg-gradient-to-br from-purple-500/20 to-indigo-500/20 rounded-xl backdrop-blur-sm border border-purple-500/20 group-hover:border-purple-500/40 transition-all duration-500 inline-block">
                                             {process.icon}
                                         </div>
                                     </div>
-                                    <h3 className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent group-hover:from-purple-400 group-hover:to-indigo-400 transition-all duration-500 mb-4">
+                                    <h3 className="text-2xl font-bold text-white group-hover:text-purple-300 transition-colors duration-500 mb-4 font-aggro">
                                         {process.title}
                                     </h3>
-                                    <p className="text-gray-400 whitespace-pre-line leading-relaxed">
+                                    <p className="text-gray-400 whitespace-pre-line leading-relaxed font-tway">
                                         {process.description}
                                     </p>
-                                    <motion.div
-                                        initial={{ scaleX: 0 }}
-                                        whileInView={{ scaleX: 1 }}
-                                        viewport={{ once: true }}
-                                        transition={{ duration: 0.8 }}
-                                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500"
-                                    />
                                 </div>
                             </motion.div>
                         ))}
@@ -135,30 +120,23 @@ export function Process() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.6 }}
-                        className="flex justify-center"
+                        className="flex justify-center mt-16"
                     >
                         <a
                             href="http://pf.kakao.com/_CYGdn/chat"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group relative px-10 py-6 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl font-tway text-lg overflow-hidden"
+                            className="group relative px-10 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-2xl font-tway text-lg overflow-hidden shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                            <div className="relative flex items-center">
+                            <span className="relative z-10 flex items-center">
                                 상담 시작하기
                                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                            </div>
-                            <motion.div
-                                initial={{ scale: 0 }}
-                                whileInView={{ scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.8, duration: 0.8 }}
-                                className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-indigo-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                            />
+                            </span>
+                            <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         </a>
                     </motion.div>
                 </div>
-            </motion.div>
+            </div>
         </section>
     );
 } 

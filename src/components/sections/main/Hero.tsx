@@ -41,12 +41,8 @@ export function Hero() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="text-5xl sm:text-7xl font-bold mb-8 font-aggro"
                     >
-                        <span className="bg-gradient-to-r from-white via-purple-300 to-indigo-300 bg-clip-text text-transparent">
-                            Your bridge to
-                        </span>
-                        <br />
-                        <span className="bg-gradient-to-r from-purple-400 via-indigo-400 to-white bg-clip-text text-transparent">
-                            success
+                        <span className="bg-gradient-to-r from-white via-purple-300 to-indigo-400 bg-clip-text text-transparent">
+                            Your bridge to success
                         </span>
                     </motion.h1>
 
