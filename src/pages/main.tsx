@@ -8,6 +8,8 @@ import { Services } from "@/components/sections/main/Services";
 import { Process } from "@/components/sections/main/Process";
 import { References } from "@/components/sections/main/References";
 import { About } from "@/components/sections/main/About";
+import { Marketing } from "@/components/sections/main/Marketing";
+import { Contact } from "@/components/sections/main/Contact";
 import { KakaoChatButton } from "@/components/common/kakao-chat-button";
 
 export function MainPage() {
@@ -35,7 +37,7 @@ export function MainPage() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        document.title = "Bridge Marketing - 디지털 마케팅의 새로운 기준";
+        document.title = "브릿지마케팅 - 디지털 마케팅의 새로운 기준";
         const timer = setTimeout(() => setIsLoading(false), 500);
         return () => clearTimeout(timer);
     }, []);
@@ -48,10 +50,12 @@ export function MainPage() {
             <Navbar />
             <main>
                 <Hero />
-                <Services />
-                <Process />
                 <References />
+                <Marketing />
                 <About />
+                <Process />
+                <Services />
+                <Contact />
             </main>
             <Footer />
         </div>
