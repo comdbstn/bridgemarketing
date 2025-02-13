@@ -3,40 +3,35 @@ import { motion } from "framer-motion";
 
 export function Footer() {
     return (
-        <footer className="w-full bg-gray-900 text-gray-300 py-16 border-t border-gray-800">
+        <footer className="w-full bg-gray-50 py-12 border-t">
             <div className="container mx-auto px-4">
-                <div className="max-w-6xl mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div className="max-w-4xl mx-auto">
+                    <div className="flex flex-col md:flex-row justify-between items-start gap-8">
                         {/* Company Info */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="space-y-6"
-                        >
-                            <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent font-aggro">
+                        <div className="space-y-2">
+                            <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
                                 브릿지마케팅
                             </h3>
-                            <div className="space-y-4">
-                                <div className="flex items-center gap-3">
-                                    <MapPin className="w-5 h-5 text-gray-400 flex-shrink-0" />
-                                    <span className="font-tway">서울특별시 관악구 신림로19길 46-3</span>
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-2">
+                                    <MapPin className="w-4 h-4 text-purple-500 flex-shrink-0" />
+                                    <span className="text-gray-600 hover:text-purple-600 transition-colors duration-200">서울특별시 관악구 신림로19길 46-3</span>
                                 </div>
-                                <div className="flex items-center gap-3">
-                                    <Phone className="w-5 h-5 text-gray-400 flex-shrink-0" />
-                                    <span className="font-tway">사업자등록번호: 405-06-65006</span>
+                                <div className="flex items-center gap-2">
+                                    <Phone className="w-4 h-4 text-purple-500 flex-shrink-0" />
+                                    <span className="text-gray-600 hover:text-purple-600 transition-colors duration-200">사업자등록번호: 405-06-65006</span>
                                 </div>
-                                <div className="flex items-center gap-3">
-                                    <Mail className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                                <div className="flex items-center gap-2">
+                                    <Mail className="w-4 h-4 text-purple-500 flex-shrink-0" />
                                     <a 
                                         href="mailto:director@bridgemarketing.xyz" 
-                                        className="hover:text-purple-400 transition-colors duration-200 font-tway"
+                                        className="text-gray-600 hover:text-purple-600 transition-colors duration-200"
                                     >
                                         director@bridgemarketing.xyz
                                     </a>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
 
                         {/* Services */}
                         <motion.div
@@ -94,18 +89,12 @@ export function Footer() {
                                 </a>
                             </div>
                         </motion.div>
-                    </div>
 
-                    {/* Copyright */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3 }}
-                        className="mt-16 pt-8 border-t border-gray-800 text-center text-sm text-gray-400 font-tway"
-                    >
-                        <p>© {new Date().getFullYear()} 브릿지마케팅. All rights reserved.</p>
-                    </motion.div>
+                        {/* Copyright */}
+                        <div className="text-sm text-gray-600 hover:text-purple-600 transition-colors duration-200">
+                            © {new Date().getFullYear()} 브릿지마케팅. All rights reserved.
+                        </div>
+                    </div>
                 </div>
             </div>
         </footer>
