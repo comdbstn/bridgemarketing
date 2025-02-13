@@ -12,6 +12,8 @@ export default {
                 tway: ['"Tway Fly"', "sans-serif"],
             },
             colors: {
+                background: "#000000",
+                foreground: "#ffffff",
                 primary: "#3b82f6",
                 secondary: "#64748b",
                 destructive: "#ef4444",
