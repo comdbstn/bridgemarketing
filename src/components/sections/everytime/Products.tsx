@@ -41,10 +41,10 @@ export const Products: React.FC = () => {
                         className="mb-12"
                     >
                         <span className="text-[#FF4B4B] font-semibold text-lg font-tway mb-6 block">
-                            BUSINESS PLAN SERVICE
+                            에브리타임 마케팅 서비스
                         </span>
                         <h2 className="text-[3.5rem] leading-tight font-bold mb-6 font-aggro bg-gradient-to-r from-[#FF4B4B] to-[#FF7070] bg-clip-text text-transparent">
-                            사업계획서 작성 서비스
+                            에브리타임 바이럴 마케팅
                         </h2>
                     </motion.div>
 
@@ -56,27 +56,27 @@ export const Products: React.FC = () => {
                         className="max-w-3xl"
                     >
                         <p className="text-2xl text-gray-700 font-tway leading-relaxed mb-10">
-                            전문가의 노하우와 체계적인 프로세스로
+                            다양한 게시판을 활용한 효과적인
                             <br />
-                            <span className="text-[#FF4B4B] font-semibold">맞춤형 사업계획서를 작성해드립니다.</span>
+                            <span className="text-[#FF4B4B] font-semibold">홍보 마케팅을 진행합니다.</span>
                         </p>
                         
                         <div className="space-y-6">
                             <div className="flex items-center text-gray-700 group">
                                 <ArrowRight className="w-6 h-6 text-[#FF4B4B] mr-3 group-hover:translate-x-1 transition-transform" />
-                                <span className="text-lg font-tway">정부지원사업 약 1,600종 커버</span>
+                                <span className="text-lg font-tway">전국 397개 대학교 커버리지</span>
                             </div>
                             <div className="flex items-center text-gray-700 group">
                                 <ArrowRight className="w-6 h-6 text-[#FF4B4B] mr-3 group-hover:translate-x-1 transition-transform" />
-                                <span className="text-lg font-tway">사업계획서 작성 전문가 직접 작성</span>
+                                <span className="text-lg font-tway">450만+ 대학생 사용자 보유</span>
                             </div>
                             <div className="flex items-center text-gray-700 group">
                                 <ArrowRight className="w-6 h-6 text-[#FF4B4B] mr-3 group-hover:translate-x-1 transition-transform" />
-                                <span className="text-lg font-tway">사업 아이템 분석 및 컨설팅</span>
+                                <span className="text-lg font-tway">학교별 맞춤형 마케팅 전략</span>
                             </div>
                             <div className="flex items-center text-gray-700 group">
                                 <ArrowRight className="w-6 h-6 text-[#FF4B4B] mr-3 group-hover:translate-x-1 transition-transform" />
-                                <span className="text-lg font-tway">맞춤형 사업계획서 작성</span>
+                                <span className="text-lg font-tway">실시간 모니터링 및 피드백</span>
                             </div>
                         </div>
                     </motion.div>
