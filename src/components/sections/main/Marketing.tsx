@@ -1,17 +1,21 @@
 import { motion } from "framer-motion";
+import { Bot, TrendingUp, Users } from "lucide-react";
 
 const stats = [
     {
+        icon: Bot,
         title: "개발 효율 증가",
         value: "300%",
         description: "AI 기반 자동화 시스템으로\n개발 효율성 대폭 향상"
     },
     {
+        icon: TrendingUp,
         title: "배 빠른 개발",
         value: "3",
         description: "웹/모바일 앱, AI 솔루션 등\n다양한 분야의 프로젝트 수행"
     },
     {
+        icon: Users,
         title: "배 저렴한 비용",
         value: "3",
         description: "높은 품질과 합리적인 비용으로\n고객 만족 실현"
@@ -66,14 +70,32 @@ export function Marketing() {
                         >
                             New Perspective
                         </motion.span>
-                        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 font-aggro leading-tight">
-                            AI 시대의 개발 비용<br />
-                            이제는 달라져야 합니다
-                        </h2>
-                        <p className="text-xl text-gray-400 max-w-3xl mx-auto font-tway">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                        >
+                            <h2 className="text-4xl sm:text-5xl font-bold mb-6 font-aggro leading-tight">
+                                <span className="bg-gradient-to-r from-white via-purple-200 to-indigo-200 bg-clip-text text-transparent">
+                                    AI 시대의 개발 비용
+                                </span>
+                                <br />
+                                <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
+                                    이제는 달라져야 합니다
+                                </span>
+                            </h2>
+                        </motion.div>
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.3 }}
+                            className="text-xl text-gray-400 max-w-3xl mx-auto font-tway"
+                        >
                             자체 개발 자동화 시스템으로<br />
                             AI의 기술 발전을 그대로 외주 비용에 녹여냈습니다
-                        </p>
+                        </motion.p>
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
@@ -88,11 +110,27 @@ export function Marketing() {
                             >
                                 <div className="absolute -inset-px bg-gradient-to-r from-purple-600/20 to-indigo-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
                                 <div className="relative bg-purple-500/5 backdrop-blur-xl border border-purple-500/10 rounded-2xl p-8 hover:border-purple-500/20 transition-all duration-500">
-                                    <h3 className="text-6xl font-bold text-white mb-4 font-aggro bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
-                                        {stat.value}
-                                    </h3>
-                                    <h4 className="text-xl font-bold text-white mb-3 font-aggro">{stat.title}</h4>
-                                    <p className="text-gray-400 whitespace-pre-line font-tway">{stat.description}</p>
+                                    <motion.div
+                                        initial={{ scale: 0.5, opacity: 0 }}
+                                        whileInView={{ scale: 1, opacity: 1 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: index * 0.2 }}
+                                        className="w-16 h-16 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500"
+                                    >
+                                        <stat.icon className="w-8 h-8 text-white" />
+                                    </motion.div>
+                                    <motion.div
+                                        initial={{ y: 20, opacity: 0 }}
+                                        whileInView={{ y: 0, opacity: 1 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: index * 0.3 }}
+                                    >
+                                        <h3 className="text-6xl font-bold mb-4 font-aggro bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
+                                            {stat.value}
+                                        </h3>
+                                        <h4 className="text-xl font-bold text-white mb-3 font-aggro">{stat.title}</h4>
+                                        <p className="text-gray-400 whitespace-pre-line font-tway">{stat.description}</p>
+                                    </motion.div>
                                 </div>
                             </motion.div>
                         ))}
@@ -102,23 +140,40 @@ export function Marketing() {
                         {achievements.map((achievement, index) => (
                             <motion.div
                                 key={achievement.label}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
+                                initial={{ opacity: 0, scale: 0.5 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="text-center p-6 rounded-2xl bg-purple-500/5 border border-purple-500/10"
+                                whileHover={{ scale: 1.05 }}
+                                className="relative group"
                             >
-                                <h3 className="text-3xl sm:text-4xl font-bold text-white mb-2 font-aggro">
-                                    {achievement.value}
-                                </h3>
-                                <p className="text-gray-400 font-tway">{achievement.label}</p>
+                                <div className="absolute -inset-px bg-gradient-to-r from-purple-600/20 to-indigo-600/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                                <div className="relative text-center p-6 rounded-2xl bg-purple-500/5 border border-purple-500/10 group-hover:border-purple-500/30 transition-all duration-300">
+                                    <motion.h3
+                                        initial={{ y: 10, opacity: 0 }}
+                                        whileInView={{ y: 0, opacity: 1 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: index * 0.2 }}
+                                        className="text-3xl sm:text-4xl font-bold mb-2 font-aggro bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent"
+                                    >
+                                        {achievement.value}
+                                    </motion.h3>
+                                    <motion.p
+                                        initial={{ y: 10, opacity: 0 }}
+                                        whileInView={{ y: 0, opacity: 1 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: index * 0.3 }}
+                                        className="text-gray-400 font-tway"
+                                    >
+                                        {achievement.label}
+                                    </motion.p>
+                                </div>
                             </motion.div>
                         ))}
                     </div>
                 </div>
             </div>
 
-            {/* Decorative Elements */}
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
         </section>
     );
