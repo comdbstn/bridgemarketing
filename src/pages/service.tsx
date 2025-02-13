@@ -5,6 +5,9 @@ import { Navbar } from "@/components/common/Navbar";
 import { Footer } from "@/components/common/Footer";
 import { Loading } from "@/components/ui/loading";
 import { ArrowRight } from "lucide-react";
+import { BackButton } from "@/components/common/back-button";
+import { KakaoChatButton } from "@/components/common/kakao-chat-button";
+import { FileText, Code, GraduationCap, Building2 } from "lucide-react";
 
 interface Service {
     title: string;
@@ -15,7 +18,18 @@ interface Service {
     link: string;
     category: string;
     gradient: string;
+    icon: React.ComponentType<{ className?: string }>;
 }
+
+const glowAnimation = {
+    opacity: [0.4, 0.6, 0.4],
+    scale: [1, 1.2, 1],
+    transition: {
+        duration: 3,
+        repeat: Infinity,
+        ease: "easeInOut"
+    }
+};
 
 export default function ServicePage() {
     const [isLoading, setIsLoading] = useState(true);
@@ -55,33 +69,36 @@ export default function ServicePage() {
     const services: Service[] = [
         {
             title: "사업계획서 첨삭",
-            description: "정부지원사업계획서 전문 컨설팅, 예비창업자와 초기창업자를 위한 맞춤형 첨삭 서비스입니다.",
-            features: ["정부지원사업 1,600종 커버", "만족도 100%, 1차 합격률 92%", "최저가 보장제"],
+            description: "전문가의 체계적인 프로세스로 성공적인 사업계획서를 작성합니다",
+            features: ["전문가 작성", "품질 보장", "합리적 비용", "신속한 작성"],
             minPrice: "50만원",
             image: "/logo/business-plan.png",
             link: "/business-plan",
             category: "business",
-            gradient: "from-blue-500 to-purple-500"
+            gradient: "from-blue-400 to-indigo-400",
+            icon: FileText
         },
         {
             title: "개발 외주",
-            description: "AI AgentForce를 통한 최고의 프로덕트를, 최고의 가격에 제공하는 IT 개발 에이전시입니다.",
-            features: ["53% 개발 효율 증가", "3배 빠른 개발", "3배 저렴한 비용"],
+            description: "AI 기반 개발 플랫폼으로 최고의 프로덕트를 합리적인 가격에 제공합니다",
+            features: ["AI 기반 개발", "빠른 개발 속도", "저렴한 비용", "높은 품질"],
             minPrice: "100만원",
             image: "/logo/boltlab.png",
             link: "/boltlab",
             category: "business",
-            gradient: "from-[#626ae2] to-[#95c5fa]"
+            gradient: "from-purple-400 to-indigo-400",
+            icon: Code
         },
         {
             title: "에브리타임",
-            description: "대학생 커뮤니티 1위 에브리타임에서 진행되는 마케팅 서비스입니다.",
-            features: ["대학생 타겟 마케팅", "실시간 반응 분석", "맞춤형 컨텐츠 제작"],
+            description: "450만 대학생이 사용하는 에브리타임에서 효과적인 마케팅을 진행합니다",
+            features: ["대학생 타겟팅", "높은 도달률", "실시간 피드백", "데이터 분석"],
             minPrice: "1만원",
             image: "/logo/everytime.png",
             link: "/everytime",
             category: "community",
-            gradient: "from-[#f03e3e] to-[#ff8787]"
+            gradient: "from-red-400 to-pink-400",
+            icon: GraduationCap
         },
         {
             title: "네이버 카페",
@@ -91,7 +108,8 @@ export default function ServicePage() {
             image: "/logo/navercafe.png",
             link: "/naver-cafe",
             category: "naver",
-            gradient: "from-[#03AC0E] to-[#02891B]"
+            gradient: "from-[#03AC0E] to-[#02891B]",
+            icon: Building2
         },
         {
             title: "네이버 플레이스",
@@ -101,17 +119,19 @@ export default function ServicePage() {
             image: "/logo/naverplace.png",
             link: "/naver-place",
             category: "naver",
-            gradient: "from-[#03AC0E] to-[#02891B]"
+            gradient: "from-[#03AC0E] to-[#02891B]",
+            icon: Building2
         },
         {
             title: "블라인드",
-            description: "직장인들의 솔직한 이야기가 있는 블라인드에서 진행되는 마케팅 서비스입니다.",
-            features: ["직장인 타겟 마케팅", "실시간 모니터링", "전문가 컨설팅"],
+            description: "800만 직장인이 사용하는 블라인드에서 자연스러운 바이럴마케팅을 진행합니다",
+            features: ["직장인 타겟팅", "자연스러운 바이럴", "높은 신뢰도", "실시간 모니터링"],
             minPrice: "5만원",
             image: "/logo/blind.png",
             link: "/blind",
             category: "community",
-            gradient: "from-gray-600 to-gray-800"
+            gradient: "from-blue-400 to-cyan-400",
+            icon: Building2
         },
         {
             title: "틱톡",
@@ -121,7 +141,8 @@ export default function ServicePage() {
             image: "/logo/tiktok.png",
             link: "/tiktok",
             category: "influencer",
-            gradient: "from-[#00F2EA] to-[#FF0050]"
+            gradient: "from-[#00F2EA] to-[#FF0050]",
+            icon: Building2
         }
     ];
 
@@ -148,144 +169,108 @@ export default function ServicePage() {
     };
 
     return (
-        <div className="min-h-screen bg-black">
-            <Navbar />
-            <main>
-                <section className="pt-40 pb-20">
-                    <div className="container mx-auto px-4">
+        <div className="min-h-screen bg-black overflow-hidden relative">
+            <BackButton />
+            <KakaoChatButton />
+
+            {/* Background Elements */}
+            <motion.div 
+                className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-black to-indigo-900/20"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+            />
+            <motion.div
+                className="absolute inset-0"
+                initial={{ opacity: 0 }}
+                animate={glowAnimation}
+            >
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,80,220,0.15),transparent_50%)]" />
+            </motion.div>
+
+            {/* Content */}
+            <div className="container mx-auto px-4 py-32 relative z-10">
+                <div className="max-w-7xl mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="text-center mb-20"
+                    >
+                        <motion.span
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.5 }}
+                            className="inline-block px-8 py-3 bg-purple-500/10 rounded-full text-purple-300 text-lg border-2 border-purple-500/20 backdrop-blur-sm font-tway mb-8"
+                        >
+                            Our Services
+                        </motion.span>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            className="max-w-4xl mx-auto text-center"
+                            transition={{ delay: 0.2 }}
                         >
-                            <h1 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-6 font-aggro">
-                                마케팅 서비스
-                            </h1>
-                            <p className="text-xl text-gray-400 mb-12 font-tway">
-                                브릿지마케팅의 다양한 서비스를 만나보세요
-                            </p>
-                            <div className="flex flex-wrap justify-center gap-4">
-                                {categories.map((category, index) => (
-                                    <motion.button
-                                        key={category.id}
-                                        onClick={() => setSelectedCategory(category.id)}
-                                        className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
-                                            selectedCategory === category.id
-                                                ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white"
-                                                : "bg-gray-800 text-gray-400 hover:bg-gray-700"
-                                        }`}
-                                        whileHover={{ scale: 1.05 }}
-                                        whileTap={{ scale: 0.95 }}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.4, delay: index * 0.1 }}
-                                    >
-                                        {category.name}
-                                    </motion.button>
-                                ))}
-                            </div>
+                            <h2 className="text-5xl sm:text-6xl font-bold mb-8 font-aggro">
+                                <span className="bg-gradient-to-r from-white via-purple-200 to-indigo-200 bg-clip-text text-transparent">
+                                    브릿지마케팅의
+                                </span>
+                                <br />
+                                <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
+                                    모든 서비스
+                                </span>
+                            </h2>
                         </motion.div>
-                    </div>
-                </section>
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3 }}
+                            className="text-xl text-gray-400 max-w-3xl mx-auto font-tway"
+                        >
+                            성공적인 비즈니스를 위한 최적의 솔루션을 제공합니다
+                        </motion.p>
+                    </motion.div>
 
-                <section className="py-24">
-                    <div className="container mx-auto px-4">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {filteredServices.map((service, index) => (
-                                <motion.div
-                                    key={service.title}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                                    className="group relative"
-                                >
-                                    <div className="absolute inset-0.5 bg-gradient-to-r opacity-50 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur-sm"></div>
-                                    <div className="relative bg-gray-900 rounded-2xl p-8 hover:bg-gray-800/90 transition-colors">
-                                        <div className="flex items-center justify-center mb-6">
-                                            <img 
-                                                src={service.image} 
-                                                alt={service.title} 
-                                                className="h-12 group-hover:scale-110 transition-transform duration-300"
-                                            />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {filteredServices.map((service, index) => (
+                            <motion.div
+                                key={service.title}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.1 }}
+                                className="relative group"
+                            >
+                                <Link to={service.link} className="block">
+                                    <div className="absolute -inset-px bg-gradient-to-r from-purple-600/20 to-indigo-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
+                                    <div className="relative bg-purple-500/5 backdrop-blur-xl border-2 border-purple-500/10 rounded-2xl p-8 hover:border-purple-500/30 transition-all duration-500">
+                                        <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${service.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500`}>
+                                            <service.icon className="w-8 h-8 text-white" />
                                         </div>
-                                        <h3 className="text-2xl font-bold text-white mb-4 text-center font-aggro">
+                                        <h3 className={`text-2xl font-bold mb-4 font-aggro bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}>
                                             {service.title}
                                         </h3>
-                                        <p className="text-gray-400 mb-6 text-center font-tway">
+                                        <p className="text-gray-400 font-tway mb-8">
                                             {service.description}
                                         </p>
-                                        <ul className="space-y-3 mb-6">
-                                            {service.features.map((feature, featureIndex) => (
-                                                <motion.li
-                                                    key={feature}
-                                                    initial={{ opacity: 0, x: -20 }}
-                                                    animate={{ opacity: 1, x: 0 }}
-                                                    transition={{ duration: 0.3, delay: index * 0.1 + featureIndex * 0.1 }}
-                                                    className="flex items-center text-gray-400 font-tway"
-                                                >
-                                                    <span className="w-1.5 h-1.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mr-2" />
-                                                    {feature}
-                                                </motion.li>
+                                        <div className="grid grid-cols-2 gap-4">
+                                            {service.features.map((feature, i) => (
+                                                <div key={i} className="flex items-center gap-2">
+                                                    <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${service.gradient}`} />
+                                                    <span className="text-sm text-gray-400 font-tway">{feature}</span>
+                                                </div>
                                             ))}
-                                        </ul>
-                                        <div className="text-center mb-6">
-                                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 font-semibold font-tway">
-                                                최소 {service.minPrice}
-                                            </span>
                                         </div>
-                                        <Link
-                                            to={service.link}
-                                            state={handleServiceClick()}
-                                            className="group/button flex items-center justify-center w-full py-3 px-6 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-lg text-center transition-all duration-300 font-tway"
-                                        >
-                                            자세히 보기
-                                            <ArrowRight className="w-4 h-4 ml-2 group-hover/button:translate-x-1 transition-transform" />
-                                        </Link>
+                                        <div className="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                            <ArrowRight className="w-6 h-6 text-purple-400" />
+                                        </div>
                                     </div>
-                                </motion.div>
-                            ))}
-                        </div>
+                                </Link>
+                            </motion.div>
+                        ))}
                     </div>
-                </section>
+                </div>
+            </div>
 
-                <section className="py-24 relative overflow-hidden">
-                    <motion.div 
-                        className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(147,51,234,0.1),transparent_70%)]"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.6 }}
-                    />
-                    <div className="container mx-auto px-4">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                            className="max-w-4xl mx-auto text-center"
-                        >
-                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-aggro">
-                                맞춤형 서비스가 필요하신가요?
-                            </h2>
-                            <p className="text-xl text-gray-400 mb-8 font-tway">
-                                브릿지마케팅의 전문가와 상담하세요
-                            </p>
-                            <motion.a
-                                href="http://pf.kakao.com/_CYGdn/chat"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 font-tway"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                무료 상담하기
-                                <ArrowRight className="w-5 h-5 ml-2" />
-                            </motion.a>
-                        </motion.div>
-                    </div>
-                </section>
-            </main>
-            <Footer />
+            {/* Decorative Elements */}
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
         </div>
     );
 } 
