@@ -1,7 +1,6 @@
 import { Card } from "@/components/ui/card";
-import { motion, useScroll } from "framer-motion";
-import { useRef } from "react";
-import { MessageSquare, FileEdit, Upload, BarChart, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { MessageSquare, FileEdit, Upload, BarChart } from "lucide-react";
 
 const steps = [
     {
@@ -38,14 +37,8 @@ const steps = [
 ];
 
 export function Process() {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start end", "end start"],
-    });
-
     return (
-        <section className='py-20 bg-white overflow-hidden' ref={containerRef}>
+        <section className='py-20 bg-white overflow-hidden'>
             <div className='container mx-auto px-4'>
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}

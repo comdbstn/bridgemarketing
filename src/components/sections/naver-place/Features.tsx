@@ -60,9 +60,19 @@ export function Features() {
 
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8'>
                     {features.map((feature, index) => (
-                        <motion.div key={index} variants={itemVariants} className='h-full'>
+                        <motion.div 
+                            key={feature.title}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className='h-full'
+                        >
                             <Card className='h-full hover:shadow-lg transition-shadow duration-300'>
                                 <div className='p-6'>
+                                    <div className='w-12 h-12 rounded-lg bg-gradient-to-r from-[#03AC0E] to-[#02891B] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
+                                        <feature.icon className='w-6 h-6 text-white' />
+                                    </div>
                                     <h3 className='text-xl font-bold mb-2 text-gray-900 font-tway'>{feature.title}</h3>
                                     <p className='text-gray-800 font-tway'>{feature.description}</p>
                                 </div>

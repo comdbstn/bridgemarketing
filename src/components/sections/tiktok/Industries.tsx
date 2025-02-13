@@ -75,7 +75,7 @@ const Industries: React.FC = () => {
                         틱톡 시딩 마케팅을 통해 성공적인 결과를 얻고 있습니다.
                     </motion.p>
                     <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8'>
-                        {industries.map((industry, index) => (
+                        {industries.map((industry) => (
                             <motion.div
                                 key={industry.title}
                                 variants={itemVariants}

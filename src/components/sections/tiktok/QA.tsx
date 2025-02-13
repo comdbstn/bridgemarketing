@@ -2,40 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, MessageCircle } from "lucide-react";
 
-interface QAItemProps {
-    question: string;
-    answer: string;
-    isOpen: boolean;
-    onClick: () => void;
-}
-
-const QAItem: React.FC<QAItemProps> = ({ question, answer, isOpen, onClick }) => {
-    return (
-        <div className='border-b border-gray-200 last:border-0'>
-            <button className='w-full py-6 flex justify-between items-center text-left' onClick={onClick}>
-                <span className='text-lg font-bold text-gray-900'>{question}</span>
-                <ChevronDown
-                    className={`w-5 h-5 text-gray-500 transition-transform duration-300 ${isOpen ? "transform rotate-180" : ""}`}
-                />
-            </button>
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className='overflow-hidden'
-                    >
-                        <p className='pb-6 text-gray-800 font-tway'>{answer}</p>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </div>
-    );
-};
-
-const QA: React.FC = () => {
+export const QA: React.FC = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     const handleToggle = (index: number) => {
