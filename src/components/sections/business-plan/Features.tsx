@@ -51,7 +51,7 @@ export function Features() {
                         viewport={{ once: true }}
                         className="text-lg text-gray-600"
                     >
-                        AI 기술과 전문성으로 최고의 사업계획서를 작성합니다
+                        업계에 대한 깊은 이해도와 전문성으로 사업계획서를 작성합니다
                     </motion.p>
                 </motion.div>
 

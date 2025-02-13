@@ -15,28 +15,20 @@ import { ImageModal } from "@/components/ui/image-modal";
 
 const referenceImages = [
     {
-        src: "/images/business-plan/references/general-reference.png",
-        alt: "일반 레퍼런스"
+        src: "/images/business-plan/references/01.png",
+        alt: "레퍼런스 1"
     },
     {
-        src: "/images/business-plan/references/askme-ai.png",
-        alt: "애스크미 AI바우처"
+        src: "/images/business-plan/references/02.png",
+        alt: "레퍼런스 2"
     },
     {
-        src: "/images/business-plan/references/business-plan-ref2.png",
-        alt: "사업계획서 레퍼런스"
+        src: "/images/business-plan/references/03.png",
+        alt: "레퍼런스 3"
     },
     {
-        src: "/images/business-plan/references/analysis-report.png",
-        alt: "분석 보고서 리포트"
-    },
-    {
-        src: "/images/business-plan/references/zolv-business.png",
-        alt: "ZOLV 신사업창업사관학교"
-    },
-    {
-        src: "/images/business-plan/references/GYMPT.png",
-        alt: "GYMPT"
+        src: "/images/business-plan/references/04.png",
+        alt: "레퍼런스 4"
     }
 ];
 
