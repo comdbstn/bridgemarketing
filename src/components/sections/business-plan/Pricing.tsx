@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, FileText, FileCheck, Presentation, BarChart, Building2, PieChart, FileSpreadsheet } from "lucide-react";
+import { Check } from "lucide-react";
 import { useState } from "react";
 
 interface ServicePlan {
@@ -15,26 +15,6 @@ interface Services {
 
 export function Pricing() {
     const [selectedService, setSelectedService] = useState<string>("정부지원사업계획서");
-
-    const getServiceIcon = (service: string, plan: string) => {
-        switch(service) {
-            case "정부지원사업계획서":
-                return plan === "Standard" ? FileText : FileCheck;
-            case "회사소개서":
-                return plan === "Standard" ? Building2 : Presentation;
-            case "IR":
-                switch(plan) {
-                    case "Standard":
-                        return FileSpreadsheet;
-                    case "Deluxe":
-                        return PieChart;
-                    default:
-                        return BarChart;
-                }
-            default:
-                return BarChart;
-        }
-    };
 
     const services: Services = {
         "정부지원사업계획서": [
@@ -199,44 +179,41 @@ export function Pricing() {
 
                 {/* 요금제 카드 */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                    {services[selectedService].map((plan: ServicePlan, index: number) => {
-                        const Icon = getServiceIcon(selectedService, plan.name);
-                        return (
-                            <motion.div
-                                key={plan.name}
-                                className="relative group"
-                            >
-                                <div className="absolute inset-0.5 bg-gradient-to-r from-[#626ae2] to-[#7884eb] opacity-50 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur-sm" />
-                                <div className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                                    <div className="text-center mb-8">
-                                        <h3 className="text-2xl font-bold text-gray-900 mb-2 font-aggro">{plan.name}</h3>
-                                        <p className="text-gray-600 mb-4 min-h-[48px] font-tway">{plan.description}</p>
-                                        <div className="text-[#626ae2] text-3xl font-bold font-tway">{plan.price}</div>
-                                    </div>
-                                    <ul className="space-y-4">
-                                        {plan.features.map((feature: string) => (
-                                            <li key={feature} className="flex items-start gap-2">
-                                                <div className="rounded-full p-1 bg-gradient-to-r from-[#626ae2] to-[#7884eb] mt-0.5">
-                                                    <Check className="w-3 h-3 text-white" />
-                                                </div>
-                                                <span className="text-gray-600 font-tway">{feature}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    <div className="mt-8">
-                                        <a
-                                            href="http://pf.kakao.com/_CYGdn/chat"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="block w-full py-3 px-6 text-center text-white bg-gradient-to-r from-[#626ae2] to-[#7884eb] rounded-lg hover:from-[#7884eb] hover:to-[#626ae2] transition-all duration-300 font-tway"
-                                        >
-                                            시작하기
-                                        </a>
-                                    </div>
+                    {services[selectedService].map((plan: ServicePlan) => (
+                        <motion.div
+                            key={plan.name}
+                            className="relative group"
+                        >
+                            <div className="absolute inset-0.5 bg-gradient-to-r from-[#626ae2] to-[#7884eb] opacity-50 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur-sm" />
+                            <div className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <div className="text-center mb-8">
+                                    <h3 className="text-2xl font-bold text-gray-900 mb-2 font-aggro">{plan.name}</h3>
+                                    <p className="text-gray-600 mb-4 min-h-[48px] font-tway">{plan.description}</p>
+                                    <div className="text-[#626ae2] text-3xl font-bold font-tway">{plan.price}</div>
                                 </div>
-                            </motion.div>
-                        );
-                    })}
+                                <ul className="space-y-4">
+                                    {plan.features.map((feature: string) => (
+                                        <li key={feature} className="flex items-start gap-2">
+                                            <div className="rounded-full p-1 bg-gradient-to-r from-[#626ae2] to-[#7884eb] mt-0.5">
+                                                <Check className="w-3 h-3 text-white" />
+                                            </div>
+                                            <span className="text-gray-600 font-tway">{feature}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                                <div className="mt-8">
+                                    <a
+                                        href="http://pf.kakao.com/_CYGdn/chat"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block w-full py-3 px-6 text-center text-white bg-gradient-to-r from-[#626ae2] to-[#7884eb] rounded-lg hover:from-[#7884eb] hover:to-[#626ae2] transition-all duration-300 font-tway"
+                                    >
+                                        시작하기
+                                    </a>
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </section>
