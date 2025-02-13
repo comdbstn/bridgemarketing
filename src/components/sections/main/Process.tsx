@@ -106,7 +106,7 @@ export function Process() {
                                 <div className="absolute -inset-px bg-gradient-to-r from-purple-600/20 to-indigo-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
                                 <div className="relative bg-purple-500/5 backdrop-blur-xl border-2 border-purple-500/10 rounded-2xl p-8 hover:border-purple-500/30 transition-all duration-500">
                                     <div className="relative mb-8">
-                                        <div className={`absolute -top-4 left-6 w-8 h-8 rounded-full bg-gradient-to-r ${process.gradient} flex items-center justify-center text-white font-bold shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                                        <div className={`absolute -top-10 left-0 w-10 h-10 rounded-full bg-gradient-to-r ${process.gradient} flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                                             {process.number}
                                         </div>
                                         <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${process.gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}>
