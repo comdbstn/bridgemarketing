@@ -37,45 +37,53 @@ const steps = [
 
 export function Process() {
     return (
-        <section className='py-20 bg-gradient-to-br from-[#626ae2]/5 to-white overflow-hidden'>
-            <div className='container mx-auto px-4'>
+        <section className='py-20 relative overflow-hidden bg-gradient-to-br from-white to-[#626ae2]/5'>
+            <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="relative group mb-16 inline-block"
+                    className="text-center mb-16"
                 >
-                    <div className="absolute -inset-1 bg-gradient-to-r from-[#626ae2] to-[#7884eb] opacity-50 group-hover:opacity-100 transition-all duration-300 rounded-2xl blur-[3px] group-hover:blur-[5px]" />
-                    <div className="relative text-center bg-white rounded-2xl p-8">
-                        <h2 className='text-4xl font-bold text-gray-900 mb-4 font-aggro'>
-                            작성 프로세스
-                        </h2>
-                        <p className='text-[#626ae2] font-tway'>
-                            체계적인 프로세스로 완벽한 사업계획서를 작성합니다
-                        </p>
-                    </div>
+                    <motion.span
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5 }}
+                        className="text-center mb-16 inline-block"
+                    >
+                        <span className="px-6 py-3 bg-[#626ae2]/10 rounded-full text-[#626ae2] text-sm border border-[#626ae2]/20 backdrop-blur-sm">
+                            PROCESS
+                        </span>
+                    </motion.span>
+                    <h2 className='text-4xl font-bold text-gray-900 mb-4 font-aggro'>
+                        작성 프로세스
+                    </h2>
+                    <p className='text-[#626ae2] font-tway'>
+                        체계적인 프로세스로 완벽한 사업계획서를 작성합니다
+                    </p>
                 </motion.div>
 
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8'>
                     {steps.map((step, index) => (
                         <motion.div
                             key={step.title}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
                             className="relative group"
                         >
                             <div className="absolute -inset-0.5 bg-gradient-to-r from-[#626ae2] to-[#7884eb] opacity-50 group-hover:opacity-100 transition-all duration-300 rounded-2xl blur-[2px] group-hover:blur-[3px]" />
-                            <div className="relative bg-white rounded-2xl p-8">
+                            <div className="relative bg-white rounded-2xl p-8 h-full">
                                 <div className='flex flex-col h-full'>
                                     {/* Number Badge */}
-                                    <div className={`absolute -top-4 left-6 w-8 h-8 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center text-white font-bold shadow-lg`}>
+                                    <div className={`absolute -top-4 left-6 w-8 h-8 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center text-white font-bold shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                                         {step.number}
                                     </div>
 
                                     {/* Icon */}
-                                    <div className={`w-16 h-16 rounded-lg bg-gradient-to-r ${step.color} flex items-center justify-center mb-6`}>
+                                    <div className={`w-16 h-16 rounded-lg bg-gradient-to-r ${step.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                                         <step.icon className="w-8 h-8 text-white" />
                                     </div>
 
