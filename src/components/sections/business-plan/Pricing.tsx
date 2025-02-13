@@ -160,20 +160,19 @@ export function Pricing() {
     };
 
     return (
-        <section className="py-20 bg-[#f8faff]">
+        <section className="py-20 bg-gradient-to-br from-[#626ae2]/10 to-[#7884eb]/5">
             <div className="container mx-auto px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
-                    className="text-center mb-12"
+                    className="text-center mb-16"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4 font-aggro">
                         서비스 요금제
                     </h2>
-                    <p className="text-lg text-gray-600">
-                        프리랜서 플랫폼 판매자 비교 첨삭 완료 기준 최저가
+                    <p className="text-xl text-gray-600 font-tway">
+                        합리적인 가격으로 최고의 서비스를 제공합니다
                     </p>
                 </motion.div>
 
@@ -205,55 +204,35 @@ export function Pricing() {
                         return (
                             <motion.div
                                 key={plan.name}
-                                className="flex flex-col p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                className="relative group"
                             >
-                                {/* 아이콘 */}
-                                <div className="flex justify-center items-center h-16">
-                                    <div className="w-12 h-12 rounded-full bg-[#626ae2]/10 flex items-center justify-center">
-                                        <Icon className="w-6 h-6 text-[#626ae2]" />
+                                <div className="absolute inset-0.5 bg-gradient-to-r from-[#626ae2] to-[#7884eb] opacity-50 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur-sm" />
+                                <div className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                    <div className="text-center mb-8">
+                                        <h3 className="text-2xl font-bold text-gray-900 mb-2 font-aggro">{plan.name}</h3>
+                                        <p className="text-gray-600 mb-4 min-h-[48px] font-tway">{plan.description}</p>
+                                        <div className="text-[#626ae2] text-3xl font-bold font-tway">{plan.price}</div>
                                     </div>
-                                </div>
-
-                                {/* 이름 & 가격 */}
-                                <div className="text-center mb-4">
-                                    <h3 className="text-xl font-bold text-gray-900 mb-1">{plan.name}</h3>
-                                    <div className="flex flex-col items-center">
-                                        <p className="text-2xl font-bold text-[#626ae2]">{plan.price}</p>
-                                        <p className="text-sm text-gray-500">/ 1회</p>
-                                    </div>
-                                </div>
-
-                                {/* 설명 */}
-                                <div className="bg-gray-50 p-3 rounded-lg mb-4">
-                                    <p className="text-gray-600 text-center text-sm">{plan.description}</p>
-                                </div>
-
-                                {/* 주요 혜택 */}
-                                <div className="flex-1">
-                                    <h4 className="font-bold text-base mb-2 text-gray-900 text-center">주요 혜택</h4>
-                                    <ul className="space-y-1.5">
+                                    <ul className="space-y-4">
                                         {plan.features.map((feature: string) => (
-                                            <li key={feature} className="flex items-start">
-                                                <Check className="w-4 h-4 text-[#626ae2] mr-2 mt-0.5 flex-shrink-0" />
-                                                <span className="text-gray-600 text-sm">{feature}</span>
+                                            <li key={feature} className="flex items-start gap-2">
+                                                <div className="rounded-full p-1 bg-gradient-to-r from-[#626ae2] to-[#7884eb] mt-0.5">
+                                                    <Check className="w-3 h-3 text-white" />
+                                                </div>
+                                                <span className="text-gray-600 font-tway">{feature}</span>
                                             </li>
                                         ))}
                                     </ul>
-                                </div>
-
-                                {/* 시작하기 버튼 */}
-                                <div className="mt-4 pt-4 border-t border-gray-100">
-                                    <a
-                                        href="http://pf.kakao.com/_CYGdn/chat"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="block w-full py-2.5 px-4 bg-[#626ae2] hover:bg-[#7884eb] text-white font-medium rounded-lg text-center transition-colors duration-300"
-                                    >
-                                        시작하기
-                                    </a>
+                                    <div className="mt-8">
+                                        <a
+                                            href="http://pf.kakao.com/_CYGdn/chat"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="block w-full py-3 px-6 text-center text-white bg-gradient-to-r from-[#626ae2] to-[#7884eb] rounded-lg hover:from-[#7884eb] hover:to-[#626ae2] transition-all duration-300 font-tway"
+                                        >
+                                            시작하기
+                                        </a>
+                                    </div>
                                 </div>
                             </motion.div>
                         );
