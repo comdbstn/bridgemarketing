@@ -1,26 +1,29 @@
 import { motion } from "framer-motion";
-import { ArrowRight, FileSearch, FileEdit, FileCheck, Presentation } from "lucide-react";
+import { FileSearch, FileEdit, FileCheck, Presentation } from "lucide-react";
 
 const processes = [
     {
         number: 1,
         icon: FileSearch,
         title: "상담 및 분석",
-        description: "현재 상황과 목표를 파악하고 최적의 마케팅 전략을 수립합니다",
+        description:
+            "현재 상황과 목표를 파악하고 최적의 마케팅 전략을 수립합니다",
         gradient: "from-purple-400 to-pink-400"
     },
     {
         number: 2,
         icon: FileEdit,
         title: "전문가 작업 진행",
-        description: "각 분야 전문가들이 1차 작업물을 신속하고 심도 있게 작성하고 전달 드립니다",
+        description:
+            "각 분야 전문가들이 1차 작업물을 신속하고 심도 있게 작성하고 전달 드립니다",
         gradient: "from-blue-400 to-indigo-400"
     },
     {
         number: 3,
         icon: FileCheck,
         title: "피드백 반영",
-        description: "대표님께서 1차 초안에 대한 피드백을 작성하여 전달해주시면 반영합니다",
+        description:
+            "대표님께서 1차 초안에 대한 피드백을 작성하여 전달해주시면 반영합니다",
         gradient: "from-purple-400 to-indigo-400"
     },
     {
@@ -57,9 +60,11 @@ export function Process() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5 }}
-                            className="inline-block px-8 py-3 bg-purple-500/10 rounded-full text-purple-300 text-lg border-2 border-purple-500/20 backdrop-blur-sm font-tway mb-8"
+                            className="text-center mb-16 inline-block"
                         >
-                            Our Process
+                            <span className="px-8 py-3 bg-purple-500/10 rounded-full text-purple-300 text-lg border-2 border-purple-500/20 backdrop-blur-sm font-tway">
+                                Our Process
+                            </span>
                         </motion.span>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -114,27 +119,6 @@ export function Process() {
                             </motion.div>
                         ))}
                     </div>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.6 }}
-                        className="flex justify-center mt-16"
-                    >
-                        <a
-                            href="http://pf.kakao.com/_CYGdn/chat"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group relative px-10 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-2xl font-tway text-lg overflow-hidden shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300"
-                        >
-                            <span className="relative z-10 flex items-center">
-                                상담 시작하기
-                                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                            </span>
-                            <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        </a>
-                    </motion.div>
                 </div>
             </div>
 

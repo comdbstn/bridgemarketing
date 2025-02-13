@@ -24,7 +24,7 @@ const stats = [
 
 const achievements = [
     {
-        value: "50+",
+        value: "100+",
         label: "프로젝트 완수"
     },
     {
