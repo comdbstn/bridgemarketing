@@ -40,22 +40,22 @@ export function Process() {
     return (
         <section className='py-20 bg-gradient-to-br from-[#626ae2]/5 to-white overflow-hidden'>
             <div className='container mx-auto px-4'>
-                <motion.h2
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className='text-4xl font-bold text-center mb-4 text-gray-900 font-aggro'
+                    className="relative group mb-16 inline-block"
                 >
-                    작성 프로세스
-                </motion.h2>
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className='text-[#626ae2] text-center mb-16 max-w-2xl mx-auto font-tway'
-                >
-                    체계적인 프로세스로 완벽한 사업계획서를 작성합니다
-                </motion.p>
+                    <div className="absolute -inset-1 bg-gradient-to-r from-[#626ae2] to-[#7884eb] opacity-50 group-hover:opacity-100 transition-all duration-300 rounded-2xl blur-[3px] group-hover:blur-[5px]" />
+                    <div className="relative text-center bg-white rounded-2xl p-8">
+                        <h2 className='text-4xl font-bold text-gray-900 mb-4 font-aggro'>
+                            작성 프로세스
+                        </h2>
+                        <p className='text-[#626ae2] font-tway'>
+                            체계적인 프로세스로 완벽한 사업계획서를 작성합니다
+                        </p>
+                    </div>
+                </motion.div>
 
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative'>
                     {steps.map((step, index) => (
@@ -65,8 +65,10 @@ export function Process() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
+                            className="relative group"
                         >
-                            <Card className='p-6 relative h-full bg-white hover:shadow-lg transition-shadow duration-300'>
+                            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#626ae2] to-[#7884eb] opacity-50 group-hover:opacity-100 transition-all duration-300 rounded-2xl blur-[2px] group-hover:blur-[3px]" />
+                            <div className="relative bg-white rounded-2xl p-8">
                                 <div className='flex flex-col h-full'>
                                     {/* Number Badge */}
                                     <div className={`absolute -top-4 left-6 w-8 h-8 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center text-white font-bold shadow-lg`}>
@@ -74,15 +76,15 @@ export function Process() {
                                     </div>
 
                                     {/* Icon */}
-                                    <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${step.color} flex items-center justify-center mb-4 mt-2 shadow-md`}>
-                                        <step.icon className="w-6 h-6 text-white" />
+                                    <div className={`w-16 h-16 rounded-lg bg-gradient-to-r ${step.color} flex items-center justify-center mb-6`}>
+                                        <step.icon className="w-8 h-8 text-white" />
                                     </div>
 
                                     {/* Content */}
-                                    <h3 className='text-xl font-bold mb-2 text-gray-900 font-aggro'>{step.title}</h3>
+                                    <h3 className='text-2xl font-bold mb-4 text-gray-900 font-aggro'>{step.title}</h3>
                                     <p className='text-gray-600 font-tway text-base'>{step.description}</p>
                                 </div>
-                            </Card>
+                            </div>
                         </motion.div>
                     ))}
                 </div>

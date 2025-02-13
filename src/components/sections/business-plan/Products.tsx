@@ -5,20 +5,11 @@ export function Products() {
     return (
         <section className="py-20 bg-gradient-to-br from-[#626ae2]/5 to-white">
             <div className="container mx-auto px-4">
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold text-gray-900 mb-4 font-aggro">
-                        서비스 소개
-                    </h2>
-                    <p className="text-xl text-[#626ae2] font-tway">
-                        브릿지마케팅의 전문적인 사업계획서 작성 서비스를 소개합니다
-                    </p>
-                </div>
-
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    className="mb-12"
+                    className="mb-16"
                 >
                     <span className="text-[#626ae2] font-semibold text-lg font-tway mb-6 block">
                         BUSINESS PLAN SERVICE
@@ -33,30 +24,33 @@ export function Products() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 }}
-                    className="max-w-3xl"
+                    className="max-w-3xl relative group"
                 >
-                    <p className="text-2xl text-gray-700 font-tway leading-relaxed mb-10">
-                        전문가의 노하우와 체계적인 프로세스로
-                        <br />
-                        <span className="text-[#626ae2] font-semibold">맞춤형 사업계획서를 작성</span>해드립니다.
-                    </p>
-                    
-                    <div className="space-y-6">
-                        <div className="flex items-center text-gray-700 group">
-                            <ArrowRight className="w-6 h-6 text-[#626ae2] mr-3 group-hover:translate-x-1 transition-transform" />
-                            <span className="text-lg font-tway">정부지원사업 약 1,600종 커버</span>
-                        </div>
-                        <div className="flex items-center text-gray-700 group">
-                            <ArrowRight className="w-6 h-6 text-[#626ae2] mr-3 group-hover:translate-x-1 transition-transform" />
-                            <span className="text-lg font-tway">사업계획서 작성 전문가 직접 작성</span>
-                        </div>
-                        <div className="flex items-center text-gray-700 group">
-                            <ArrowRight className="w-6 h-6 text-[#626ae2] mr-3 group-hover:translate-x-1 transition-transform" />
-                            <span className="text-lg font-tway">사업 아이템 분석 및 컨설팅</span>
-                        </div>
-                        <div className="flex items-center text-gray-700 group">
-                            <ArrowRight className="w-6 h-6 text-[#626ae2] mr-3 group-hover:translate-x-1 transition-transform" />
-                            <span className="text-lg font-tway">맞춤형 사업계획서 작성</span>
+                    <div className="absolute -inset-0.5 bg-gradient-to-r from-[#626ae2] to-[#7884eb] opacity-50 group-hover:opacity-100 transition-all duration-300 rounded-2xl blur-[2px] group-hover:blur-[3px]" />
+                    <div className="relative bg-white rounded-2xl p-8">
+                        <p className="text-2xl text-gray-700 font-tway leading-relaxed mb-10">
+                            전문가의 노하우와 체계적인 프로세스로
+                            <br />
+                            <span className="text-[#626ae2] font-semibold">맞춤형 사업계획서를 작성</span>해드립니다.
+                        </p>
+                        
+                        <div className="space-y-6">
+                            <div className="flex items-center text-gray-700 group">
+                                <ArrowRight className="w-6 h-6 text-[#626ae2] mr-3 group-hover:translate-x-1 transition-transform" />
+                                <span className="text-lg font-tway">정부지원사업 약 1,600종 커버</span>
+                            </div>
+                            <div className="flex items-center text-gray-700 group">
+                                <ArrowRight className="w-6 h-6 text-[#626ae2] mr-3 group-hover:translate-x-1 transition-transform" />
+                                <span className="text-lg font-tway">사업계획서 작성 전문가 직접 작성</span>
+                            </div>
+                            <div className="flex items-center text-gray-700 group">
+                                <ArrowRight className="w-6 h-6 text-[#626ae2] mr-3 group-hover:translate-x-1 transition-transform" />
+                                <span className="text-lg font-tway">사업 아이템 분석 및 컨설팅</span>
+                            </div>
+                            <div className="flex items-center text-gray-700 group">
+                                <ArrowRight className="w-6 h-6 text-[#626ae2] mr-3 group-hover:translate-x-1 transition-transform" />
+                                <span className="text-lg font-tway">맞춤형 사업계획서 작성</span>
+                            </div>
                         </div>
                     </div>
                 </motion.div>
