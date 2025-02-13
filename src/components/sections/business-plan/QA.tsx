@@ -84,17 +84,25 @@ export function QA() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="relative group mb-16 inline-block"
+                        className="text-center mb-16"
                     >
-                        <div className="absolute -inset-1 bg-gradient-to-r from-[#626ae2] to-[#7884eb] opacity-50 group-hover:opacity-100 transition-all duration-300 rounded-2xl blur-[3px] group-hover:blur-[5px]" />
-                        <div className="relative text-center bg-white rounded-2xl p-8">
-                            <h2 className='text-4xl font-bold text-gray-900 mb-4 font-aggro'>
-                                자주 묻는 질문
-                            </h2>
-                            <p className='text-[#626ae2] font-tway'>
-                                사업계획서 작성에 대해 궁금하신 점을 확인하세요
-                            </p>
-                        </div>
+                        <motion.span
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5 }}
+                            className="inline-block"
+                        >
+                            <span className="px-6 py-3 bg-[#626ae2]/10 rounded-full text-[#626ae2] text-sm border border-[#626ae2]/20 backdrop-blur-sm">
+                                FAQ
+                            </span>
+                        </motion.span>
+                        <h2 className='text-4xl font-bold text-gray-900 mb-4 mt-6 font-aggro'>
+                            자주 묻는 질문
+                        </h2>
+                        <p className='text-[#626ae2] font-tway'>
+                            사업계획서 작성에 대해 궁금하신 점을 확인하세요
+                        </p>
                     </motion.div>
 
                     <div className='space-y-6'>
