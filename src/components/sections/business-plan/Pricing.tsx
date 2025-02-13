@@ -148,23 +148,23 @@ export function Pricing() {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <motion.div
+                    <motion.span
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5 }}
-                        className="relative group inline-block"
+                        className="inline-block"
                     >
-                        <div className="absolute -inset-0.5 bg-gradient-to-r from-[#626ae2] to-[#7884eb] opacity-50 group-hover:opacity-100 transition-all duration-300 rounded-2xl blur-[2px] group-hover:blur-[3px]" />
-                        <div className="relative bg-white rounded-2xl p-8">
-                            <h2 className="text-4xl font-bold text-gray-900 mb-4 font-aggro">
-                                서비스 요금제
-                            </h2>
-                            <p className="text-[#626ae2] font-tway">
-                                합리적인 가격으로 최고의 서비스를 제공합니다
-                            </p>
-                        </div>
-                    </motion.div>
+                        <span className="px-6 py-3 bg-[#626ae2]/10 rounded-full text-[#626ae2] text-sm border border-[#626ae2]/20 backdrop-blur-sm">
+                            PRICING
+                        </span>
+                    </motion.span>
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4 mt-6 font-aggro">
+                        서비스 요금제
+                    </h2>
+                    <p className="text-[#626ae2] font-tway">
+                        합리적인 가격으로 최고의 서비스를 제공합니다
+                    </p>
                 </motion.div>
 
                 {/* 서비스 선택 탭 */}
@@ -206,11 +206,11 @@ export function Pricing() {
                                 </div>
                                 <ul className="space-y-4">
                                     {plan.features.map((feature: string) => (
-                                        <li key={feature} className="flex items-start gap-2">
-                                            <div className="rounded-full p-1 bg-gradient-to-r from-[#626ae2] to-[#7884eb] mt-0.5 shrink-0">
+                                        <li key={feature} className="flex items-center justify-center gap-2 text-center">
+                                            <div className="rounded-full p-1 bg-gradient-to-r from-[#626ae2] to-[#7884eb] shrink-0">
                                                 <Check className="w-3 h-3 text-white" />
                                             </div>
-                                            <span className="text-gray-600 font-tway">{feature}</span>
+                                            <span className="text-gray-600 font-tway text-center">{feature}</span>
                                         </li>
                                     ))}
                                 </ul>
