@@ -44,10 +44,9 @@ export default function BusinessPlanPage() {
             <BackButton />
             <KakaoChatButton />
             <Hero />
-            <Stats />
-            <Features />
             <Products />
-            <Process />
+            <Features />
+            <Stats />
             <Profile />
             
             {/* References Section */}
@@ -61,7 +60,7 @@ export default function BusinessPlanPage() {
                             성공적인 사업계획서 작성 사례를 소개합니다
                         </p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-2 gap-6">
                         {referenceImages.map((image, index) => (
                             <motion.div
                                 key={index}
@@ -91,6 +90,7 @@ export default function BusinessPlanPage() {
                 />
             </section>
             
+            <Process />
             <Pricing />
             <QA />
             <Footer />

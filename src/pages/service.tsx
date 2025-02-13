@@ -57,7 +57,7 @@ export default function ServicePage() {
             title: "사업계획서 첨삭",
             description: "정부지원사업계획서 전문 컨설팅, 예비창업자와 초기창업자를 위한 맞춤형 첨삭 서비스입니다.",
             features: ["정부지원사업 1,600종 커버", "만족도 100%, 1차 합격률 92%", "최저가 보장제"],
-            minPrice: "100만원",
+            minPrice: "50만원",
             image: "/logo/business-plan.png",
             link: "/business-plan",
             category: "business",
