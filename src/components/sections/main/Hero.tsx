@@ -6,15 +6,14 @@ export function Hero() {
     return (
         <section className="relative min-h-screen flex items-center pt-20">
             <motion.div 
-                className="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-indigo-600/20 to-purple-600/20"
+                className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-indigo-600/10 to-purple-600/10"
                 animate={{
-                    scale: [1, 1.2, 1],
-                    opacity: [0.3, 0.6, 0.3]
+                    opacity: [0.3, 0.4, 0.3]
                 }}
                 transition={{
-                    duration: 8,
+                    duration: 5,
                     repeat: Infinity,
-                    ease: "easeInOut"
+                    ease: "linear"
                 }}
             />
             <div className="container mx-auto px-4 relative">
