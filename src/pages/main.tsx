@@ -7,6 +7,7 @@ import { Hero } from "@/components/sections/main/Hero";
 import { Services } from "@/components/sections/main/Services";
 import { Process } from "@/components/sections/main/Process";
 import { References } from "@/components/sections/main/References";
+import { About } from "@/components/sections/main/About";
 import { KakaoChatButton } from "@/components/common/kakao-chat-button";
 
 export function MainPage() {
@@ -50,6 +51,7 @@ export function MainPage() {
                 <Services />
                 <Process />
                 <References />
+                <About />
             </main>
             <Footer />
         </div>
