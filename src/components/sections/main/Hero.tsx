@@ -2,15 +2,6 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const floatingAnimation = {
-    y: [0, -20, 0],
-    transition: {
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut"
-    }
-};
-
 const glowAnimation = {
     opacity: [0.4, 0.6, 0.4],
     scale: [1, 1.2, 1],
