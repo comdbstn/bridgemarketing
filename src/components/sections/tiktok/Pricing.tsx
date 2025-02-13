@@ -52,7 +52,7 @@ const Pricing: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className='text-4xl font-bold mb-4 font-aggro'
+                        className='text-4xl font-bold mb-4 font-aggro text-gray-900'
                     >
                         합리적인 가격으로 시작하세요
                     </motion.h2>
@@ -60,21 +60,20 @@ const Pricing: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className='text-gray-600 font-tway'
+                        className='text-gray-800 font-tway'
                     >
                         프로젝트 규모와 목표에 맞는 최적의 플랜을 선택하세요
                     </motion.p>
                 </div>
 
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto'>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto'>
                     {plans.map((plan, index) => (
                         <motion.div
                             key={plan.name}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className='relative'
+                            transition={{ delay: index * 0.1 }}
                         >
                             {plan.badge && (
                                 <div className='absolute -top-4 left-1/2 transform -translate-x-1/2'>
@@ -84,20 +83,19 @@ const Pricing: React.FC = () => {
                                 </div>
                             )}
 
-                            <Card
-                                className={`h-full ${
-                                    plan.highlighted
-                                        ? "border-2 border-[#00F2EA] shadow-lg scale-105 relative z-10"
-                                        : "border border-gray-200"
-                                } hover:shadow-xl transition-all duration-300`}
+                            <Card className={`h-full ${
+                                plan.highlighted
+                                    ? "border-2 border-[#00F2EA] shadow-lg scale-105 relative z-10"
+                                    : "border border-gray-200"
+                            } hover:shadow-xl transition-all duration-300`}
                             >
                                 <div className='p-8'>
-                                    <h3 className='text-2xl font-bold mb-2 font-tway'>{plan.name}</h3>
+                                    <h3 className='text-2xl font-bold mb-2 font-tway text-gray-900'>{plan.name}</h3>
                                     <div className='mb-4'>
-                                        <span className='text-4xl font-bold'>{plan.price}</span>
-                                        {plan.name !== "Enterprise" && <span className='text-gray-600'>/회</span>}
+                                        <span className='text-4xl font-bold text-gray-900'>{plan.price}</span>
+                                        {plan.name !== "Enterprise" && <span className='text-gray-800'>/회</span>}
                                     </div>
-                                    <p className='text-gray-600 mb-6 font-tway'>{plan.description}</p>
+                                    <p className='text-gray-800 mb-6 font-tway'>{plan.description}</p>
 
                                     <a
                                         href='http://pf.kakao.com/_CYGdn/chat'

@@ -43,34 +43,29 @@ export function Features() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className='text-4xl font-bold text-center mb-4 font-aggro'
+                    className='text-4xl font-bold text-center mb-4 text-gray-900 font-aggro'
                 >
-                    네이버 플레이스 마케팅의 강점
+                    네이버 플레이스 마케팅의 특징
                 </motion.h2>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className='text-gray-600 text-center mb-12 max-w-2xl mx-auto px-4 font-tway'
+                    className='text-gray-800 text-center mb-12 max-w-2xl mx-auto px-4 font-tway'
                 >
-                    대한민국 최대 지도 서비스 네이버 플레이스에서 
+                    브랜드의 대량 노출 및 즉각적인 전환이 필요한 다양한 업종에서
                     <br />
-                    효과적인 마케팅을 시작하세요
+                    네이버 플레이스 마케팅을 통해 성공적인 결과를 얻고 있습니다.
                 </motion.p>
 
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8'>
                     {features.map((feature, index) => (
-                        <motion.div
-                            key={feature.title}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                        >
-                            <Card className='p-6 bg-white/50 backdrop-blur-sm border-none hover:bg-white/80 transition-colors'>
-                                <feature.icon className='w-12 h-12 text-[#2DB400] mb-4' />
-                                <h3 className='text-xl font-bold mb-2 font-aggro'>{feature.title}</h3>
-                                <p className='text-gray-600 font-tway'>{feature.description}</p>
+                        <motion.div key={index} variants={itemVariants} className='h-full'>
+                            <Card className='h-full hover:shadow-lg transition-shadow duration-300'>
+                                <div className='p-6'>
+                                    <h3 className='text-xl font-bold mb-2 text-gray-900 font-tway'>{feature.title}</h3>
+                                    <p className='text-gray-800 font-tway'>{feature.description}</p>
+                                </div>
                             </Card>
                         </motion.div>
                     ))}

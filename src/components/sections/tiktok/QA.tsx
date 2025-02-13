@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, MessageCircle } from "lucide-react";
 
 interface QAItemProps {
     question: string;
@@ -15,7 +15,7 @@ const QAItem: React.FC<QAItemProps> = ({ question, answer, isOpen, onClick }) =>
             <button className='w-full py-6 flex justify-between items-center text-left' onClick={onClick}>
                 <span className='text-lg font-bold text-gray-900'>{question}</span>
                 <ChevronDown
-                    className={`w-5 h-5 text-[#00F2EA] transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                    className={`w-5 h-5 text-gray-500 transition-transform duration-300 ${isOpen ? "transform rotate-180" : ""}`}
                 />
             </button>
             <AnimatePresence>
@@ -27,7 +27,7 @@ const QAItem: React.FC<QAItemProps> = ({ question, answer, isOpen, onClick }) =>
                         transition={{ duration: 0.3 }}
                         className='overflow-hidden'
                     >
-                        <p className='pb-6 text-gray-600'>{answer}</p>
+                        <p className='pb-6 text-gray-800 font-tway'>{answer}</p>
                     </motion.div>
                 )}
             </AnimatePresence>
@@ -69,7 +69,7 @@ const QA: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className='text-4xl font-bold text-center mb-4 font-aggro'
+                        className='text-4xl font-bold text-center mb-4 font-aggro text-gray-900'
                     >
                         자주 묻는 질문
                     </motion.h2>
@@ -77,7 +77,7 @@ const QA: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className='text-gray-600 text-center mb-12 font-tway'
+                        className='text-gray-800 text-center mb-12 font-tway'
                     >
                         틱톡 마케팅에 대해 자주 묻는 질문들을 모았습니다
                     </motion.p>
@@ -92,12 +92,30 @@ const QA: React.FC = () => {
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
                                     viewport={{ once: true }}
                                 >
-                                    <QAItem
-                                        question={item.question}
-                                        answer={item.answer}
-                                        isOpen={openIndex === index}
+                                    <div
+                                        className='py-6 cursor-pointer'
                                         onClick={() => handleToggle(index)}
-                                    />
+                                    >
+                                        <div className='flex justify-between items-center'>
+                                            <h3 className='text-lg font-bold text-gray-900 font-tway'>{item.question}</h3>
+                                            <ChevronDown
+                                                className={`w-5 h-5 text-gray-500 transition-transform duration-300 ${
+                                                    openIndex === index ? 'transform rotate-180' : ''
+                                                }`}
+                                            />
+                                        </div>
+                                        {openIndex === index && (
+                                            <motion.p
+                                                initial={{ opacity: 0, height: 0 }}
+                                                animate={{ opacity: 1, height: 'auto' }}
+                                                exit={{ opacity: 0, height: 0 }}
+                                                transition={{ duration: 0.3 }}
+                                                className='mt-4 text-gray-800 font-tway'
+                                            >
+                                                {item.answer}
+                                            </motion.p>
+                                        )}
+                                    </div>
                                 </motion.div>
                             ))}
                         </div>
@@ -115,7 +133,7 @@ const QA: React.FC = () => {
                             rel='noopener noreferrer'
                             className='inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#00F2EA] to-[#FF0050] hover:from-[#FF0050] hover:to-[#00F2EA] text-white rounded-full font-bold text-lg transition-all duration-300 hover:scale-105'
                         >
-                            더 빠른 성장을 원하시나요?
+                            <MessageCircle className='w-5 h-5' />더 빠른 성장을 원하시나요?
                         </a>
                     </motion.div>
                 </div>

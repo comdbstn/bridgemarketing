@@ -97,7 +97,7 @@ const doughnutOptions: ChartOptions<"doughnut"> = {
     },
 };
 
-const Stats: React.FC = () => {
+export function Stats() {
     return (
         <section className='py-20 bg-gradient-to-br from-white via-[#00F2EA]/5 to-white'>
             <div className='container mx-auto px-4'>
@@ -111,7 +111,7 @@ const Stats: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className='text-4xl font-bold text-center mb-12 text-black font-aggro'
+                        className='text-4xl font-bold text-center mb-12 text-gray-900 font-aggro'
                     >
                         틱톡 성장 지표
                     </motion.h2>
@@ -122,7 +122,7 @@ const Stats: React.FC = () => {
                             viewport={{ once: true }}
                             className='bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300'
                         >
-                            <h3 className='text-xl font-bold mb-4 text-black'>연간 사용자 성장</h3>
+                            <h3 className='text-xl font-bold mb-4 text-gray-900'>연간 사용자 성장</h3>
                             <div className='h-[300px]'>
                                 <Line options={lineOptions} data={userGrowthData} />
                             </div>
@@ -134,7 +134,7 @@ const Stats: React.FC = () => {
                             viewport={{ once: true }}
                             className='bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300'
                         >
-                            <h3 className='text-xl font-bold mb-4 text-black'>SNS별 하루 이용 시간 비교</h3>
+                            <h3 className='text-xl font-bold mb-4 text-gray-900'>SNS별 하루 이용 시간 비교</h3>
                             <div className='h-[300px]'>
                                 <Doughnut options={doughnutOptions} data={platformDistributionData} />
                             </div>
@@ -160,8 +160,8 @@ const Stats: React.FC = () => {
                                         viewport={{ once: true }}
                                     >
                                         <Card className='p-6 text-center border-2 border-[#00F2EA] hover:border-[#FF0050] hover:shadow-lg transition-all duration-300'>
-                                            <h4 className='text-lg font-medium mb-2 text-black'>{stat.label}</h4>
-                                            <p className='text-3xl font-bold text-black'>{stat.value}</p>
+                                            <h4 className='text-lg font-medium mb-2 text-gray-900'>{stat.label}</h4>
+                                            <p className='text-3xl font-bold text-gray-900'>{stat.value}</p>
                                         </Card>
                                     </motion.div>
                                 ))}
@@ -172,6 +172,4 @@ const Stats: React.FC = () => {
             </div>
         </section>
     );
-};
-
-export default Stats;
+}

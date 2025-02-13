@@ -96,7 +96,7 @@ export function Stats() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className='text-4xl font-bold text-center mb-4 font-aggro'
+                    className='text-4xl font-bold text-center mb-4 font-aggro text-gray-900'
                 >
                     블라인드 성장 지표
                 </motion.h2>
@@ -126,21 +126,21 @@ export function Stats() {
                                 <div className='flex-1 bg-gray-200 rounded-full h-2'>
                                     <div className='bg-[#00A9FF] h-2 rounded-full' style={{ width: "88%" }} />
                                 </div>
-                                <span className='text-gray-600 font-medium'>88%</span>
+                                <span className='text-gray-800 font-medium'>88%</span>
                             </div>
                             <div className='flex items-center gap-4 mb-2'>
                                 <img src={companyStats[1].logo} alt='SK' className='h-6 w-24 object-contain' />
                                 <div className='flex-1 bg-gray-200 rounded-full h-2'>
                                     <div className='bg-[#00A9FF] h-2 rounded-full' style={{ width: "89%" }} />
                                 </div>
-                                <span className='text-gray-600 font-medium'>89%</span>
+                                <span className='text-gray-800 font-medium'>89%</span>
                             </div>
                             <div className='flex items-center gap-4'>
                                 <img src={companyStats[2].logo} alt='현대' className='h-6 w-24 object-contain' />
                                 <div className='flex-1 bg-gray-200 rounded-full h-2'>
                                     <div className='bg-[#00A9FF] h-2 rounded-full' style={{ width: "62%" }} />
                                 </div>
-                                <span className='text-gray-600 font-medium'>62%</span>
+                                <span className='text-gray-800 font-medium'>62%</span>
                             </div>
                         </div>
                     </motion.div>

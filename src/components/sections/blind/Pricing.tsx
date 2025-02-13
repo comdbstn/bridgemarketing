@@ -67,10 +67,10 @@ export function Pricing() {
                     <span className="text-blue-600 font-semibold text-lg font-tway mb-4 block">
                         PRICING
                     </span>
-                    <h2 className="text-4xl font-bold mb-4 font-aggro">
+                    <h2 className="text-4xl font-bold mb-4 font-aggro text-gray-900">
                         가격 안내
                     </h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto font-tway">
+                    <p className="text-gray-800 max-w-2xl mx-auto font-tway">
                         합리적인 가격으로 효과적인 블라인드 마케팅을 시작하세요
                     </p>
                 </motion.div>
@@ -95,15 +95,15 @@ export function Pricing() {
                                     </div>
                                 )}
                                 <div>
-                                    <h3 className="text-2xl font-bold mb-2 font-aggro">{plan.name}</h3>
-                                    <div className="text-gray-600 mb-4 font-tway">{plan.description}</div>
+                                    <h3 className="text-2xl font-bold mb-2 font-aggro text-gray-900">{plan.name}</h3>
+                                    <div className="text-gray-800 mb-4 font-tway">{plan.description}</div>
                                     <div className="text-3xl font-bold mb-6 font-aggro text-blue-600">
                                         {plan.price}
                                     </div>
                                 </div>
                                 <div className="space-y-4 mb-8 flex-grow">
                                     {plan.features.map((feature, i) => (
-                                        <div key={i} className="flex items-center text-gray-600 font-tway">
+                                        <div key={i} className="flex items-center text-gray-800 font-tway">
                                             <Check className="w-5 h-5 text-blue-500 mr-2" />
                                             {feature}
                                         </div>

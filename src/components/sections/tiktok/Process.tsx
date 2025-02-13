@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { MessageSquare, FileEdit, Upload, BarChart } from "lucide-react";
+import { Card } from "@/components/ui/card";
 
 const Process: React.FC = () => {
     const steps = [
@@ -49,7 +50,7 @@ const Process: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className='text-4xl font-bold text-center mb-4 text-black font-aggro'
+                        className='text-4xl font-bold text-center mb-4 text-gray-900 font-aggro'
                     >
                         광고과정
                     </motion.h2>
@@ -61,33 +62,26 @@ const Process: React.FC = () => {
                     >
                         체계적인 프로세스로 캠페인의 성공을 이끌어냅니다
                     </motion.p>
-
-                    <div className='max-w-4xl mx-auto'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
                         {steps.map((step, index) => (
                             <motion.div
                                 key={step.title}
-                                initial={{ opacity: 0, y: 50 }}
+                                initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.3, delay: index * 0.1 }}
-                                viewport={{ once: true, margin: "-100px" }}
-                                className='mb-12 last:mb-0'
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                viewport={{ once: true }}
+                                className='relative'
                             >
-                                <div className='flex items-start gap-6'>
-                                    <motion.div
-                                        whileHover={{ scale: 1.1 }}
-                                        transition={{ type: "spring", stiffness: 300 }}
-                                        className={`flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center`}
-                                    >
+                                <Card className='h-full p-6 hover:shadow-lg transition-all duration-300'>
+                                    <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${step.color} flex items-center justify-center mb-4`}>
                                         <step.icon className='w-6 h-6 text-white' />
-                                    </motion.div>
-                                    <div>
-                                        <h3 className='text-xl font-bold mb-2 text-black'>{step.title}</h3>
-                                        <p className='text-gray-800'>{step.description}</p>
                                     </div>
-                                </div>
-                                {index < steps.length - 1 && (
-                                    <div className='ml-6 mt-4 mb-4 w-0.5 h-8 bg-gradient-to-b from-[#00F2EA] to-[#FF0050] opacity-30' />
-                                )}
+                                    <div className='mb-4 flex items-center gap-2'>
+                                        <span className='text-2xl font-bold text-gray-900 font-tway'>{step.number}</span>
+                                        <h3 className='text-xl font-bold text-gray-900 font-tway'>{step.title}</h3>
+                                    </div>
+                                    <p className='text-gray-800 font-tway'>{step.description}</p>
+                                </Card>
                             </motion.div>
                         ))}
                     </div>

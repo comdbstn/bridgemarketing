@@ -53,7 +53,7 @@ export function Features() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className='text-4xl font-bold text-center mb-4 font-aggro'
+                    className='text-4xl font-bold text-center mb-4 font-aggro text-gray-900'
                 >
                     블라인드 마케팅의 강점
                 </motion.h2>

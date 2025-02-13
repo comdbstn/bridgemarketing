@@ -62,7 +62,7 @@ const Industries: React.FC = () => {
                 >
                     <motion.h2
                         variants={itemVariants}
-                        className='text-4xl font-bold text-center mb-4 text-black font-aggro'
+                        className='text-4xl font-bold text-center mb-4 text-gray-900 font-aggro'
                     >
                         추천 업종
                     </motion.h2>
@@ -74,30 +74,29 @@ const Industries: React.FC = () => {
                         <br />
                         틱톡 시딩 마케팅을 통해 성공적인 결과를 얻고 있습니다.
                     </motion.p>
-                    <motion.div
-                        variants={containerVariants}
-                        className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8'
-                    >
+                    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8'>
                         {industries.map((industry, index) => (
-                            <motion.div key={index} variants={itemVariants} className='h-full'>
-                                <Card className='group relative overflow-hidden hover:shadow-lg transition-shadow duration-300'>
-                                    <div className='absolute inset-0'>
+                            <motion.div
+                                key={industry.title}
+                                variants={itemVariants}
+                                className='h-full'
+                            >
+                                <Card className='h-full flex flex-col overflow-hidden group hover:shadow-xl transition-all duration-300'>
+                                    <div className='relative h-48 flex-shrink-0'>
                                         <img
                                             src={industry.image}
                                             alt={industry.title}
-                                            className='w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-300'
+                                            className='w-full h-full object-cover transition-transform duration-300 group-hover:scale-110'
                                         />
                                     </div>
-                                    <div className='relative p-8'>
-                                        <h3 className='text-xl font-bold mb-2 text-black group-hover:text-[#FF0050] transition-colors duration-300'>
-                                            {industry.title}
-                                        </h3>
-                                        <p className='text-gray-800'>{industry.description}</p>
+                                    <div className='p-6 flex flex-col flex-grow'>
+                                        <h3 className='text-xl font-bold mb-2 text-gray-900 font-tway'>{industry.title}</h3>
+                                        <p className='text-gray-800 font-tway'>{industry.description}</p>
                                     </div>
                                 </Card>
                             </motion.div>
                         ))}
-                    </motion.div>
+                    </div>
                 </motion.div>
             </div>
         </section>

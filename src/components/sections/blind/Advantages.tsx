@@ -36,7 +36,7 @@ export function Advantages() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-3xl font-bold text-center mb-12 font-aggro"
+                    className="text-3xl font-bold text-center mb-12 font-aggro text-gray-900"
                 >
                     브릿지마케팅만의 장점
                 </motion.h2>
@@ -50,20 +50,15 @@ export function Advantages() {
                             viewport={{ once: true }}
                             className="h-full"
                         >
-                            <Card className="h-full flex flex-col hover:shadow-lg transition-all duration-300 overflow-hidden group">
-                                <div className="p-6 flex flex-col flex-grow">
-                                    <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-[#00A9FF] to-[#0077FF] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                                        <advantage.icon className="w-6 h-6 text-white" />
-                                    </div>
-                                    <h3 className="text-xl font-bold mb-4 text-gray-900 font-tway">{advantage.title}</h3>
-                                    <ul className="space-y-3 text-gray-600 font-tway">
-                                        {advantage.descriptions.map((desc, i) => (
-                                            <li key={i} className="flex items-start">
-                                                <span className="mr-2">•</span>
-                                                <span>{desc}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
+                            <Card className="h-full p-6 hover:shadow-lg transition-all duration-300">
+                                <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-[#00A9FF] to-[#0077FF] flex items-center justify-center mb-4">
+                                    <advantage.icon className="w-6 h-6 text-white" />
+                                </div>
+                                <h3 className="text-xl font-bold mb-4 text-gray-900 font-tway">{advantage.title}</h3>
+                                <div className="space-y-2">
+                                    {advantage.descriptions.map((desc, i) => (
+                                        <p key={i} className="text-gray-800 font-tway">{desc}</p>
+                                    ))}
                                 </div>
                             </Card>
                         </motion.div>

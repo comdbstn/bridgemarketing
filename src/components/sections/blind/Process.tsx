@@ -51,7 +51,7 @@ export function Process() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className='text-4xl font-bold text-center mb-4 font-aggro'
+                    className='text-4xl font-bold text-center mb-4 font-aggro text-gray-900'
                 >
                     광고 진행 과정
                 </motion.h2>
@@ -59,76 +59,32 @@ export function Process() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className='text-gray-600 text-center mb-16 max-w-2xl mx-auto font-tway'
+                    className='text-gray-800 text-center mb-16 max-w-2xl mx-auto font-tway'
                 >
                     체계적인 프로세스로 효과적인 마케팅을 진행합니다
                 </motion.p>
-
-                <div className='max-w-5xl mx-auto'>
-                    <div className='relative'>
-                        {/* Progress Line */}
-                        <div className='absolute left-[45px] top-0 bottom-0 w-1 bg-gray-100 sm:left-1/2 sm:-ml-[2px]' />
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
+                    {steps.map((step, index) => (
                         <motion.div
-                            className='absolute left-[45px] top-0 w-1 bg-gradient-to-b from-[#00A9FF] to-[#E5F7FF] origin-top sm:left-1/2 sm:-ml-[2px]'
-                            style={{
-                                scaleY: scrollYProgress,
-                                height: "100%",
-                            }}
-                        />
-
-                        {/* Steps */}
-                        <div className='space-y-20'>
-                            {steps.map((step, index) => (
-                                <motion.div
-                                    key={step.number}
-                                    initial={{ opacity: 0, y: 50 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.5, delay: index * 0.2 }}
-                                    viewport={{ once: true, margin: "-100px" }}
-                                    className={`relative flex items-center ${
-                                        index % 2 === 0 ? "sm:flex-row" : "sm:flex-row-reverse"
-                                    } flex-col`}
-                                >
-                                    {/* Number Circle - Moved above content on mobile */}
-                                    <div className='flex items-center justify-center w-24 h-24 relative mb-4 sm:mb-0 order-first sm:order-none'>
-                                        <motion.div
-                                            className={`w-16 h-16 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center text-2xl font-bold text-white z-10`}
-                                            whileHover={{ scale: 1.1 }}
-                                            transition={{ type: "spring", stiffness: 300 }}
-                                        >
-                                            {step.number}
-                                        </motion.div>
-                                    </div>
-
-                                    {/* Content */}
-                                    <div className={`flex-1 ${index % 2 === 0 ? "sm:pr-16" : "sm:pl-16"}`}>
-                                        <Card className='p-6 hover:shadow-lg transition-all duration-300 group'>
-                                            <div className='flex flex-col sm:flex-row items-start gap-4'>
-                                                <div
-                                                    className={`w-12 h-12 rounded-xl bg-gradient-to-r ${step.color} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
-                                                >
-                                                    <step.icon className='w-6 h-6 text-white' />
-                                                </div>
-                                                <div className='flex-1'>
-                                                    <h3 className='text-xl font-bold mb-2 flex items-center gap-2 font-tway'>
-                                                        {step.title}
-                                                    </h3>
-                                                    <p className='text-gray-600 leading-relaxed font-tway'>
-                                                        {step.description}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </Card>
-                                    </div>
-
-                                    {/* Arrow for mobile */}
-                                    <div className='sm:hidden absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-full'>
-                                        <ArrowRight className='w-6 h-6 text-gray-400 transform rotate-90' />
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
+                            key={step.title}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            viewport={{ once: true }}
+                            className='relative'
+                        >
+                            <Card className='h-full p-6 hover:shadow-lg transition-all duration-300'>
+                                <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${step.color} flex items-center justify-center mb-4`}>
+                                    <step.icon className='w-6 h-6 text-white' />
+                                </div>
+                                <div className='mb-4 flex items-center gap-2'>
+                                    <span className='text-2xl font-bold text-gray-900 font-tway'>{step.number}</span>
+                                    <h3 className='text-xl font-bold text-gray-900 font-tway'>{step.title}</h3>
+                                </div>
+                                <p className='text-gray-800 font-tway'>{step.description}</p>
+                            </Card>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </section>

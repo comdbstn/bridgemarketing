@@ -32,7 +32,7 @@ export function Industries() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className='text-4xl font-bold text-center mb-4 font-aggro'
+                    className='text-4xl font-bold text-center mb-4 font-aggro text-gray-900'
                 >
                     추천 업종
                 </motion.h2>
@@ -40,7 +40,7 @@ export function Industries() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className='text-gray-600 text-center mb-12 max-w-2xl mx-auto px-4 font-tway'
+                    className='text-gray-800 text-center mb-12 max-w-2xl mx-auto px-4 font-tway'
                 >
                     직장인의 높은 소득 수준과 구매력을 활용할 수 있는 다양한 업종에서 
                     <br />

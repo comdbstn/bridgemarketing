@@ -53,21 +53,19 @@ export function Features() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className='text-4xl font-bold text-center mb-4 font-aggro'
+                    className='text-4xl font-bold text-center mb-4 text-gray-900 font-aggro'
                 >
-                    브릿지마케팅만의 장점
+                    네이버 카페 마케팅의 특징
                 </motion.h2>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className='text-gray-600 text-center mb-12 max-w-2xl mx-auto px-4 font-tway'
+                    className='text-gray-800 text-center mb-12 max-w-2xl mx-auto px-4 font-tway'
                 >
-                    지역 커뮤니티에 대한 이해
+                    브랜드의 대량 노출 및 즉각적인 전환이 필요한 다양한 업종에서
                     <br />
-                    브릿지마케팅은 섭외 가능한 200여개의 카페에 대한 이해도를 보유하고있습니다.
-                    <br />
-                    자연스러운 바이럴로 입소문을 만들어드리겠습니다.
+                    네이버 카페 마케팅을 통해 성공적인 결과를 얻고 있습니다.
                 </motion.p>
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8'>
                     {features.map((feature, index) => (
@@ -85,7 +83,7 @@ export function Features() {
                                         <feature.icon className='w-6 h-6 text-white' />
                                     </div>
                                     <h3 className='text-xl font-bold mb-2 text-gray-900 font-tway'>{feature.title}</h3>
-                                    <p className='text-gray-600 font-tway'>{feature.description}</p>
+                                    <p className='text-gray-800 font-tway'>{feature.description}</p>
                                 </div>
                             </Card>
                         </motion.div>

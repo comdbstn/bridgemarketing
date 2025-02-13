@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const questions = [
@@ -22,64 +22,6 @@ const questions = [
     },
 ];
 
-function QAItem({
-    question,
-    answer,
-    isOpen,
-    onClick,
-}: {
-    question: string;
-    answer: string;
-    isOpen: boolean;
-    onClick: () => void;
-}) {
-    return (
-        <div className='group'>
-            <button
-                className='w-full py-6 flex items-start gap-6 text-left hover:bg-gray-50/50 rounded-lg px-4 transition-colors duration-200'
-                onClick={onClick}
-            >
-                <div className='flex-shrink-0'>
-                    <span className='inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#00A9FF]/10 text-[#00A9FF] font-bold'>
-                        Q
-                    </span>
-                </div>
-                <div className='flex-grow'>
-                    <span className='text-lg font-medium block mb-2 font-tway'>{question}</span>
-                    <div className={cn("overflow-hidden transition-all duration-300", isOpen ? "max-h-96" : "max-h-0")}>
-                        <div className='flex gap-6 mt-4'>
-                            <div className='flex-shrink-0'>
-                                <span className='inline-flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 text-gray-500 font-bold'>
-                                    A
-                                </span>
-                            </div>
-                            <p className='text-gray-600 font-tway'>{answer}</p>
-                        </div>
-                    </div>
-                </div>
-                <div className='flex-shrink-0 pt-1'>
-                    <div
-                        className={cn(
-                            "w-6 h-6 relative transition-transform duration-300",
-                            isOpen ? "transform rotate-180" : ""
-                        )}
-                    >
-                        <div className='absolute inset-0 flex items-center justify-center'>
-                            <div className='w-0.5 h-6 bg-[#00A9FF] rounded-full transition-transform duration-300' />
-                            <div
-                                className={cn(
-                                    "absolute w-6 h-0.5 bg-[#00A9FF] rounded-full transition-transform duration-300",
-                                    isOpen ? "transform rotate-90" : ""
-                                )}
-                            />
-                        </div>
-                    </div>
-                </div>
-            </button>
-        </div>
-    );
-}
-
 export function QA() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -95,7 +37,7 @@ export function QA() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className='text-4xl font-bold text-center mb-4 font-aggro'
+                        className='text-4xl font-bold text-center mb-4 font-aggro text-gray-900'
                     >
                         자주 묻는 질문
                     </motion.h2>
@@ -103,7 +45,7 @@ export function QA() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className='text-gray-600 text-center mb-12 font-tway'
+                        className='text-gray-800 text-center mb-12 font-tway'
                     >
                         블라인드 마케팅에 대해 궁금하신 점을 확인하세요
                     </motion.p>
@@ -117,12 +59,30 @@ export function QA() {
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 viewport={{ once: true }}
                             >
-                                <QAItem
-                                    question={item.question}
-                                    answer={item.answer}
-                                    isOpen={openIndex === index}
+                                <div
+                                    className='py-6 cursor-pointer'
                                     onClick={() => handleToggle(index)}
-                                />
+                                >
+                                    <div className='flex justify-between items-center'>
+                                        <h3 className='text-lg font-bold text-gray-900 font-tway'>{item.question}</h3>
+                                        <ChevronDown
+                                            className={`w-5 h-5 text-gray-500 transition-transform duration-300 ${
+                                                openIndex === index ? 'transform rotate-180' : ''
+                                            }`}
+                                        />
+                                    </div>
+                                    {openIndex === index && (
+                                        <motion.p
+                                            initial={{ opacity: 0, height: 0 }}
+                                            animate={{ opacity: 1, height: 'auto' }}
+                                            exit={{ opacity: 0, height: 0 }}
+                                            transition={{ duration: 0.3 }}
+                                            className='mt-4 text-gray-800 font-tway'
+                                        >
+                                            {item.answer}
+                                        </motion.p>
+                                    )}
+                                </div>
                             </motion.div>
                         ))}
                     </div>
