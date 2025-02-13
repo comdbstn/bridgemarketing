@@ -1,8 +1,30 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect, useRef } from "react";
+
+// 로고 이미지 배열 생성
+const logos = Array.from({ length: 47 }, (_, i) => `/logo/${i}.png`);
 
 export function Hero() {
+    const sliderRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const slider = sliderRef.current;
+        if (!slider) return;
+
+        const scroll = () => {
+            if (slider.scrollLeft >= (slider.scrollWidth - slider.clientWidth)) {
+                slider.scrollLeft = 0;
+            } else {
+                slider.scrollLeft += 1;
+            }
+        };
+
+        const interval = setInterval(scroll, 30);
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
             {/* Background Elements */}
@@ -61,7 +83,7 @@ export function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
-                        className="flex flex-col sm:flex-row items-center justify-center gap-6"
+                        className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16"
                     >
                         <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                             <a
@@ -95,8 +117,53 @@ export function Hero() {
                             </Link>
                         </motion.div>
                     </motion.div>
+
+                    {/* Stats Section */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.5 }}
+                        className="grid grid-cols-2 gap-8 max-w-2xl mx-auto mb-20"
+                    >
+                        <div className="text-center p-6 rounded-2xl bg-purple-500/5 border border-purple-500/10">
+                            <h3 className="text-4xl font-bold text-white mb-2 font-aggro">716<span className="text-purple-400">+</span></h3>
+                            <p className="text-gray-400 font-tway">누적 고객사</p>
+                        </div>
+                        <div className="text-center p-6 rounded-2xl bg-purple-500/5 border border-purple-500/10">
+                            <h3 className="text-4xl font-bold text-white mb-2 font-aggro">13,000<span className="text-purple-400">+</span></h3>
+                            <p className="text-gray-400 font-tway">총 업로드</p>
+                        </div>
+                    </motion.div>
                 </div>
             </div>
+
+            {/* Logo Slider */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="absolute bottom-0 left-0 right-0 overflow-hidden py-12 bg-gradient-to-t from-black/80 to-transparent"
+            >
+                <div
+                    ref={sliderRef}
+                    className="flex gap-8 overflow-x-hidden whitespace-nowrap"
+                    style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}
+                >
+                    {[...logos, ...logos].map((logo, index) => (
+                        <motion.img
+                            key={index}
+                            src={logo}
+                            alt={`Client Logo ${index}`}
+                            className="h-12 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
+                            style={{ minWidth: '120px' }}
+                            onError={(e) => {
+                                const target = e.target as HTMLImageElement;
+                                target.style.display = 'none';
+                            }}
+                        />
+                    ))}
+                </div>
+            </motion.div>
 
             {/* Decorative Elements */}
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
