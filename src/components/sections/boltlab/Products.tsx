@@ -1,135 +1,52 @@
 import { motion } from "framer-motion";
-import { Globe, Smartphone, Code, Brain } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export function Products() {
-    const products = [
-        {
-            icon: Globe,
-            title: "홈/랜딩페이지",
-            subtitle: "매력적인 브랜드 경험 제공",
-            price: "₩100,000~",
-            features: [
-                "반응형 디자인",
-                "최적화된 성능",
-                "모던한 UI/UX",
-                "Analytics 트래킹"
-            ]
-        },
-        {
-            icon: Code,
-            title: "웹 플랫폼",
-            subtitle: "확장 가능한 웹 서비스 개발",
-            price: "₩400,000~",
-            features: [
-                "SaaS 플랫폼",
-                "커머스 솔루션",
-                "맞춤형 웹 서비스",
-                "실시간 데이터 처리"
-            ]
-        },
-        {
-            icon: Smartphone,
-            title: "모바일 앱",
-            subtitle: "iOS/Android 앱 개발",
-            price: "₩700,000~",
-            features: [
-                "네이티브 앱",
-                "크로스플랫폼 앱",
-                "하이브리드 앱",
-                "PWA"
-            ]
-        },
-        {
-            icon: Brain,
-            title: "AI 솔루션",
-            subtitle: "인공지능 서비스 통합",
-            price: "₩1,000,000~",
-            features: [
-                "LLM 통합",
-                "머신러닝 모델",
-                "데이터 분석",
-                "AI 워크플로우"
-            ]
-        }
-    ];
-
     return (
-        <section className="py-20 bg-white">
-            <div className="container mx-auto px-4">
+        <section className="py-24 relative overflow-hidden bg-gradient-to-br from-gray-50 to-[#626ae2]/10">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-12"
+                >
+                    <span className="text-[#626ae2] font-semibold text-lg font-tway mb-6 block">
+                        AI AGENTFORCE DEVELOPMENT
+                    </span>
+                    <h2 className="text-[3.5rem] leading-tight font-bold mb-6 font-aggro bg-gradient-to-r from-[#626ae2] to-[#95c5fa] bg-clip-text text-transparent">
+                        AI 기반 개발 외주
+                    </h2>
+                </motion.div>
+
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    transition={{ delay: 0.2 }}
+                    className="max-w-3xl"
                 >
-                    <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                        서비스 소개
-                    </h2>
-                    <p className="text-lg text-gray-600">
-                        최신 기술과 전문성으로 최고의 서비스를 제공합니다
+                    <p className="text-2xl text-gray-700 font-tway leading-relaxed mb-10">
+                        AgentForce AI 개발 플랫폼을 통해
+                        <br />
+                        <span className="text-[#626ae2] font-semibold">최고의 프로덕트를, 최고의 가격에 제공</span>하는 IT 개발 에이전시입니다.
                     </p>
+                    
+                    <div className="space-y-6">
+                        <div className="flex items-center text-gray-700 group">
+                            <ArrowRight className="w-6 h-6 text-[#626ae2] mr-3 group-hover:translate-x-1 transition-transform" />
+                            <span className="text-lg font-tway">53% 개발 효율 증가로 3배 빠른 개발 속도</span>
+                        </div>
+                        <div className="flex items-center text-gray-700 group">
+                            <ArrowRight className="w-6 h-6 text-[#626ae2] mr-3 group-hover:translate-x-1 transition-transform" />
+                            <span className="text-lg font-tway">AI 기반 자동화로 3배 저렴한 개발 비용</span>
+                        </div>
+                        <div className="flex items-center text-gray-700 group">
+                            <ArrowRight className="w-6 h-6 text-[#626ae2] mr-3 group-hover:translate-x-1 transition-transform" />
+                            <span className="text-lg font-tway">웹/앱 개발, AI/ML 솔루션, 블록체인/NFT 플랫폼 등 다양한 개발 경험</span>
+                        </div>
+                    </div>
                 </motion.div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {products.map((product, index) => (
-                        <motion.div
-                            key={product.title}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            whileHover={{ scale: 1.02 }}
-                            className="group bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:border-[#626ae2]/20"
-                        >
-                            <div className="flex flex-col items-center text-center">
-                                <motion.div
-                                    whileHover={{ rotate: 360 }}
-                                    transition={{ duration: 0.6 }}
-                                    className="w-14 h-14 rounded-full bg-[#626ae2]/10 flex items-center justify-center mb-4 group-hover:bg-[#626ae2]/20 transition-colors duration-300"
-                                >
-                                    <product.icon className="w-7 h-7 text-[#626ae2]" />
-                                </motion.div>
-                                <motion.h3
-                                    whileHover={{ scale: 1.05 }}
-                                    transition={{ duration: 0.3 }}
-                                    className="text-xl font-bold text-gray-900 mb-2"
-                                >
-                                    {product.title}
-                                </motion.h3>
-                                <p className="text-gray-600 mb-2">
-                                    {product.subtitle}
-                                </p>
-                                <motion.p
-                                    whileHover={{ scale: 1.1 }}
-                                    transition={{ duration: 0.3 }}
-                                    className="text-[#626ae2] font-bold mb-4"
-                                >
-                                    {product.price}
-                                </motion.p>
-                                <ul className="space-y-2 text-left w-full">
-                                    {product.features.map((feature, featureIndex) => (
-                                        <motion.li
-                                            key={feature}
-                                            initial={{ opacity: 0, x: -20 }}
-                                            whileInView={{ opacity: 1, x: 0 }}
-                                            transition={{ duration: 0.3, delay: index * 0.1 + featureIndex * 0.1 }}
-                                            viewport={{ once: true }}
-                                            className="flex items-center text-gray-600 group-hover:text-gray-900 transition-colors duration-300"
-                                        >
-                                            <motion.span
-                                                whileHover={{ scale: 1.5 }}
-                                                transition={{ duration: 0.3 }}
-                                                className="w-1.5 h-1.5 bg-[#626ae2] rounded-full mr-2"
-                                            />
-                                            {feature}
-                                        </motion.li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
             </div>
         </section>
     );

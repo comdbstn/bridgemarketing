@@ -7,30 +7,30 @@ const steps = [
         icon: FileSearch,
         title: "요구사항 분석",
         description:
-            "사업의 특성과 목표를 상세히 분석하여 최적의 방향성을 도출합니다.",
+            "제공해드리는 초기 현황 파악 설문 자료를 대표님께서 작성해주시면 분석을 진행합니다.",
         color: "from-[#626ae2] to-[#7884eb]",
     },
     {
         number: 2,
         icon: FileEdit,
-        title: "초안 작성",
+        title: "전문가 작업 진행",
         description:
-            "AI 기술을 활용하여 핵심 내용을 담은 초안을 신속하게 작성합니다.",
+            "각 분야 전문가들이 1차 작업물을 신속하고 심도 있게 작성하고 전달 드립니다.",
         color: "from-[#626ae2] to-[#7884eb]",
     },
     {
         number: 3,
         icon: FileCheck,
-        title: "전문가 검수",
+        title: "피드백 반영",
         description:
-            "각 분야 전문가들의 검토를 통해 완성도를 높입니다.",
+            "대표님께서 1차 초안에 대한 피드백을 작성하여 전달해주시면 반영합니다.",
         color: "from-[#626ae2] to-[#7884eb]",
     },
     {
         number: 4,
         icon: Presentation,
         title: "최종 완성",
-        description: "피드백을 반영하여 최종 사업계획서를 완성합니다.",
+        description: "전문가 작업과 피드백을 통해 최종 사업계획서를 완성합니다.",
         color: "from-[#626ae2] to-[#7884eb]",
     },
 ];
@@ -60,7 +60,7 @@ export function Process() {
                         작성 프로세스
                     </h2>
                     <p className='text-[#626ae2] font-tway'>
-                        체계적인 프로세스로 완벽한 사업계획서를 작성합니다
+                        체계적인 프로세스로 완벽한 사업계획서를 작성합니다 (평균 5일 소요)
                     </p>
                 </motion.div>
 

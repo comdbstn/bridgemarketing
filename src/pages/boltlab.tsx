@@ -13,24 +13,10 @@ import { KakaoChatButton } from "@/components/common/kakao-chat-button";
 import { motion } from "framer-motion";
 import { ImageModal } from "@/components/ui/image-modal";
 
-const referenceImages = [
-    {
-        src: "/boltlab_reference/1.png",
-        alt: "레퍼런스 1"
-    },
-    {
-        src: "/boltlab_reference/2.png",
-        alt: "레퍼런스 2"
-    },
-    {
-        src: "/boltlab_reference/3.png",
-        alt: "레퍼런스 3"
-    },
-    {
-        src: "/boltlab_reference/4.jpeg",
-        alt: "레퍼런스 4"
-    }
-];
+const referenceImages = Array.from({ length: 17 }, (_, i) => ({
+    src: `/boltlab_reference/${i + 1}.${i + 1 === 4 || i + 1 === 7 ? 'jpeg' : 'png'}`,
+    alt: `레퍼런스 ${i + 1}`
+}));
 
 export default function BoltlabPage() {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -60,7 +46,7 @@ export default function BoltlabPage() {
                             볼트랩이 만든 다양한 프로젝트들을 소개합니다
                         </p>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
                         {referenceImages.map((image, index) => (
                             <motion.div
                                 key={index}
