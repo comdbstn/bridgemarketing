@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Bot, TrendingUp, Users } from "lucide-react";
 
 export function References() {
     return (
@@ -46,7 +45,7 @@ export function References() {
                 </motion.div>
 
                 <div className="space-y-16 overflow-hidden">
-                    {[1, 2].map((row, rowIndex) => (
+                    {[1, 2].map((_, rowIndex) => (
                         <motion.div
                             key={rowIndex}
                             initial={{ opacity: 0 }}

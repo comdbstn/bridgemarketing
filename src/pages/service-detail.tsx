@@ -1,27 +1,8 @@
 import { motion } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Navbar } from "@/components/common/Navbar";
-import { Footer } from "@/components/common/Footer";
 import { Loading } from "@/components/ui/loading";
 import { useState, useEffect } from "react";
 import { BackButton } from "@/components/common/back-button";
-
-interface ServiceDetail {
-    title: string;
-    description: string;
-    features: string[];
-    benefits: string[];
-    process: {
-        title: string;
-        description: string;
-    }[];
-    pricing: {
-        title: string;
-        price: string;
-        features: string[];
-    }[];
-}
 
 export function ServiceDetailPage() {
     const location = useLocation();
@@ -35,78 +16,7 @@ export function ServiceDetailPage() {
         return () => clearTimeout(timer);
     }, []);
 
-    const handleGoBack = () => {
-        navigate(fromPage, {
-            state: { shouldRestore: true, scrollPosition }
-        });
-    };
-
     if (isLoading) return <Loading />;
-
-    const serviceDetail: ServiceDetail = {
-        title: "에브리타임 마케팅",
-        description: "대학생 커뮤니티 1위 에브리타임에서 진행되는 마케팅 서비스입니다.",
-        features: [
-            "대학생 타겟 마케팅",
-            "실시간 반응 분석",
-            "맞춤형 컨텐츠 제작"
-        ],
-        benefits: [
-            "정확한 타겟 도달",
-            "높은 전환율",
-            "브랜드 인지도 상승"
-        ],
-        process: [
-            {
-                title: "전략 수립",
-                description: "목표 설정 및 타겟 분석을 통한 전략 수립"
-            },
-            {
-                title: "컨텐츠 제작",
-                description: "타겟에 맞는 맞춤형 컨텐츠 제작"
-            },
-            {
-                title: "캠페인 실행",
-                description: "효과적인 캠페인 실행 및 모니터링"
-            },
-            {
-                title: "성과 분석",
-                description: "데이터 기반의 성과 분석 및 리포트 제공"
-            }
-        ],
-        pricing: [
-            {
-                title: "Basic",
-                price: "100만원",
-                features: [
-                    "기본 컨텐츠 제작",
-                    "1회 캠페인 진행",
-                    "기본 리포트 제공"
-                ]
-            },
-            {
-                title: "Standard",
-                price: "300만원",
-                features: [
-                    "맞춤형 컨텐츠 제작",
-                    "3회 캠페인 진행",
-                    "상세 리포트 제공",
-                    "실시간 모니터링"
-                ]
-            },
-            {
-                title: "Premium",
-                price: "500만원",
-                features: [
-                    "프리미엄 컨텐츠 제작",
-                    "무제한 캠페인 진행",
-                    "실시간 대시보드 제공",
-                    "전담 매니저 배정",
-                    "성과 분석 컨설팅"
-                ]
-            }
-        ]
-    };
 
     return (
         <div className="min-h-screen bg-black flex items-center justify-center relative">
