@@ -23,6 +23,7 @@ export default function BoltlabPage() {
     
     useEffect(() => {
         window.scrollTo(0, 0);
+        document.title = "AI 개발 외주 | 브릿지마케팅";
     }, []);
 
     return (

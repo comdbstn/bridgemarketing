@@ -37,6 +37,7 @@ export default function EverytimePage() {
     
     useEffect(() => {
         window.scrollTo(0, 0);
+        document.title = "에브리타임 마케팅 | 브릿지마케팅";
     }, []);
 
     return (

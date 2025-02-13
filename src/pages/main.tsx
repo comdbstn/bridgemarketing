@@ -37,7 +37,7 @@ export function MainPage() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        document.title = "브릿지마케팅 - 디지털 마케팅의 새로운 기준";
+        document.title = "브릿지마케팅";
         const timer = setTimeout(() => setIsLoading(false), 500);
         return () => clearTimeout(timer);
     }, []);

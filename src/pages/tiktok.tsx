@@ -16,6 +16,7 @@ import { KakaoChatButton } from "@/components/common/kakao-chat-button";
 export function TiktokPage() {
     useEffect(() => {
         window.scrollTo(0, 0);
+        document.title = "틱톡 마케팅 | 브릿지마케팅";
     }, []);
 
     return (

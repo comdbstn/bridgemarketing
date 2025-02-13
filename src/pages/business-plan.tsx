@@ -37,6 +37,7 @@ export default function BusinessPlanPage() {
     
     useEffect(() => {
         window.scrollTo(0, 0);
+        document.title = "사업계획서 작성 | 브릿지마케팅";
     }, []);
 
     return (

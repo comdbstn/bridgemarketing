@@ -16,6 +16,7 @@ import { useEffect } from "react";
 export function BlindPage() {
     useEffect(() => {
         window.scrollTo(0, 0);
+        document.title = "블라인드 마케팅 | 브릿지마케팅";
     }, []);
 
     return (
