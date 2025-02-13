@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { MessageSquare, Megaphone } from "lucide-react";
+import { MessageSquare, Megaphone, ArrowRight } from "lucide-react";
 
 export const Products: React.FC = () => {
     const products = [
@@ -31,68 +31,121 @@ export const Products: React.FC = () => {
     ];
 
     return (
-        <section className="py-20 bg-gradient-to-br from-white to-[#FF4B4B]/5">
-            <div className="container mx-auto px-4">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
-                    <h2 className="text-4xl font-bold text-gray-900 mb-4 font-aggro">
-                        에브리타임 마케팅 서비스
-                    </h2>
-                    <p className="text-xl text-gray-600 font-tway">
-                        다양한 게시판을 활용한 효과적인 마케팅 서비스를 제공합니다
-                    </p>
-                </motion.div>
+        <>
+            <section className="py-24 relative overflow-hidden bg-gradient-to-br from-gray-50 to-[#FF4B4B]/10">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="mb-12"
+                    >
+                        <span className="text-[#FF4B4B] font-semibold text-lg font-tway mb-6 block">
+                            BUSINESS PLAN SERVICE
+                        </span>
+                        <h2 className="text-[3.5rem] leading-tight font-bold mb-6 font-aggro bg-gradient-to-r from-[#FF4B4B] to-[#FF7070] bg-clip-text text-transparent">
+                            사업계획서 작성 서비스
+                        </h2>
+                    </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                    {products.map((product, index) => (
-                        <motion.div
-                            key={product.title}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            className="group bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:border-[#FF4B4B]/20"
-                        >
-                            <div className="flex flex-col h-full">
-                                <div className="flex items-start gap-4 mb-6">
-                                    <div className="w-12 h-12 rounded-lg bg-[#FF4B4B]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#FF4B4B]/20 transition-colors duration-300">
-                                        <product.icon className="w-6 h-6 text-[#FF4B4B]" />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-xl font-bold text-gray-900 mb-1 font-aggro">
-                                            {product.title}
-                                        </h3>
-                                        <p className="text-[#FF4B4B] font-bold">
-                                            {product.subtitle}
-                                        </p>
-                                    </div>
-                                </div>
-                                <p className="text-gray-600 mb-6 font-tway">
-                                    {product.description}
-                                </p>
-                                <div className="mt-auto">
-                                    <ul className="space-y-3">
-                                        {product.features.map((feature) => (
-                                            <li
-                                                key={feature}
-                                                className="flex items-center gap-2 text-gray-600 group-hover:text-gray-900 transition-colors duration-300 font-tway"
-                                            >
-                                                <span className="w-1.5 h-1.5 bg-[#FF4B4B] rounded-full" />
-                                                {feature}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="max-w-3xl"
+                    >
+                        <p className="text-2xl text-gray-700 font-tway leading-relaxed mb-10">
+                            전문가의 노하우와 체계적인 프로세스로
+                            <br />
+                            <span className="text-[#FF4B4B] font-semibold">맞춤형 사업계획서를 작성해드립니다.</span>
+                        </p>
+                        
+                        <div className="space-y-6">
+                            <div className="flex items-center text-gray-700 group">
+                                <ArrowRight className="w-6 h-6 text-[#FF4B4B] mr-3 group-hover:translate-x-1 transition-transform" />
+                                <span className="text-lg font-tway">정부지원사업 약 1,600종 커버</span>
                             </div>
-                        </motion.div>
-                    ))}
+                            <div className="flex items-center text-gray-700 group">
+                                <ArrowRight className="w-6 h-6 text-[#FF4B4B] mr-3 group-hover:translate-x-1 transition-transform" />
+                                <span className="text-lg font-tway">사업계획서 작성 전문가 직접 작성</span>
+                            </div>
+                            <div className="flex items-center text-gray-700 group">
+                                <ArrowRight className="w-6 h-6 text-[#FF4B4B] mr-3 group-hover:translate-x-1 transition-transform" />
+                                <span className="text-lg font-tway">사업 아이템 분석 및 컨설팅</span>
+                            </div>
+                            <div className="flex items-center text-gray-700 group">
+                                <ArrowRight className="w-6 h-6 text-[#FF4B4B] mr-3 group-hover:translate-x-1 transition-transform" />
+                                <span className="text-lg font-tway">맞춤형 사업계획서 작성</span>
+                            </div>
+                        </div>
+                    </motion.div>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            <section className="py-20 bg-gradient-to-br from-white to-[#FF4B4B]/5">
+                <div className="container mx-auto px-4">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-16"
+                    >
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4 font-aggro">
+                            에브리타임 마케팅 서비스
+                        </h2>
+                        <p className="text-xl text-gray-600 font-tway">
+                            다양한 게시판을 활용한 효과적인 마케팅 서비스를 제공합니다
+                        </p>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                        {products.map((product, index) => (
+                            <motion.div
+                                key={product.title}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                viewport={{ once: true }}
+                                className="group bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:border-[#FF4B4B]/20"
+                            >
+                                <div className="flex flex-col h-full">
+                                    <div className="flex items-start gap-4 mb-6">
+                                        <div className="w-12 h-12 rounded-lg bg-[#FF4B4B]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#FF4B4B]/20 transition-colors duration-300">
+                                            <product.icon className="w-6 h-6 text-[#FF4B4B]" />
+                                        </div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-gray-900 mb-1 font-aggro">
+                                                {product.title}
+                                            </h3>
+                                            <p className="text-[#FF4B4B] font-bold">
+                                                {product.subtitle}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <p className="text-gray-600 mb-6 font-tway">
+                                        {product.description}
+                                    </p>
+                                    <div className="mt-auto">
+                                        <ul className="space-y-3">
+                                            {product.features.map((feature) => (
+                                                <li
+                                                    key={feature}
+                                                    className="flex items-center gap-2 text-gray-600 group-hover:text-gray-900 transition-colors duration-300 font-tway"
+                                                >
+                                                    <span className="w-1.5 h-1.5 bg-[#FF4B4B] rounded-full" />
+                                                    {feature}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        </>
     );
 }; 

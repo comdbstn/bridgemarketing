@@ -15,16 +15,20 @@ import { ImageModal } from "@/components/ui/image-modal";
 
 const referenceImages = [
     {
-        src: "/everytime_reference/1.png",
+        src: "/everytime_reference/0.png",
         alt: "레퍼런스 1"
     },
     {
-        src: "/everytime_reference/2.png",
+        src: "/everytime_reference/1.png",
         alt: "레퍼런스 2"
     },
     {
-        src: "/everytime_reference/3.png",
+        src: "/everytime_reference/2.png",
         alt: "레퍼런스 3"
+    },
+    {
+        src: "/everytime_reference/3.png",
+        alt: "레퍼런스 4"
     }
 ];
 
