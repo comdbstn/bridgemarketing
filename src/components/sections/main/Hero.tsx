@@ -72,10 +72,8 @@ export function Hero() {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{
-                                duration: 1.5,
-                                repeat: Infinity,
-                                repeatType: "reverse",
-                                ease: "easeInOut"
+                                duration: 1,
+                                ease: "easeOut"
                             }}
                             className="inline-block bg-gradient-to-r from-white via-purple-300 to-indigo-400 bg-clip-text text-transparent"
                         >
