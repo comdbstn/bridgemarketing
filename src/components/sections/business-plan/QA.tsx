@@ -120,7 +120,7 @@ export function QA() {
                             href='http://pf.kakao.com/_CYGdn/chat'
                             target='_blank'
                             rel='noopener noreferrer'
-                            className='inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#00A9FF] to-[#0077FF] hover:from-[#0077FF] hover:to-[#00A9FF] text-white rounded-full font-bold text-lg transition-all duration-300 hover:scale-105'
+                            className='inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white rounded-full font-bold text-lg transition-all duration-300 hover:scale-105'
                         >
                             더 빠른 성장을 원하시나요?
                         </a>

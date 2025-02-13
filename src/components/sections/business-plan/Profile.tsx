@@ -37,7 +37,7 @@ const achievements = [
 
 export function Profile() {
     return (
-        <section className="py-20 bg-gradient-to-br from-white to-blue-50">
+        <section className="py-20 bg-gradient-to-br from-white to-purple-50">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -63,7 +63,7 @@ export function Profile() {
                             transition={{ delay: index * 0.1 }}
                             className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                         >
-                            <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-[#00A9FF] to-[#0077FF] flex items-center justify-center mb-4">
+                            <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center mb-4">
                                 <achievement.icon className="w-6 h-6 text-white" />
                             </div>
                             <h3 className="text-xl font-bold mb-4 font-aggro">{achievement.title}</h3>
