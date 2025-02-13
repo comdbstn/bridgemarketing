@@ -61,11 +61,11 @@ export function Profile() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="relative group"
+                            className="relative group h-full"
                         >
                             <div className="absolute -inset-0.5 bg-gradient-to-r from-[#626ae2] to-[#7884eb] opacity-50 group-hover:opacity-100 transition-all duration-300 rounded-2xl blur-[2px] group-hover:blur-[3px]" />
-                            <div className="relative bg-white rounded-2xl p-8">
-                                <div className="w-16 h-16 rounded-lg bg-gradient-to-r from-[#626ae2] to-[#7884eb] flex items-center justify-center mb-6">
+                            <div className="relative bg-white rounded-2xl p-8 h-full">
+                                <div className="w-16 h-16 rounded-lg bg-gradient-to-r from-[#626ae2] to-[#7884eb] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                                     <achievement.icon className="w-8 h-8 text-white" />
                                 </div>
                                 <h3 className="text-2xl font-bold mb-4 text-gray-900 font-aggro">{achievement.title}</h3>
