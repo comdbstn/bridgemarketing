@@ -48,7 +48,7 @@ export function Profile() {
                     <h2 className="text-4xl font-bold text-gray-900 mb-6 font-aggro">
                         검증된 전문가가 도와드립니다
                     </h2>
-                    <p className="text-xl text-gray-600 mb-8 font-tway">
+                    <p className="text-xl text-[#626ae2] mb-8 font-tway">
                         정부지원 사업계획서 컨설팅·회사 소개서·투자 라운딩용 IR·각종 아이디어 공모전 및 창업경진대회 발표 자료 작성업을 2년 간 진행해왔습니다. 더불어 ESG 분야 창업을 1년 간 경험하며, 정부지원사업을 창업가 입장에서 생각할 수 있는 작업자임을 말씀드립니다.
                     </p>
                 </motion.div>
@@ -64,14 +64,14 @@ export function Profile() {
                             className="relative group"
                         >
                             <div className="absolute -inset-0.5 bg-gradient-to-r from-[#626ae2] to-[#7884eb] opacity-50 group-hover:opacity-100 transition-all duration-300 rounded-2xl blur-[2px] group-hover:blur-[3px]" />
-                            <div className="relative bg-white rounded-2xl p-8 border border-[#626ae2]/10">
-                                <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-[#626ae2] to-[#7884eb] flex items-center justify-center mb-4">
-                                    <achievement.icon className="w-6 h-6 text-white" />
+                            <div className="relative bg-white rounded-2xl p-8">
+                                <div className="w-16 h-16 rounded-lg bg-gradient-to-r from-[#626ae2] to-[#7884eb] flex items-center justify-center mb-6">
+                                    <achievement.icon className="w-8 h-8 text-white" />
                                 </div>
-                                <h3 className="text-xl font-bold mb-4 text-gray-900 font-aggro">{achievement.title}</h3>
-                                <ul className="space-y-2">
+                                <h3 className="text-2xl font-bold mb-4 text-gray-900 font-aggro">{achievement.title}</h3>
+                                <ul className="space-y-3">
                                     {achievement.items.map((item, i) => (
-                                        <li key={i} className="text-gray-600 font-tway">
+                                        <li key={i} className="text-gray-600 font-tway text-base">
                                             {item}
                                         </li>
                                     ))}

@@ -9,7 +9,7 @@ const steps = [
         title: "요구사항 분석",
         description:
             "사업의 특성과 목표를 상세히 분석하여 최적의 방향성을 도출합니다.",
-        color: "from-purple-500 to-purple-600",
+        color: "from-[#626ae2] to-[#7884eb]",
     },
     {
         number: 2,
@@ -17,7 +17,7 @@ const steps = [
         title: "초안 작성",
         description:
             "AI 기술을 활용하여 핵심 내용을 담은 초안을 신속하게 작성합니다.",
-        color: "from-purple-600 to-purple-700",
+        color: "from-[#626ae2] to-[#7884eb]",
     },
     {
         number: 3,
@@ -25,20 +25,20 @@ const steps = [
         title: "전문가 검수",
         description:
             "각 분야 전문가들의 검토를 통해 완성도를 높입니다.",
-        color: "from-purple-700 to-purple-800",
+        color: "from-[#626ae2] to-[#7884eb]",
     },
     {
         number: 4,
         icon: Presentation,
         title: "최종 완성",
         description: "피드백을 반영하여 최종 사업계획서를 완성합니다.",
-        color: "from-purple-800 to-purple-900",
+        color: "from-[#626ae2] to-[#7884eb]",
     },
 ];
 
 export function Process() {
     return (
-        <section className='py-20 bg-gray-50 overflow-hidden'>
+        <section className='py-20 bg-gradient-to-br from-[#626ae2]/5 to-white overflow-hidden'>
             <div className='container mx-auto px-4'>
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
@@ -52,7 +52,7 @@ export function Process() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className='text-gray-600 text-center mb-16 max-w-2xl mx-auto font-tway'
+                    className='text-[#626ae2] text-center mb-16 max-w-2xl mx-auto font-tway'
                 >
                     체계적인 프로세스로 완벽한 사업계획서를 작성합니다
                 </motion.p>
@@ -80,7 +80,7 @@ export function Process() {
 
                                     {/* Content */}
                                     <h3 className='text-xl font-bold mb-2 text-gray-900 font-aggro'>{step.title}</h3>
-                                    <p className='text-gray-600 font-tway'>{step.description}</p>
+                                    <p className='text-gray-600 font-tway text-base'>{step.description}</p>
                                 </div>
                             </Card>
                         </motion.div>

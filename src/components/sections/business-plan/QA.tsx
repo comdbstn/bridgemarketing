@@ -31,36 +31,40 @@ interface QAItemProps {
 
 function QAItem({ question, answer, isOpen, onClick }: QAItemProps) {
     return (
-        <div className="border-b border-gray-100 last:border-0">
-            <button
-                className={`w-full p-6 text-left bg-gradient-to-r from-[#626ae2] to-[#7884eb] rounded-xl text-white transition-all duration-300 hover:opacity-90 ${
-                    isOpen ? 'shadow-lg' : ''
-                }`}
-                onClick={onClick}
-            >
-                <span className="text-lg font-medium text-gray-900 font-tway">{question}</span>
-                <ChevronDown
-                    className={cn(
-                        "w-5 h-5 text-gray-500 transition-transform duration-200",
-                        isOpen && "transform rotate-180"
+        <div className="relative group">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#626ae2] to-[#7884eb] opacity-50 group-hover:opacity-100 transition-all duration-300 rounded-2xl blur-[2px] group-hover:blur-[3px]" />
+            <div className="relative bg-white rounded-2xl overflow-hidden">
+                <button
+                    className="w-full p-6 text-left flex items-center justify-between transition-all duration-300"
+                    onClick={onClick}
+                >
+                    <span className="text-lg font-medium text-gray-900 font-tway">{question}</span>
+                    <ChevronDown
+                        className={cn(
+                            "w-5 h-5 text-[#626ae2] transition-transform duration-200",
+                            isOpen && "transform rotate-180"
+                        )}
+                    />
+                </button>
+                <AnimatePresence>
+                    {isOpen && (
+                        <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="overflow-hidden"
+                        >
+                            <div className="px-6 pb-6">
+                                <div className="h-px w-full bg-gray-100 mb-6" />
+                                <p className="text-gray-600 font-tway">
+                                    {answer}
+                                </p>
+                            </div>
+                        </motion.div>
                     )}
-                />
-            </button>
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="overflow-hidden"
-                    >
-                        <p className="pb-6 text-gray-600 font-tway">
-                            {answer}
-                        </p>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+                </AnimatePresence>
+            </div>
         </div>
     );
 }
@@ -73,27 +77,27 @@ export function QA() {
     };
 
     return (
-        <section className='py-20 bg-white'>
+        <section className='py-20 bg-gradient-to-br from-[#626ae2]/5 to-white'>
             <div className='container mx-auto px-4'>
                 <div className='max-w-3xl mx-auto'>
-                    <motion.h2
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className='text-4xl font-bold text-center mb-4 font-aggro'
+                        className="relative group mb-16 inline-block"
                     >
-                        자주 묻는 질문
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className='text-gray-600 text-center mb-12 font-tway'
-                    >
-                        사업계획서 작성에 대해 궁금하신 점을 확인하세요
-                    </motion.p>
+                        <div className="absolute -inset-1 bg-gradient-to-r from-[#626ae2] to-[#7884eb] opacity-50 group-hover:opacity-100 transition-all duration-300 rounded-2xl blur-[3px] group-hover:blur-[5px]" />
+                        <div className="relative text-center bg-white rounded-2xl p-8">
+                            <h2 className='text-4xl font-bold text-gray-900 mb-4 font-aggro'>
+                                자주 묻는 질문
+                            </h2>
+                            <p className='text-[#626ae2] font-tway'>
+                                사업계획서 작성에 대해 궁금하신 점을 확인하세요
+                            </p>
+                        </div>
+                    </motion.div>
 
-                    <div className='divide-y divide-gray-100'>
+                    <div className='space-y-6'>
                         {questions.map((item, index) => (
                             <motion.div
                                 key={index}
