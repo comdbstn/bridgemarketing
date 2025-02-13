@@ -4,21 +4,21 @@ import { Bot, TrendingUp, Users } from "lucide-react";
 const stats = [
     {
         icon: Bot,
-        title: "개발 효율 증가",
+        title: "마케팅 효율 증가",
         value: "300%",
-        description: "AI 기반 자동화 시스템으로\n개발 효율성 대폭 향상"
+        description: "AI 기반 자동화 시스템으로\n마케팅 효율성 대폭 향상"
     },
     {
         icon: TrendingUp,
-        title: "배 빠른 개발",
+        title: "배 빠른 집행",
         value: "3",
-        description: "웹/모바일 앱, AI 솔루션 등\n다양한 분야의 프로젝트 수행"
+        description: "AI와 자동화를 활용한\n신속한 마케팅 집행"
     },
     {
         icon: Users,
         title: "배 저렴한 비용",
         value: "3",
-        description: "높은 품질과 합리적인 비용으로\n고객 만족 실현"
+        description: "개발 외주 10만원부터\n합리적인 비용 제공"
     }
 ];
 
@@ -28,8 +28,8 @@ const achievements = [
         label: "프로젝트 완수"
     },
     {
-        value: "1.5개월",
-        label: "평균 개발기간"
+        value: "3일",
+        label: "평균 집행 기간"
     },
     {
         value: "98%",
@@ -68,7 +68,7 @@ export function Marketing() {
                             transition={{ duration: 0.5 }}
                             className="inline-block px-6 py-2 bg-purple-500/10 rounded-full text-purple-300 text-sm border border-purple-500/20 backdrop-blur-sm font-tway mb-6"
                         >
-                            New Perspective
+                            Marketing Innovation
                         </motion.span>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -78,7 +78,7 @@ export function Marketing() {
                         >
                             <h2 className="text-4xl sm:text-5xl font-bold mb-6 font-aggro leading-tight">
                                 <span className="bg-gradient-to-r from-white via-purple-200 to-indigo-200 bg-clip-text text-transparent">
-                                    AI 시대의 개발 비용
+                                    AI 시대의 사업 추진
                                 </span>
                                 <br />
                                 <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">
@@ -93,8 +93,8 @@ export function Marketing() {
                             transition={{ delay: 0.3 }}
                             className="text-xl text-gray-400 max-w-3xl mx-auto font-tway"
                         >
-                            자체 개발 자동화 시스템으로<br />
-                            AI의 기술 발전을 그대로 외주 비용에 녹여냈습니다
+                            AI와 자동화를 활용한 KPI의 최적화<br />
+                            기술 발전을 그대로 외주 비용 감소에 녹여냈습니다
                         </motion.p>
                     </motion.div>
 

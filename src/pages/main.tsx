@@ -50,9 +50,9 @@ export function MainPage() {
             <Navbar />
             <main>
                 <Hero />
-                <References />
                 <Marketing />
                 <About />
+                <References />
                 <Process />
                 <Services />
                 <Contact />
