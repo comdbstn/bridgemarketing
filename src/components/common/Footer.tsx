@@ -105,7 +105,6 @@ export function Footer() {
                         className="mt-16 pt-8 border-t border-gray-800 text-center text-sm text-gray-400 font-tway"
                     >
                         <p>© {new Date().getFullYear()} 브릿지마케팅. All rights reserved.</p>
-                        <p className="mt-2">대표: 정승민 | 개인정보책임자: 정승민</p>
                     </motion.div>
                 </div>
             </div>
