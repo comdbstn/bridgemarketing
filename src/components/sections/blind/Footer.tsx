@@ -9,12 +9,12 @@ export function Footer() {
             {/* Company Info */}
             <div className="space-y-2">
               <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-[#00A9FF] to-[#0077FF] bg-clip-text text-transparent">
-                Bridge Marketing
+                브릿지마케팅
               </h3>
               <div className="space-y-3 text-gray-600">
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-gray-400 flex-shrink-0" />
-                  <span>서울시 성동구 뚝섬로 13길 38 (성수동 2가)</span>
+                  <span>서울특별시 관악구 신림로19길 46-3</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-gray-400 flex-shrink-0" />
@@ -34,7 +34,7 @@ export function Footer() {
 
             {/* Copyright */}
             <div className="text-sm text-gray-500">
-              © {new Date().getFullYear()} Bridge Marketing. All rights reserved.
+              © {new Date().getFullYear()} 브릿지마케팅. All rights reserved.
             </div>
           </div>
         </div>

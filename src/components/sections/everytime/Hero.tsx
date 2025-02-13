@@ -3,7 +3,7 @@ import { MessageCircle } from "lucide-react";
 
 export function Hero() {
     return (
-        <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#C62917] to-[#A61F10]">
+        <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#FF4B4B] to-[#FF7070]">
             <div className='container mx-auto px-4 sm:px-6 lg:px-8 relative pt-20 sm:pt-0'>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -35,7 +35,7 @@ export function Hero() {
                                 transition={{ duration: 0.8, ease: "easeOut" }}
                                 className="font-['Changa'] text-[50px] sm:text-[130px] font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-br from-[#FFE5E5] via-[#FFFFFF] to-[#FFF0F0] select-none leading-none"
                             >
-                                POST
+                                EVERYTIME
                             </motion.h1>
                         </div>
                         <div className='space-y-8'>
@@ -65,28 +65,28 @@ export function Hero() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.5 }}
-                                className='bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white'
+                                className='bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-white'
                             >
                                 <h3 className='text-2xl sm:text-4xl font-bold mb-2'>450만+</h3>
-                                <p className='text-sm sm:text-base text-white/80'>월간 활성 사용자</p>
+                                <p className='text-sm sm:text-base text-white/90'>월간 활성 사용자</p>
                             </motion.div>
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.6 }}
-                                className='bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white'
+                                className='bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-white'
                             >
                                 <h3 className='text-2xl sm:text-4xl font-bold mb-2'>200+</h3>
-                                <p className='text-sm sm:text-base text-white/80'>대학교 커뮤니티</p>
+                                <p className='text-sm sm:text-base text-white/90'>대학교 커뮤니티</p>
                             </motion.div>
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.7 }}
-                                className='bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white'
+                                className='bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-white'
                             >
                                 <h3 className='text-2xl sm:text-4xl font-bold mb-2'>99%</h3>
-                                <p className='text-sm sm:text-base text-white/80'>광고 만족도</p>
+                                <p className='text-sm sm:text-base text-white/90'>광고 만족도</p>
                             </motion.div>
                         </div>
 
@@ -100,7 +100,7 @@ export function Hero() {
                                 href='http://pf.kakao.com/_CYGdn/chat'
                                 target='_blank'
                                 rel='noopener noreferrer'
-                                className='inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-white/90 text-[#C62917] rounded-full font-bold text-lg transition-all duration-300 hover:scale-105'
+                                className='inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-white/90 text-[#FF4B4B] rounded-full font-bold text-lg transition-all duration-300 hover:scale-105'
                             >
                                 <MessageCircle className='w-5 h-5' />더 빠른 성장을 원하시나요?
                             </a>

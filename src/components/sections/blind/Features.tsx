@@ -47,7 +47,7 @@ const features = [
 
 export function Features() {
     return (
-        <section className='py-20 relative overflow-hidden bg-gradient-to-br from-white to-blue-50'>
+        <section className='py-20 relative overflow-hidden bg-gradient-to-br from-gray-50 to-blue-50'>
             <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
@@ -61,7 +61,7 @@ export function Features() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className='text-gray-600 text-center mb-12 max-w-2xl mx-auto px-4 font-tway'
+                    className='text-gray-700 text-center mb-12 max-w-2xl mx-auto px-4 font-tway'
                 >
                     직장인 마케팅의 새로운 기준을 제시합니다. 
                     <br />
@@ -77,7 +77,7 @@ export function Features() {
                             viewport={{ once: true }}
                             className='h-full'
                         >
-                            <Card className='h-full flex flex-col hover:shadow-lg transition-all duration-300 overflow-hidden group'>
+                            <Card className='h-full flex flex-col hover:shadow-lg transition-all duration-300 overflow-hidden group bg-white'>
                                 <div className='p-6 flex flex-col flex-grow'>
                                     <div className='w-12 h-12 rounded-lg bg-gradient-to-r from-[#00A9FF] to-[#0077FF] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
                                         <feature.icon className='w-6 h-6 text-white' />

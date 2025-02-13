@@ -90,7 +90,7 @@ const lineOptions: ChartOptions<"line"> = {
 
 export function Stats() {
     return (
-        <section className='py-20 bg-gradient-to-br from-white via-blue-50 to-white'>
+        <section className='py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-gray-50'>
             <div className='container mx-auto px-4'>
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
@@ -105,7 +105,7 @@ export function Stats() {
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className='bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300'
+                        className='bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100'
                     >
                         <h3 className='text-xl font-bold mb-4 text-[#00A9FF]'>연간 사용자 성장</h3>
                         <div className='h-[300px]'>
@@ -117,7 +117,7 @@ export function Stats() {
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className='bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300'
+                        className='bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100'
                     >
                         <h3 className='text-xl font-bold mb-6 text-[#00A9FF]'>국내 3대 그룹사 가입률</h3>
                         <div className='space-y-6'>

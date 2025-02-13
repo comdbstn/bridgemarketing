@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 const plans = [
     {
         name: "Basic",
-        price: "₩10,000",
+        price: "₩15,000",
         description: "단발성 홍보가 필요한 소규모 프로젝트에 적합",
         features: [
             "1개 대학 게시글 1회",
-            "홍보게시판 사용",
+            "자유게시판/홍보게시판 선택",
             "국내 모든 대학 배포 가능",
             "24시간 이내 업로드",
             "기본 리포트 제공",
@@ -24,7 +24,7 @@ const plans = [
         features: [
             "100개 대학 게시글 1회",
             "또는 10개 대학 10회",
-            "홍보게시판 사용",
+            "자유게시판/홍보게시판 선택",
             "맞춤형 이미지/카피",
             "프리미엄 리포트 제공",
             "전담 매니저 배정",
@@ -59,7 +59,7 @@ export function Pricing() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className='text-4xl font-bold mb-4 font-aggro'
+                        className='text-4xl font-bold mb-4 text-gray-900 font-aggro'
                     >
                         합리적인 가격으로 시작하세요
                     </motion.h2>
@@ -85,7 +85,7 @@ export function Pricing() {
                         >
                             {plan.badge && (
                                 <div className='absolute -top-4 left-1/2 transform -translate-x-1/2'>
-                                    <span className='bg-gradient-to-r from-[#FF416C] to-[#FF4B2B] text-white text-sm font-bold px-4 py-1 rounded-full'>
+                                    <span className='bg-gradient-to-r from-[#FF4B4B] to-[#FF7070] text-white text-sm font-bold px-4 py-1 rounded-full'>
                                         {plan.badge}
                                     </span>
                                 </div>
@@ -94,14 +94,14 @@ export function Pricing() {
                             <Card
                                 className={`h-full ${
                                     plan.highlighted
-                                        ? "border-2 border-[#FF416C] shadow-lg scale-105 relative z-10"
+                                        ? "border-2 border-[#FF4B4B] shadow-lg scale-105 relative z-10"
                                         : "border border-gray-200"
-                                } hover:shadow-xl transition-all duration-300`}
+                                } hover:shadow-xl transition-all duration-300 bg-white`}
                             >
                                 <div className='p-8'>
-                                    <h3 className='text-2xl font-bold mb-2 font-tway'>{plan.name}</h3>
+                                    <h3 className='text-2xl font-bold mb-2 text-gray-900 font-tway'>{plan.name}</h3>
                                     <div className='mb-4'>
-                                        <span className='text-4xl font-bold'>{plan.price}</span>
+                                        <span className='text-4xl font-bold text-gray-900'>{plan.price}</span>
                                         {plan.name !== "Enterprise" && <span className='text-gray-600'>/회</span>}
                                     </div>
                                     <p className='text-gray-600 mb-6 font-tway'>{plan.description}</p>
@@ -112,7 +112,7 @@ export function Pricing() {
                                         rel='noopener noreferrer'
                                         className={`w-full block text-center py-3 ${
                                             plan.highlighted
-                                                ? "bg-gradient-to-r from-[#C62917] to-[#E54B3C] hover:from-[#E54B3C] hover:to-[#C62917]"
+                                                ? "bg-gradient-to-r from-[#FF4B4B] to-[#FF7070] hover:from-[#FF7070] hover:to-[#FF4B4B]"
                                                 : "bg-gray-900 hover:bg-gray-800"
                                         } text-white rounded-full font-bold transition-all duration-300 hover:scale-[1.02] mb-8`}
                                     >
@@ -125,7 +125,7 @@ export function Pricing() {
                                                 <div
                                                     className={`rounded-full p-1 ${
                                                         plan.highlighted
-                                                            ? "bg-[#FF416C]/10 text-[#FF416C]"
+                                                            ? "bg-[#FF4B4B]/10 text-[#FF4B4B]"
                                                             : "bg-gray-100 text-gray-600"
                                                     }`}
                                                 >
