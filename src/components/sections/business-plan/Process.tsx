@@ -1,4 +1,3 @@
-import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { FileSearch, FileEdit, FileCheck, Presentation } from "lucide-react";
 
