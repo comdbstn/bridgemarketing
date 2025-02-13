@@ -20,7 +20,7 @@ const features = [
     {
         icon: Clock,
         title: "신속한 작성",
-        description: "평균 3일 이내 초안 작성, 1주일 이내 최종본 완성을 보장합니다."
+        description: "평균 5일 이내 초안 작성, 1주일 이내 최종본 완성을 보장합니다."
     },
     {
         icon: Target,
