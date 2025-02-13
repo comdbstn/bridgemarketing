@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { BackButton } from "@/components/common/back-button";
 import { KakaoChatButton } from "@/components/common/kakao-chat-button";
 import { FileText, Code, GraduationCap, Building2 } from "lucide-react";
 import { Loading } from "@/components/ui/loading";
@@ -103,7 +102,7 @@ export default function ServicePage() {
             minPrice: "1만원",
             image: "/logo/everytime.png",
             link: "/everytime",
-            category: "community",
+            category: "viral",
             gradient: "from-red-400 to-pink-400",
             icon: GraduationCap
         },
@@ -136,7 +135,7 @@ export default function ServicePage() {
             minPrice: "5만원",
             image: "/logo/blind.png",
             link: "/blind",
-            category: "community",
+            category: "viral",
             gradient: "from-blue-400 to-cyan-400",
             icon: Building2
         },
@@ -160,18 +159,17 @@ export default function ServicePage() {
     return (
         <div className="min-h-screen bg-black overflow-hidden relative">
             <Navbar />
-            <BackButton />
             <KakaoChatButton />
 
             {/* Background Elements */}
             <motion.div 
-                className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-black to-indigo-900/20"
+                className="absolute inset-0 bottom-[400px] bg-gradient-to-br from-purple-900/20 via-black to-indigo-900/20"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1 }}
             />
             <motion.div
-                className="absolute inset-0"
+                className="absolute inset-0 bottom-[400px]"
                 initial={{ opacity: 0 }}
                 animate={glowAnimation}
             >
