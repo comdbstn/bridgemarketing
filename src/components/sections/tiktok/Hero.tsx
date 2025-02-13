@@ -73,21 +73,21 @@ const Hero: React.FC = () => {
                     <div className='space-y-8'>
                         <motion.p
                             variants={itemVariants}
-                            className="font-['Changa'] text-[28px] sm:text-[50px] font-bold tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-white to-white/80 select-none"
+                            className="font-['Changa'] text-[28px] sm:text-[50px] font-bold tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-black to-black/80 select-none"
                         >
                             BRIDGE MARKETING
                         </motion.p>
                         <motion.div variants={itemVariants} className='flex items-center justify-center gap-12'>
                             <img src='/logo/tiktok.png' alt='TikTok Logo' className='h-28' />
-                            <h1 className="font-['Changa'] text-[50px] sm:text-[130px] font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-br from-white via-white/90 to-white/80 select-none leading-none">
+                            <h1 className="font-['Changa'] text-[50px] sm:text-[130px] font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-br from-[#FF0050] via-[#FF0050]/90 to-[#FF0050]/80 select-none leading-none">
                                 TIKTOK
                             </h1>
                         </motion.div>
                         <motion.div variants={itemVariants} className='space-y-4'>
-                            <h2 className='text-3xl sm:text-5xl font-bold text-white font-aggro'>
+                            <h2 className='text-3xl sm:text-5xl font-bold text-[#00F2EA] font-aggro'>
                                 바이럴 마케팅의 새로운 기준
                             </h2>
-                            <p className='text-lg sm:text-xl text-white/90 px-4 font-tway'>
+                            <p className='text-lg sm:text-xl text-black/90 px-4 font-tway'>
                                 틱톡은 글로벌 단위 트렌드가 만들어지는 소셜 앱입니다.
                                 <br className='hidden sm:block' />
                                 대규모 바이럴 마케팅을 위한 최적의 플랫폼, 틱톡 시딩 마케팅을 시작하세요.
@@ -101,15 +101,15 @@ const Hero: React.FC = () => {
                             {stats.map((stat) => (
                                 <div
                                     key={stat.label}
-                                    className='p-4 sm:p-6 mx-4 sm:mx-0 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:border-white/20 transition-all duration-300 group'
+                                    className='p-4 sm:p-6 mx-4 sm:mx-0 bg-gradient-to-br from-[#00F2EA]/20 to-[#FF0050]/20 backdrop-blur-sm rounded-lg border border-[#00F2EA]/30 hover:border-[#FF0050]/40 transition-all duration-300 group'
                                 >
                                     <h3 className='text-2xl sm:text-4xl font-bold mb-2 group-hover:scale-105 transition-transform duration-300 font-aggro'>
-                                        <span className='text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/60'>
+                                        <span className='text-transparent bg-clip-text bg-gradient-to-b from-[#FF0050] via-[#FF0050] to-[#FF0050]/80'>
                                             <CountUpAnimation end={stat.number} />
                                             {stat.suffix}+
                                         </span>
                                     </h3>
-                                    <p className='text-white/80'>{stat.label}</p>
+                                    <p className='text-black/80'>{stat.label}</p>
                                 </div>
                             ))}
                         </motion.div>

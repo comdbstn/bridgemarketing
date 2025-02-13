@@ -32,7 +32,7 @@ const referenceImages = [
     }
 ];
 
-export function EverytimePage() {
+export default function EverytimePage() {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
     
     useEffect(() => {
@@ -46,9 +46,8 @@ export function EverytimePage() {
             <Hero />
             <Products />
             <Features />
-            <Profile />
             <Stats />
-            <Process />
+            <Profile />
             
             {/* References Section */}
             <section className="py-20 bg-gradient-to-br from-[#FF4B4B]/5 to-white">
@@ -91,6 +90,7 @@ export function EverytimePage() {
                 />
             </section>
             
+            <Process />
             <Pricing />
             <QA />
             <Footer />

@@ -1,8 +1,8 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
-export function QA() {
+export const QA: React.FC = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     const qas = [
@@ -25,34 +25,16 @@ export function QA() {
     ];
 
     return (
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-gradient-to-br from-white to-[#FF4B4B]/5">
             <div className="container mx-auto px-4">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="text-center mb-16"
-                >
-                    <motion.h2
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}
-                        className="text-3xl font-bold text-gray-900 mb-4"
-                    >
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4 font-aggro">
                         자주 묻는 질문
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        viewport={{ once: true }}
-                        className="text-xl text-gray-600"
-                    >
+                    </h2>
+                    <p className="text-xl text-gray-600 font-tway">
                         고객님들이 자주 문의하시는 내용을 모았습니다
-                    </motion.p>
-                </motion.div>
+                    </p>
+                </div>
                 <div className="max-w-3xl mx-auto">
                     {qas.map((qa, index) => (
                         <motion.div
@@ -65,14 +47,14 @@ export function QA() {
                         >
                             <motion.button
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                className="w-full flex items-center justify-between p-6 bg-[#f8faff] hover:bg-[#e8f0ff] rounded-lg transition-all duration-300"
+                                className="w-full flex items-center justify-between p-6 bg-white hover:bg-[#FF4B4B]/5 rounded-xl border border-gray-100 hover:border-[#FF4B4B]/20 transition-all duration-300"
                                 whileHover={{ scale: 1.01 }}
                                 whileTap={{ scale: 0.99 }}
                             >
                                 <motion.span
-                                    className="text-lg font-medium text-gray-900"
+                                    className="text-lg font-medium text-gray-900 font-aggro"
                                     initial={false}
-                                    animate={{ color: openIndex === index ? "#f03e3e" : "#111827" }}
+                                    animate={{ color: openIndex === index ? "#FF4B4B" : "#111827" }}
                                     transition={{ duration: 0.2 }}
                                 >
                                     {qa.question}
@@ -83,7 +65,7 @@ export function QA() {
                                     transition={{ duration: 0.3 }}
                                 >
                                     <ChevronDown className={`w-5 h-5 text-gray-500 transition-colors duration-300 ${
-                                        openIndex === index ? "text-[#f03e3e]" : ""
+                                        openIndex === index ? "text-[#FF4B4B]" : ""
                                     }`} />
                                 </motion.div>
                             </motion.button>
@@ -101,9 +83,9 @@ export function QA() {
                                             animate={{ y: 0, opacity: 1 }}
                                             exit={{ y: -20, opacity: 0 }}
                                             transition={{ duration: 0.3, delay: 0.1 }}
-                                            className="p-6 bg-white border border-gray-100 rounded-lg mt-2"
+                                            className="p-6 bg-white border border-gray-100 rounded-xl mt-2"
                                         >
-                                            <p className="text-gray-600">{qa.answer}</p>
+                                            <p className="text-gray-600 font-tway">{qa.answer}</p>
                                         </motion.div>
                                     </motion.div>
                                 )}
@@ -114,4 +96,4 @@ export function QA() {
             </div>
         </section>
     );
-}
+};

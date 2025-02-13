@@ -1,7 +1,8 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { FileSearch, FileEdit, FileCheck, Presentation } from "lucide-react";
 
-export function Process() {
+export const Process: React.FC = () => {
     const processes = [
         {
             icon: FileSearch,
@@ -26,7 +27,7 @@ export function Process() {
     ];
 
     return (
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-gradient-to-br from-[#FF4B4B]/5 to-white">
             <div className="container mx-auto px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -35,16 +36,16 @@ export function Process() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4 font-aggro">
                         진행 프로세스
                     </h2>
-                    <p className="text-xl text-gray-600">
+                    <p className="text-xl text-gray-600 font-tway">
                         체계적이고 효율적인 프로세스로 성공적인 마케팅을 실현합니다
                     </p>
                 </motion.div>
-                <div className="relative max-w-5xl mx-auto">
+                <div className="relative max-w-6xl mx-auto">
                     {/* Connecting Line */}
-                    <div className="absolute top-1/2 left-0 w-full h-0.5 bg-[#f03e3e]/20 -translate-y-1/2 hidden md:block" />
+                    <div className="absolute top-1/2 left-0 w-full h-0.5 bg-[#FF4B4B]/20 -translate-y-1/2 hidden md:block" />
                     
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                         {processes.map((process, index) => (
@@ -56,22 +57,22 @@ export function Process() {
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
                                 className="relative"
                             >
-                                <div className="relative bg-white p-6 rounded-xl shadow-lg text-center z-10 hover:shadow-xl transition-shadow duration-300">
+                                <div className="relative bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:border-[#FF4B4B]/20 text-center z-10">
                                     <div className="relative">
-                                        <div className="inline-flex items-center justify-center w-16 h-16 bg-[#f03e3e]/10 rounded-full mb-6 group-hover:bg-[#f03e3e]/20 transition-colors duration-300">
-                                            <process.icon className="w-8 h-8 text-[#f03e3e]" />
+                                        <div className="inline-flex items-center justify-center w-16 h-16 bg-[#FF4B4B]/10 rounded-lg mb-6 group-hover:bg-[#FF4B4B]/20 transition-colors duration-300">
+                                            <process.icon className="w-8 h-8 text-[#FF4B4B]" />
                                         </div>
-                                        <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#f03e3e] rounded-full flex items-center justify-center text-white font-bold">
+                                        <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#FF4B4B] rounded-full flex items-center justify-center text-white font-bold font-aggro">
                                             {index + 1}
                                         </div>
                                     </div>
-                                    <h3 className="text-xl font-bold text-gray-900 mb-4">{process.title}</h3>
-                                    <p className="text-gray-600 whitespace-pre-line">{process.description}</p>
+                                    <h3 className="text-xl font-bold text-gray-900 mb-4 font-aggro">{process.title}</h3>
+                                    <p className="text-gray-600 whitespace-pre-line font-tway">{process.description}</p>
                                 </div>
                                 
                                 {/* Arrow for mobile */}
                                 {index < processes.length - 1 && (
-                                    <div className="absolute left-1/2 -bottom-6 transform -translate-x-1/2 w-4 h-4 text-[#f03e3e] md:hidden">
+                                    <div className="absolute left-1/2 -bottom-6 transform -translate-x-1/2 w-4 h-4 text-[#FF4B4B] md:hidden">
                                         ↓
                                     </div>
                                 )}
@@ -82,4 +83,4 @@ export function Process() {
             </div>
         </section>
     );
-}
+};

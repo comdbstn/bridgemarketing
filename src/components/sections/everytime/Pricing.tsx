@@ -1,3 +1,4 @@
+import React from "react";
 import { Card } from "@/components/ui/card";
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
@@ -50,30 +51,20 @@ const plans = [
     },
 ];
 
-export function Pricing() {
+export const Pricing: React.FC = () => {
     return (
-        <section className='py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden'>
-            <div className='container mx-auto px-4'>
-                <div className='text-center max-w-3xl mx-auto mb-16'>
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className='text-4xl font-bold mb-4 text-gray-900 font-aggro'
-                    >
+        <section className="py-20 bg-gradient-to-br from-[#FF4B4B]/5 to-white overflow-hidden">
+            <div className="container mx-auto px-4">
+                <div className="text-center max-w-3xl mx-auto mb-16">
+                    <h2 className="text-4xl font-bold mb-4 text-gray-900 font-aggro">
                         합리적인 가격으로 시작하세요
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className='text-gray-600 font-tway'
-                    >
+                    </h2>
+                    <p className="text-xl text-gray-600 font-tway">
                         프로젝트 규모와 목표에 맞는 최적의 플랜을 선택하세요
-                    </motion.p>
+                    </p>
                 </div>
 
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto'>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
                     {plans.map((plan, index) => (
                         <motion.div
                             key={plan.name}
@@ -81,11 +72,11 @@ export function Pricing() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className='relative'
+                            className="relative"
                         >
                             {plan.badge && (
-                                <div className='absolute -top-4 left-1/2 transform -translate-x-1/2'>
-                                    <span className='bg-gradient-to-r from-[#FF4B4B] to-[#FF7070] text-white text-sm font-bold px-4 py-1 rounded-full'>
+                                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                                    <span className="bg-gradient-to-r from-[#FF4B4B] to-[#FF7070] text-white text-sm font-bold px-4 py-1 rounded-full">
                                         {plan.badge}
                                     </span>
                                 </div>
@@ -96,20 +87,20 @@ export function Pricing() {
                                     plan.highlighted
                                         ? "border-2 border-[#FF4B4B] shadow-lg scale-105 relative z-10"
                                         : "border border-gray-200"
-                                } hover:shadow-xl transition-all duration-300 bg-white`}
+                                } hover:shadow-xl transition-all duration-300 bg-white rounded-xl`}
                             >
-                                <div className='p-8'>
-                                    <h3 className='text-2xl font-bold mb-2 text-gray-900 font-tway'>{plan.name}</h3>
-                                    <div className='mb-4'>
-                                        <span className='text-4xl font-bold text-gray-900'>{plan.price}</span>
-                                        {plan.name !== "Enterprise" && <span className='text-gray-600'>/회</span>}
+                                <div className="p-8">
+                                    <h3 className="text-2xl font-bold mb-2 text-gray-900 font-aggro">{plan.name}</h3>
+                                    <div className="mb-4">
+                                        <span className="text-4xl font-bold text-[#FF4B4B]">{plan.price}</span>
+                                        {plan.name !== "Enterprise" && <span className="text-gray-600">/회</span>}
                                     </div>
-                                    <p className='text-gray-600 mb-6 font-tway'>{plan.description}</p>
+                                    <p className="text-gray-600 mb-6 font-tway">{plan.description}</p>
 
                                     <a
-                                        href='http://pf.kakao.com/_CYGdn/chat'
-                                        target='_blank'
-                                        rel='noopener noreferrer'
+                                        href="http://pf.kakao.com/_CYGdn/chat"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className={`w-full block text-center py-3 ${
                                             plan.highlighted
                                                 ? "bg-gradient-to-r from-[#FF4B4B] to-[#FF7070] hover:from-[#FF7070] hover:to-[#FF4B4B]"
@@ -119,9 +110,9 @@ export function Pricing() {
                                         {plan.ctaText}
                                     </a>
 
-                                    <div className='space-y-4'>
+                                    <div className="space-y-4">
                                         {plan.features.map((feature) => (
-                                            <div key={feature} className='flex items-center gap-3'>
+                                            <div key={feature} className="flex items-center gap-3">
                                                 <div
                                                     className={`rounded-full p-1 ${
                                                         plan.highlighted
@@ -129,9 +120,9 @@ export function Pricing() {
                                                             : "bg-gray-100 text-gray-600"
                                                     }`}
                                                 >
-                                                    <Check className='w-4 h-4' />
+                                                    <Check className="w-4 h-4" />
                                                 </div>
-                                                <span className='text-gray-600 font-tway'>{feature}</span>
+                                                <span className="text-gray-600 font-tway">{feature}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -143,4 +134,4 @@ export function Pricing() {
             </div>
         </section>
     );
-}
+};

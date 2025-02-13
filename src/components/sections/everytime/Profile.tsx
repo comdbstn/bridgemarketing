@@ -1,55 +1,81 @@
+import React from "react";
 import { motion } from "framer-motion";
 
-export function Profile() {
+export const Profile: React.FC = () => {
     return (
-        <section className="py-20 bg-gradient-to-br from-[#FF4B4B]/10 to-white">
+        <section className="py-20 bg-gradient-to-br from-[#FF4B4B]/5 to-white">
             <div className="container mx-auto px-4">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
+                <div className="text-center mb-16">
                     <h2 className="text-4xl font-bold text-gray-900 mb-4 font-aggro">
-                        에브리타임 마케팅 전문가
+                        브릿지마케팅 에브리타임 마케팅
                     </h2>
-                    <p className="text-xl text-[#FF4B4B] font-tway">
-                        대학생 마케팅의 A to Z까지 책임집니다
+                    <p className="text-xl text-gray-600 font-tway">
+                        대학생 마케팅의 새로운 기준을 제시합니다
                     </p>
-                </motion.div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="bg-white rounded-xl p-8 shadow-lg"
+                        transition={{ duration: 0.6 }}
+                        className="space-y-6"
                     >
-                        <h3 className="text-2xl font-bold mb-4 text-gray-900 font-aggro">전문성</h3>
-                        <ul className="space-y-3 text-gray-600 font-tway">
-                            <li>• 5년 이상의 에브리타임 마케팅 경험</li>
-                            <li>• 100개 이상의 성공 프로젝트 수행</li>
-                            <li>• 대학생 타겟 마케팅 전략 전문가</li>
-                            <li>• 실시간 트렌드 분석 및 적용</li>
-                        </ul>
+                        <div className="bg-white p-6 rounded-xl shadow-lg">
+                            <h3 className="text-2xl font-bold text-[#FF4B4B] mb-4 font-aggro">
+                                에브리타임 마케팅 전문가
+                            </h3>
+                            <ul className="space-y-3 text-gray-700">
+                                <li className="flex items-center gap-2">
+                                    <span className="w-2 h-2 bg-[#FF4B4B] rounded-full" />
+                                    <span>5년 이상의 에브리타임 마케팅 경험</span>
+                                </li>
+                                <li className="flex items-center gap-2">
+                                    <span className="w-2 h-2 bg-[#FF4B4B] rounded-full" />
+                                    <span>1,000+ 성공적인 캠페인 진행</span>
+                                </li>
+                                <li className="flex items-center gap-2">
+                                    <span className="w-2 h-2 bg-[#FF4B4B] rounded-full" />
+                                    <span>전국 주요 대학 네트워크 보유</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="bg-white p-6 rounded-xl shadow-lg">
+                            <h3 className="text-2xl font-bold text-[#FF4B4B] mb-4 font-aggro">
+                                차별화된 서비스
+                            </h3>
+                            <ul className="space-y-3 text-gray-700">
+                                <li className="flex items-center gap-2">
+                                    <span className="w-2 h-2 bg-[#FF4B4B] rounded-full" />
+                                    <span>맞춤형 타겟팅 전략 수립</span>
+                                </li>
+                                <li className="flex items-center gap-2">
+                                    <span className="w-2 h-2 bg-[#FF4B4B] rounded-full" />
+                                    <span>실시간 모니터링 및 피드백</span>
+                                </li>
+                                <li className="flex items-center gap-2">
+                                    <span className="w-2 h-2 bg-[#FF4B4B] rounded-full" />
+                                    <span>데이터 기반 성과 분석</span>
+                                </li>
+                            </ul>
+                        </div>
                     </motion.div>
-
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="bg-white rounded-xl p-8 shadow-lg"
+                        transition={{ duration: 0.6 }}
+                        className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-xl"
                     >
-                        <h3 className="text-2xl font-bold mb-4 text-gray-900 font-aggro">차별성</h3>
-                        <ul className="space-y-3 text-gray-600 font-tway">
-                            <li>• 맞춤형 콘텐츠 제작 및 전략 수립</li>
-                            <li>• 실시간 모니터링 및 피드백</li>
-                            <li>• 데이터 기반 성과 분석</li>
-                            <li>• 지속적인 사후 관리 서비스</li>
-                        </ul>
+                        <img
+                            src="/images/everytime/profile.jpg"
+                            alt="에브리타임 마케팅 전문가"
+                            className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#FF4B4B]/60 via-transparent to-transparent" />
                     </motion.div>
                 </div>
             </div>
         </section>
     );
-} 
+}; 
