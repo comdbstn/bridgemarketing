@@ -1,15 +1,6 @@
 import { motion } from "framer-motion";
 import { useCountAnimation } from "@/hooks/useCountAnimation";
 
-const stats = [
-    { number: 92, suffix: "%", label: "선정 성공률" },
-    { number: 3, suffix: "배", label: "빠른 작성" },
-    { number: 98, suffix: "%", label: "고객 만족도" },
-    { number: 3, suffix: "배", label: "저렴한 비용" },
-    { number: 100, suffix: "+", label: "작성 완료" },
-    { number: 85, suffix: "%", label: "재계약률" }
-];
-
 const companyStats = [
     {
         name: "삼성",
@@ -80,7 +71,7 @@ export function Stats() {
                     >
                         <h3 className="text-xl font-bold mb-6 text-[#00A9FF]">주요 기업 선정률</h3>
                         <div className="space-y-6">
-                            {companyStats.map((company, index) => (
+                            {companyStats.map((company) => (
                                 <div key={company.name} className="flex items-center gap-4 mb-2">
                                     <img src={company.logo} alt={company.name} className="h-6 w-24 object-contain" />
                                     <div className="flex-1 bg-gray-200 rounded-full h-2">

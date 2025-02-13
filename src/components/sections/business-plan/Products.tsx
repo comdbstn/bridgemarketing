@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FileText, FileCheck, FileSearch, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export function Products() {
     return (
