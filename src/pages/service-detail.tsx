@@ -1,14 +1,9 @@
 import { motion } from "framer-motion";
-import { useLocation, useNavigate } from "react-router-dom";
 import { Loading } from "@/components/ui/loading";
 import { useState, useEffect } from "react";
 import { BackButton } from "@/components/common/back-button";
 
 export function ServiceDetailPage() {
-    const location = useLocation();
-    const navigate = useNavigate();
-    const fromPage = location.state?.from || '/';
-    const scrollPosition = location.state?.scrollPosition || 0;
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
