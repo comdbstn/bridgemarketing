@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { MessageSquare, Megaphone, BookOpen, Briefcase } from "lucide-react";
+import { MessageSquare, Megaphone } from "lucide-react";
 
 export const Products: React.FC = () => {
     const products = [
@@ -26,30 +26,6 @@ export const Products: React.FC = () => {
                 "장기 노출 보장",
                 "상세 정보 전달",
                 "링크 삽입 가능"
-            ]
-        },
-        {
-            icon: BookOpen,
-            title: "책방",
-            subtitle: "중고거래 플랫폼 활용",
-            description: "중고거래 플랫폼을 활용하여 제품을 판매하고 구매자와 직접 소통합니다.",
-            features: [
-                "제품 판매 가능",
-                "가격 정보 노출",
-                "구매자 직접 소통",
-                "재고 관리 기능"
-            ]
-        },
-        {
-            icon: Briefcase,
-            title: "아르바이트",
-            subtitle: "채용 정보 홍보",
-            description: "아르바이트 게시판을 통해 채용 정보를 홍보하고 지원자를 관리합니다.",
-            features: [
-                "채용 공고 등록",
-                "상세 근무 조건",
-                "지원자 관리",
-                "기업 정보 노출"
             ]
         }
     ];

@@ -25,10 +25,6 @@ const referenceImages = [
     {
         src: "/everytime_reference/3.png",
         alt: "레퍼런스 3"
-    },
-    {
-        src: "/everytime_reference/4.png",
-        alt: "레퍼런스 4"
     }
 ];
 
