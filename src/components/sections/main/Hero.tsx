@@ -78,7 +78,14 @@ export function Hero() {
                         className="text-5xl sm:text-7xl font-bold mb-8 font-aggro"
                     >
                         <motion.span
-                            animate={floatingAnimation}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{
+                                duration: 1.5,
+                                repeat: Infinity,
+                                repeatType: "reverse",
+                                ease: "easeInOut"
+                            }}
                             className="inline-block bg-gradient-to-r from-white via-purple-300 to-indigo-400 bg-clip-text text-transparent"
                         >
                             Your bridge to success
@@ -91,9 +98,7 @@ export function Hero() {
                         transition={{ duration: 0.6, delay: 0.3 }}
                         className="text-xl sm:text-2xl text-gray-400 mb-12 font-tway leading-relaxed"
                     >
-                        사업 성공을 위한 A to Z 솔루션
-                        <br />
-                        정확한 데이터와 KPI로 가치를 전달합니다
+                        사업 성공을 위한 A to Z 솔루션, 정확한 데이터와 KPI로 가치를 전달합니다
                     </motion.p>
 
                     <motion.div
