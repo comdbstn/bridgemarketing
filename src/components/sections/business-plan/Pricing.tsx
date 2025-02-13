@@ -183,9 +183,11 @@ export function Pricing() {
                         <motion.div
                             key={plan.name}
                             className="relative group"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
                         >
-                            <div className="absolute inset-0.5 bg-gradient-to-r from-[#626ae2] to-[#7884eb] opacity-50 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur-sm" />
-                            <div className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div className="relative bg-white rounded-2xl p-8 border border-[#7884eb]/20 hover:border-[#7884eb]/40 transition-all duration-300">
                                 <div className="text-center mb-8">
                                     <h3 className="text-2xl font-bold text-gray-900 mb-2 font-aggro">{plan.name}</h3>
                                     <p className="text-gray-600 mb-4 min-h-[48px] font-tway">{plan.description}</p>
@@ -194,7 +196,7 @@ export function Pricing() {
                                 <ul className="space-y-4">
                                     {plan.features.map((feature: string) => (
                                         <li key={feature} className="flex items-start gap-2">
-                                            <div className="rounded-full p-1 bg-gradient-to-r from-[#626ae2] to-[#7884eb] mt-0.5">
+                                            <div className="rounded-full p-1 bg-gradient-to-r from-[#626ae2] to-[#7884eb] mt-0.5 shrink-0">
                                                 <Check className="w-3 h-3 text-white" />
                                             </div>
                                             <span className="text-gray-600 font-tway">{feature}</span>
@@ -206,7 +208,7 @@ export function Pricing() {
                                         href="http://pf.kakao.com/_CYGdn/chat"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="block w-full py-3 px-6 text-center text-white bg-gradient-to-r from-[#626ae2] to-[#7884eb] rounded-lg hover:from-[#7884eb] hover:to-[#626ae2] transition-all duration-300 font-tway"
+                                        className="block w-full py-3 px-6 text-center text-white bg-gradient-to-r from-[#626ae2] to-[#7884eb] rounded-lg hover:opacity-90 transition-all duration-300 font-tway"
                                     >
                                         시작하기
                                     </a>

@@ -37,7 +37,7 @@ const achievements = [
 
 export function Profile() {
     return (
-        <section className="py-20 bg-gradient-to-br from-white to-purple-50">
+        <section className="py-20 bg-gradient-to-br from-white to-[#626ae2]/5">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -61,19 +61,22 @@ export function Profile() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                            className="relative group"
                         >
-                            <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center mb-4">
-                                <achievement.icon className="w-6 h-6 text-white" />
+                            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#626ae2] to-[#7884eb] opacity-50 group-hover:opacity-100 transition-all duration-300 rounded-2xl blur-[2px] group-hover:blur-[3px]" />
+                            <div className="relative bg-white rounded-2xl p-8 border border-[#626ae2]/10">
+                                <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-[#626ae2] to-[#7884eb] flex items-center justify-center mb-4">
+                                    <achievement.icon className="w-6 h-6 text-white" />
+                                </div>
+                                <h3 className="text-xl font-bold mb-4 text-gray-900 font-aggro">{achievement.title}</h3>
+                                <ul className="space-y-2">
+                                    {achievement.items.map((item, i) => (
+                                        <li key={i} className="text-gray-600 font-tway">
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
-                            <h3 className="text-xl font-bold mb-4 font-aggro">{achievement.title}</h3>
-                            <ul className="space-y-2">
-                                {achievement.items.map((item, i) => (
-                                    <li key={i} className="text-gray-600 font-tway">
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
                         </motion.div>
                     ))}
                 </div>

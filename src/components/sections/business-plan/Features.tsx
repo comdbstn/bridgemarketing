@@ -46,13 +46,13 @@ const features = [
 
 export function Features() {
     return (
-        <section className='py-20 relative overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-900'>
+        <section className='py-20 relative overflow-hidden bg-gradient-to-br from-[#626ae2]/10 to-[#7884eb]/5'>
             <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className='text-4xl font-bold text-center mb-4 text-white font-aggro'
+                    className='text-4xl font-bold text-center mb-4 text-gray-900 font-aggro'
                 >
                     사업계획서 작성의 강점
                 </motion.h2>
@@ -60,7 +60,7 @@ export function Features() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className='text-purple-200 text-center mb-12 max-w-2xl mx-auto px-4 font-tway'
+                    className='text-[#626ae2] text-center mb-12 max-w-2xl mx-auto px-4 font-tway'
                 >
                     전문성과 체계적인 프로세스로 
                     <br />
@@ -75,13 +75,13 @@ export function Features() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className='bg-white/10 backdrop-blur-sm p-6 rounded-lg hover:bg-white/20 transition-all duration-300 border border-purple-500/20'
+                            className='bg-white/80 backdrop-blur-sm p-6 rounded-lg hover:bg-white transition-all duration-300 border border-[#7884eb]/20 hover:border-[#7884eb]/40'
                         >
-                            <div className='w-12 h-12 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center mb-4'>
+                            <div className='w-12 h-12 rounded-lg bg-gradient-to-r from-[#626ae2] to-[#7884eb] flex items-center justify-center mb-4'>
                                 <feature.icon className='w-6 h-6 text-white' />
                             </div>
-                            <h3 className='text-xl font-bold mb-2 text-white font-aggro'>{feature.title}</h3>
-                            <p className='text-purple-200 font-tway'>{feature.description}</p>
+                            <h3 className='text-xl font-bold mb-2 text-gray-900 font-aggro'>{feature.title}</h3>
+                            <p className='text-gray-600 font-tway'>{feature.description}</p>
                         </motion.div>
                     ))}
                 </div>

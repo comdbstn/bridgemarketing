@@ -33,7 +33,9 @@ function QAItem({ question, answer, isOpen, onClick }: QAItemProps) {
     return (
         <div className="border-b border-gray-100 last:border-0">
             <button
-                className="w-full py-6 flex items-center justify-between text-left"
+                className={`w-full p-6 text-left bg-gradient-to-r from-[#626ae2] to-[#7884eb] rounded-xl text-white transition-all duration-300 hover:opacity-90 ${
+                    isOpen ? 'shadow-lg' : ''
+                }`}
                 onClick={onClick}
             >
                 <span className="text-lg font-medium text-gray-900 font-tway">{question}</span>
@@ -120,7 +122,7 @@ export function QA() {
                             href='http://pf.kakao.com/_CYGdn/chat'
                             target='_blank'
                             rel='noopener noreferrer'
-                            className='inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white rounded-full font-bold text-lg transition-all duration-300 hover:scale-105'
+                            className='inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#626ae2] to-[#7884eb] hover:opacity-90 text-white rounded-full font-bold text-lg transition-all duration-300 hover:scale-105'
                         >
                             더 빠른 성장을 원하시나요?
                         </a>
