@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Navbar } from "@/components/common/Navbar";
-import { Footer } from "@/components/common/Footer";
-import { Loading } from "@/components/ui/loading";
 import { ArrowRight } from "lucide-react";
 import { BackButton } from "@/components/common/back-button";
 import { KakaoChatButton } from "@/components/common/kakao-chat-button";
 import { FileText, Code, GraduationCap, Building2 } from "lucide-react";
+import { Loading } from "@/components/ui/loading";
 
 interface Service {
     title: string;
@@ -33,7 +31,6 @@ const glowAnimation = {
 
 export default function ServicePage() {
     const [isLoading, setIsLoading] = useState(true);
-    const [selectedCategory, setSelectedCategory] = useState("all");
     const location = useLocation();
     const navigate = useNavigate();
     const shouldRestore = location.state?.shouldRestore;
@@ -51,7 +48,6 @@ export default function ServicePage() {
         }
     }, [shouldRestore, savedScrollPosition]);
 
-    // 브라우저 뒤로가기 처리
     useEffect(() => {
         const handlePopState = () => {
             const currentScroll = window.scrollY;
@@ -146,28 +142,6 @@ export default function ServicePage() {
         }
     ];
 
-    const categories = [
-        { id: "all", name: "전체" },
-        { id: "business", name: "사업지원" },
-        { id: "naver", name: "네이버" },
-        { id: "community", name: "커뮤니티" },
-        { id: "influencer", name: "인플루언서" }
-    ];
-
-    const filteredServices = selectedCategory === "all" 
-        ? services 
-        : services.filter(service => service.category === selectedCategory);
-
-    const handleServiceClick = () => {
-        const currentScroll = window.scrollY;
-        return {
-            state: {
-                from: '/service',
-                scrollPosition: currentScroll
-            }
-        };
-    };
-
     return (
         <div className="min-h-screen bg-black overflow-hidden relative">
             <BackButton />
@@ -230,7 +204,7 @@ export default function ServicePage() {
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {filteredServices.map((service, index) => (
+                        {services.map((service, index) => (
                             <motion.div
                                 key={service.title}
                                 initial={{ opacity: 0, y: 20 }}
