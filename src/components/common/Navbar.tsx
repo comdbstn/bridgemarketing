@@ -2,13 +2,12 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import { Link as ScrollLink } from "react-scroll";
 
 const navItems = [
-    { name: "서비스", to: "services" },
-    { name: "레퍼런스", to: "references" },
-    { name: "프로세스", to: "process" },
-    { name: "문의하기", to: "contact" }
+    { name: "서비스", to: "/service" },
+    { name: "포트폴리오", to: "/portfolio" },
+    { name: "인사이트", to: "/insights" },
+    { name: "문의하기", to: "http://pf.kakao.com/_CYGdn/chat", external: true }
 ];
 
 export function Navbar() {
@@ -32,24 +31,40 @@ export function Navbar() {
         >
             <div className="container mx-auto px-4">
                 <div className="flex items-center justify-between">
-                    <Link to="/" className="text-2xl font-bold text-white">
-                        브릿지마케팅
+                    <Link 
+                        to="/" 
+                        className="flex items-center gap-2"
+                    >
+                        <img 
+                            src="/logo/bridgemlogo.png" 
+                            alt="브릿지마케팅 로고" 
+                            className="h-8 w-8"
+                        />
+                        <span className="text-2xl font-bold text-white">브릿지마케팅</span>
                     </Link>
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center space-x-8">
                         {navItems.map((item) => (
-                            <ScrollLink
-                                key={item.name}
-                                to={item.to}
-                                spy={true}
-                                smooth={true}
-                                offset={-100}
-                                duration={500}
-                                className="text-gray-300 hover:text-white cursor-pointer transition-colors duration-200"
-                            >
-                                {item.name}
-                            </ScrollLink>
+                            item.external ? (
+                                <a
+                                    key={item.name}
+                                    href={item.to}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-gray-300 hover:text-white transition-colors duration-200"
+                                >
+                                    {item.name}
+                                </a>
+                            ) : (
+                                <Link
+                                    key={item.name}
+                                    to={item.to}
+                                    className="text-gray-300 hover:text-white transition-colors duration-200"
+                                >
+                                    {item.name}
+                                </Link>
+                            )
                         ))}
                     </div>
 
@@ -73,18 +88,27 @@ export function Navbar() {
                         >
                             <div className="flex flex-col space-y-4">
                                 {navItems.map((item) => (
-                                    <ScrollLink
-                                        key={item.name}
-                                        to={item.to}
-                                        spy={true}
-                                        smooth={true}
-                                        offset={-100}
-                                        duration={500}
-                                        className="text-gray-300 hover:text-white cursor-pointer transition-colors duration-200"
-                                        onClick={() => setIsOpen(false)}
-                                    >
-                                        {item.name}
-                                    </ScrollLink>
+                                    item.external ? (
+                                        <a
+                                            key={item.name}
+                                            href={item.to}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-gray-300 hover:text-white transition-colors duration-200"
+                                            onClick={() => setIsOpen(false)}
+                                        >
+                                            {item.name}
+                                        </a>
+                                    ) : (
+                                        <Link
+                                            key={item.name}
+                                            to={item.to}
+                                            className="text-gray-300 hover:text-white transition-colors duration-200"
+                                            onClick={() => setIsOpen(false)}
+                                        >
+                                            {item.name}
+                                        </Link>
+                                    )
                                 ))}
                             </div>
                         </motion.div>
