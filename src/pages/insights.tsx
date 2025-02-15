@@ -13,7 +13,7 @@ const insights = [
         description: "변화하는 소비자 트렌드와 함께 성장하는 마케팅 전략을 소개합니다. MZ세대의 특성을 이해하고, 그들과 효과적으로 소통하는 방법을 알아봅니다.",
         date: "2024.03.15",
         category: "마케팅 트렌드",
-        image: "/insights/1.jpg"
+        image: "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&q=80&w=1000"
     },
     {
         id: 2,
@@ -21,7 +21,7 @@ const insights = [
         description: "대학생 타겟 마케팅의 핵심 플랫폼인 에브리타임에서의 성공적인 캠페인 사례를 분석합니다.",
         date: "2024.03.10",
         category: "성공사례",
-        image: "/insights/2.jpg"
+        image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=1000"
     },
     {
         id: 3,
@@ -29,7 +29,7 @@ const insights = [
         description: "직장인 커뮤니티에서의 효과적인 마케팅 방법과 주의사항을 상세히 알아봅니다.",
         date: "2024.03.05",
         category: "마케팅 전략",
-        image: "/insights/3.jpg"
+        image: "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80&w=1000"
     },
     {
         id: 4,
@@ -37,7 +37,7 @@ const insights = [
         description: "숏폼 콘텐츠가 주도하는 새로운 마케팅 트렌드와 틱톡 플랫폼의 특성을 분석합니다.",
         date: "2024.02.28",
         category: "콘텐츠 마케팅",
-        image: "/insights/4.jpg"
+        image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&q=80&w=1000"
     },
     {
         id: 5,
@@ -45,7 +45,7 @@ const insights = [
         description: "투자 유치를 위한 효과적인 사업계획서 작성 방법과 주요 포인트를 소개합니다.",
         date: "2024.02.20",
         category: "사업계획",
-        image: "/insights/5.jpg"
+        image: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&q=80&w=1000"
     },
     {
         id: 6,
@@ -53,7 +53,7 @@ const insights = [
         description: "AI 기술의 발전이 가져올 비즈니스 환경의 변화와 준비해야 할 점들을 알아봅니다.",
         date: "2024.02.15",
         category: "기술 트렌드",
-        image: "/insights/6.jpg"
+        image: "https://images.unsplash.com/photo-1677442136019-21780ecad095?auto=format&fit=crop&q=80&w=1000"
     }
 ];
 
@@ -64,7 +64,7 @@ export default function InsightsPage() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-black">
+        <div className="min-h-screen bg-gradient-to-b from-black to-gray-900">
             <BackButton />
             <KakaoChatButton />
             
@@ -85,7 +85,7 @@ export default function InsightsPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
-                            className="text-4xl md:text-5xl font-bold text-white mb-6 font-aggro"
+                            className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-6 font-aggro"
                         >
                             마케팅 인사이트
                         </motion.h1>
@@ -103,7 +103,7 @@ export default function InsightsPage() {
             </section>
 
             {/* Insights Grid */}
-            <section className="py-20 bg-black">
+            <section className="py-20">
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {insights.map((insight, index) => (
@@ -112,18 +112,19 @@ export default function InsightsPage() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="group"
+                                className="group relative bg-gray-900/50 rounded-xl overflow-hidden hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300"
                             >
-                                <Link to={`/insights/${insight.id}`} className="block">
-                                    <div className="relative aspect-[16/9] rounded-xl overflow-hidden mb-6">
+                                <Link to={`/insights/${insight.id}`} className="block p-4">
+                                    <div className="relative aspect-[16/9] rounded-lg overflow-hidden mb-6">
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10" />
                                         <img
                                             src={insight.image}
                                             alt={insight.title}
                                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                            loading="lazy"
                                         />
                                         <div className="absolute bottom-4 left-4 z-20">
-                                            <span className="px-3 py-1 bg-purple-600/80 text-white text-sm rounded-full font-tway">
+                                            <span className="px-3 py-1 bg-purple-600/80 backdrop-blur-sm text-white text-sm rounded-full font-tway">
                                                 {insight.category}
                                             </span>
                                         </div>
@@ -135,7 +136,7 @@ export default function InsightsPage() {
                                         <p className="text-gray-400 font-tway line-clamp-2">
                                             {insight.description}
                                         </p>
-                                        <div className="flex items-center justify-between">
+                                        <div className="flex items-center justify-between pt-2">
                                             <span className="text-sm text-gray-500 font-tway">{insight.date}</span>
                                             <ArrowRight className="w-5 h-5 text-purple-500 group-hover:translate-x-1 transition-transform duration-300" />
                                         </div>
