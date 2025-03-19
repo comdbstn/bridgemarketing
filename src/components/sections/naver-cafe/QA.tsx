@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { Plus, ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import { Disclosure } from "@headlessui/react";
 
 const questions = [
@@ -30,32 +29,7 @@ const questions = [
     },
 ];
 
-function QAItem({ question, answer, isOpen, onClick }: { question: string; answer: string; isOpen: boolean; onClick: () => void }) {
-    return (
-        <div className="py-4">
-            <button
-                onClick={onClick}
-                className="w-full flex justify-between items-center text-left"
-            >
-                <span className="text-lg font-semibold font-tway">{question}</span>
-                <Plus
-                    className={`w-5 h-5 text-green-600 transform transition-transform ${
-                        isOpen ? "rotate-45" : ""
-                    }`}
-                />
-            </button>
-            {isOpen && (
-                <p className="mt-4 text-gray-600 font-tway">
-                    {answer}
-                </p>
-            )}
-        </div>
-    );
-}
-
 export function QA() {
-    const [openIndex, setOpenIndex] = useState<number | null>(null);
-
     return (
         <section className='py-32 bg-gradient-to-br from-white via-green-50 to-white'>
             <div className='container mx-auto px-4'>
@@ -82,7 +56,7 @@ export function QA() {
                             className='bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300'
                         >
                             <Disclosure>
-                                {({ open }) => (
+                                {({ open }: { open: boolean }) => (
                                     <>
                                         <Disclosure.Button className='w-full px-6 py-4 text-left focus:outline-none'>
                                             <div className='flex items-center justify-between'>
