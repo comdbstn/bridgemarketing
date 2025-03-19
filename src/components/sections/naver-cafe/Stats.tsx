@@ -10,7 +10,8 @@ import {
     Tooltip,
     Legend,
     ArcElement,
-} from 'chart.js/auto';
+    ChartOptions as ChartOptionsType,
+} from 'chart.js';
 import { Line, Doughnut } from 'react-chartjs-2';
 
 Chart.register(
@@ -58,7 +59,7 @@ const categoryDistributionData = {
     ],
 };
 
-const lineOptions: ChartOptions<"line"> = {
+const lineOptions: ChartOptionsType<'line'> = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
@@ -90,7 +91,7 @@ const lineOptions: ChartOptions<"line"> = {
     },
 };
 
-const doughnutOptions: ChartOptions<"doughnut"> = {
+const doughnutOptions: ChartOptionsType<'doughnut'> = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
