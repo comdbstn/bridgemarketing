@@ -177,47 +177,51 @@ export function Stats() {
                     </motion.div>
                 </div>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className='text-center mb-12'
-                >
-                    <h2 className='text-4xl font-bold text-gray-900 mb-4 font-aggro'>
-                        업계 최대 경력
-                    </h2>
-                    <p className='text-gray-800 font-tway'>
-                        업계 최초로 네이버 카페 마케팅을 시작했습니다. 노하우와 경험을 바탕으로 최적의 마케팅 경험을 제공해드립니다.
-                    </p>
-                </motion.div>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-20'>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className='bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300'
+                    >
+                        <h2 className='text-2xl font-bold text-gray-900 mb-4 font-aggro'>
+                            업계 최대 경력
+                        </h2>
+                        <p className='text-gray-700 font-tway leading-relaxed'>
+                            업계 최초로 네이버 카페 마케팅을 시작했습니다. 노하우와 경험을 바탕으로 최적의 마케팅 경험을 제공해드립니다.
+                        </p>
+                    </motion.div>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className='text-center mb-12'
-                >
-                    <h2 className='text-4xl font-bold text-gray-900 mb-4 font-aggro'>
-                        업계 최저가
-                    </h2>
-                    <p className='text-gray-800 font-tway'>
-                        장기간 확보해온 계정 및 계약을 맺은 카페 회원 풀을 통하여 합리적인 가격
-                    </p>
-                </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className='bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300'
+                    >
+                        <h2 className='text-2xl font-bold text-gray-900 mb-4 font-aggro'>
+                            업계 최저가
+                        </h2>
+                        <p className='text-gray-700 font-tway leading-relaxed'>
+                            장기간 확보해온 계정 및 계약을 맺은 카페 회원 풀을 통하여 합리적인 가격
+                        </p>
+                    </motion.div>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className='text-center mb-12'
-                >
-                    <h2 className='text-4xl font-bold text-gray-900 mb-4 font-aggro'>
-                        9년경력의 마케팅 노하우
-                    </h2>
-                    <p className='text-gray-800 font-tway'>
-                        보고하기 쉬운 마케팅 보고서 제공, 1:1 담당자 매칭 및 매니징
-                    </p>
-                </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className='bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300'
+                    >
+                        <h2 className='text-2xl font-bold text-gray-900 mb-4 font-aggro'>
+                            9년경력의 마케팅 노하우
+                        </h2>
+                        <p className='text-gray-700 font-tway leading-relaxed'>
+                            보고하기 쉬운 마케팅 보고서 제공, 1:1 담당자 매칭 및 매니징
+                        </p>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );

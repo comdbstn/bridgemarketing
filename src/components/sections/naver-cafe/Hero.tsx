@@ -55,16 +55,16 @@ export function Hero() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.3 }}
-                                className='text-3xl sm:text-5xl font-bold text-white font-aggro'
+                                className='text-3xl sm:text-5xl font-bold text-green-500 font-aggro'
                             >
-                                네이버 카페 마케팅의 장점
+                                입소문엔 역시, 네이버 카페 마케팅
                             </motion.h2>
 
                             <motion.p
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: ANIMATION_DURATION, delay: ANIMATION_DELAY_BASE * 3 }}
-                                className='text-lg sm:text-xl text-white/90 font-tway'
+                                className='text-lg sm:text-xl text-green-600 font-tway'
                             >
                                 대한민국 최대 커뮤니티 네이버 카페에서
                                 <br className='hidden sm:block' />
