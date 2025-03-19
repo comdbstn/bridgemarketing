@@ -22,13 +22,13 @@ const advantages = [
 
 export function Advantages() {
     return (
-        <section className='py-20 relative overflow-hidden bg-gradient-to-br from-white to-green-50'>
+        <section className='py-24 relative overflow-hidden bg-gradient-to-br from-white to-green-50'>
             <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className='text-4xl font-bold text-center mb-4 font-aggro'
+                    className='text-4xl font-bold text-center mb-4 text-gray-900 font-aggro'
                 >
                     네이버 카페 마케팅의 장점
                 </motion.h2>
@@ -36,14 +36,14 @@ export function Advantages() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className='text-gray-600 text-center mb-12 max-w-2xl mx-auto px-4 font-tway'
+                    className='text-gray-700 text-center mb-16 max-w-2xl mx-auto font-tway'
                 >
                     대한민국 최대 커뮤니티 네이버 카페에서 
                     <br />
                     효과적인 마케팅을 시작하세요
                 </motion.p>
 
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8'>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto'>
                     {advantages.map((advantage, index) => (
                         <motion.div
                             key={advantage.title}
@@ -51,11 +51,20 @@ export function Advantages() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
+                            className='relative'
                         >
-                            <Card className='p-6 bg-white/50 backdrop-blur-sm border-none hover:bg-white/80 transition-colors'>
-                                <advantage.icon className='w-12 h-12 text-green-600 mb-4' />
-                                <h3 className='text-xl font-bold mb-2 font-aggro'>{advantage.title}</h3>
-                                <p className='text-gray-600 font-tway'>{advantage.description}</p>
+                            <Card className='p-8 h-full hover:shadow-lg transition-all duration-300 group'>
+                                <div className='flex flex-col items-center text-center'>
+                                    <div className='w-16 h-16 bg-gradient-to-r from-[#2DB400] to-[#00C73C] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300'>
+                                        <advantage.icon className='w-8 h-8 text-white' />
+                                    </div>
+                                    <h3 className='text-xl font-bold mb-4 text-gray-900 font-tway'>
+                                        {advantage.title}
+                                    </h3>
+                                    <p className='text-gray-700 leading-relaxed font-tway'>
+                                        {advantage.description}
+                                    </p>
+                                </div>
                             </Card>
                         </motion.div>
                     ))}
