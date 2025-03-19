@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Plus } from "lucide-react";
+import { Plus, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { Disclosure } from "@headlessui/react";
 
 const questions = [
     {
@@ -56,44 +57,53 @@ export function QA() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <section className="py-20 bg-white">
-            <div className="container mx-auto px-4">
-                <div className="max-w-3xl mx-auto">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-4xl font-bold text-center mb-4 font-aggro"
-                    >
-                        자주 묻는 질문
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-gray-600 text-center mb-12 font-tway"
-                    >
+        <section className='py-32 bg-gradient-to-br from-white via-green-50 to-white'>
+            <div className='container mx-auto px-4'>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className='text-center mb-16'
+                >
+                    <h2 className='text-4xl font-bold mb-4 text-gray-900 font-aggro'>자주 묻는 질문</h2>
+                    <p className='text-gray-700 font-tway'>
                         네이버 카페 마케팅에 대해 자주 묻는 질문들을 모았습니다
-                    </motion.p>
+                    </p>
+                </motion.div>
 
-                    <div className="divide-y divide-gray-100">
-                        {questions.map((item, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                viewport={{ once: true }}
-                            >
-                                <QAItem
-                                    question={item.question}
-                                    answer={item.answer}
-                                    isOpen={openIndex === index}
-                                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                />
-                            </motion.div>
-                        ))}
-                    </div>
+                <div className='max-w-3xl mx-auto space-y-6'>
+                    {questions.map((question, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: index * 0.1 }}
+                            viewport={{ once: true }}
+                            className='bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300'
+                        >
+                            <Disclosure>
+                                {({ open }) => (
+                                    <>
+                                        <Disclosure.Button className='w-full px-6 py-4 text-left focus:outline-none'>
+                                            <div className='flex items-center justify-between'>
+                                                <span className='text-lg font-medium text-gray-900 font-tway'>
+                                                    {question.question}
+                                                </span>
+                                                <ChevronDown
+                                                    className={`w-5 h-5 text-gray-500 transform transition-transform duration-200 ${
+                                                        open ? 'rotate-180' : ''
+                                                    }`}
+                                                />
+                                            </div>
+                                        </Disclosure.Button>
+                                        <Disclosure.Panel className='px-6 pb-4'>
+                                            <p className='text-gray-700 font-tway'>{question.answer}</p>
+                                        </Disclosure.Panel>
+                                    </>
+                                )}
+                            </Disclosure>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </section>

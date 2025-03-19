@@ -55,7 +55,7 @@ export function Hero() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.3 }}
-                                className='text-3xl sm:text-5xl font-bold text-gray-900 font-aggro'
+                                className='text-3xl sm:text-5xl font-bold text-white font-aggro'
                             >
                                 네이버 카페 마케팅의 장점
                             </motion.h2>
@@ -64,7 +64,7 @@ export function Hero() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: ANIMATION_DURATION, delay: ANIMATION_DELAY_BASE * 3 }}
-                                className='text-lg sm:text-xl text-gray-800 font-tway'
+                                className='text-lg sm:text-xl text-white/90 font-tway'
                             >
                                 대한민국 최대 커뮤니티 네이버 카페에서
                                 <br className='hidden sm:block' />
@@ -102,10 +102,10 @@ export function Hero() {
                                     className='bg-white/10 backdrop-blur-sm rounded-2xl p-6'
                                     ref={stat.ref}
                                 >
-                                    <h3 className='text-2xl sm:text-4xl font-bold mb-2 text-gray-900'>
+                                    <h3 className='text-2xl sm:text-4xl font-bold mb-2 text-white'>
                                         {formatNumber(stat.number, stat.suffix)}
                                     </h3>
-                                    <p className='text-sm sm:text-base text-gray-800'>{stat.label}</p>
+                                    <p className='text-sm sm:text-base text-white/80'>{stat.label}</p>
                                 </motion.div>
                             ))}
                         </div>
