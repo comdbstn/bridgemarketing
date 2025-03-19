@@ -48,10 +48,10 @@ export function Industries() {
                     <span className="text-green-600 font-semibold text-lg font-tway mb-4 block">
                         INDUSTRIES
                     </span>
-                    <h2 className="text-4xl font-bold mb-4 font-aggro">
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4 font-aggro">
                         다양한 산업군의 마케팅
                     </h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto font-tway">
+                    <p className="text-gray-700 max-w-2xl mx-auto font-tway">
                         각 산업별 특성을 고려한 맞춤형 마케팅 전략을 제공합니다.
                         <br />
                         업종별 전문가가 최적의 마케팅 솔루션을 제시합니다.
@@ -69,12 +69,12 @@ export function Industries() {
                         >
                             <Card className="p-6 hover:shadow-lg transition-all duration-300">
                                 <industry.icon className="w-12 h-12 text-green-600 mb-4" />
-                                <h3 className="text-xl font-bold mb-4 font-aggro">{industry.title}</h3>
+                                <h3 className="text-xl font-bold mb-4 text-gray-900 font-aggro">{industry.title}</h3>
                                 <ul className="space-y-2">
                                     {industry.items.map((item, i) => (
                                         <li
                                             key={i}
-                                            className="text-gray-600 font-tway flex items-center"
+                                            className="text-gray-800 font-tway flex items-center"
                                         >
                                             <span className="w-1.5 h-1.5 bg-green-600 rounded-full mr-2" />
                                             {item}

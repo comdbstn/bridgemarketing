@@ -45,10 +45,10 @@ export function References() {
                     <span className="text-green-600 font-semibold text-lg font-tway mb-4 block">
                         REFERENCES
                     </span>
-                    <h2 className="text-4xl font-bold mb-4 font-aggro">
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4 font-aggro">
                         네이버 카페 마케팅 레퍼런스
                     </h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto font-tway">
+                    <p className="text-gray-700 max-w-2xl mx-auto font-tway">
                         다양한 카테고리의 카페에서 성공적인 마케팅을 진행한 사례입니다.
                         <br />
                         각 분야별 전문가가 최적의 마케팅 전략을 제시합니다.
@@ -79,8 +79,8 @@ export function References() {
                                     </div>
                                 </div>
                                 <div className="p-4">
-                                    <h3 className="text-lg font-bold mb-1 font-tway">{reference.title}</h3>
-                                    <p className="text-gray-600 text-sm font-tway">{reference.description}</p>
+                                    <h3 className="text-lg font-bold mb-1 text-gray-900 font-tway">{reference.title}</h3>
+                                    <p className="text-gray-800 text-sm font-tway">{reference.description}</p>
                                 </div>
                             </Card>
                         </motion.div>
