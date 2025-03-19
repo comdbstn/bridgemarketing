@@ -110,10 +110,10 @@ export function Process() {
                                                     <step.icon className='w-6 h-6 text-white' />
                                                 </div>
                                                 <div className='flex-1'>
-                                                    <h3 className='text-xl font-bold mb-2 flex items-center gap-2 font-tway'>
+                                                    <h3 className='text-xl font-bold mb-2 flex items-center gap-2 text-gray-900 font-tway'>
                                                         {step.title}
                                                     </h3>
-                                                    <p className='text-gray-600 leading-relaxed font-tway'>
+                                                    <p className='text-gray-700 leading-relaxed font-tway'>
                                                         {step.description}
                                                     </p>
                                                 </div>

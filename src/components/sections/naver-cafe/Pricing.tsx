@@ -117,7 +117,7 @@ export function Pricing() {
                                     ))}
                                 </ul>
                                 <Button
-                                    className={`w-full py-3 px-6 rounded-lg bg-green-500 text-white font-semibold hover:bg-green-600 transition-colors duration-200 font-tway`}
+                                    className='w-full py-3 px-6 rounded-lg bg-green-500 hover:bg-green-600 text-gray-50 font-semibold transition-colors duration-200 font-tway'
                                 >
                                     시작하기
                                 </Button>
